@@ -74,7 +74,12 @@ jobs:
           test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "460fac5c33047a390e07ca275a2485e1a771ce593ee3715b8f12f36184ffd9ec"
 
           # Decode and apply the exact v0.3.6 creative-expansion runtime patch.
-          cat .deploy/v036/runtime-p00.b64 .deploy/v036/runtime-p01.b64 .deploy/v036/runtime-p02.b64 .deploy/v036/runtime-p03.b64 > /tmp/v036-runtime.patch.gz.b64
+          test "$(wc -c < .deploy/v036/runtime-p00a.b64)" -eq 4000
+          test "$(wc -c < .deploy/v036/runtime-p00b.b64)" -eq 4000
+          test "$(wc -c < .deploy/v036/runtime-p01.b64)" -eq 8000
+          test "$(wc -c < .deploy/v036/runtime-p02.b64)" -eq 8000
+          test "$(wc -c < .deploy/v036/runtime-p03.b64)" -eq 6672
+          cat .deploy/v036/runtime-p00a.b64 .deploy/v036/runtime-p00b.b64 .deploy/v036/runtime-p01.b64 .deploy/v036/runtime-p02.b64 .deploy/v036/runtime-p03.b64 > /tmp/v036-runtime.patch.gz.b64
           test "$(wc -c < /tmp/v036-runtime.patch.gz.b64)" -eq 30672
           test "$(sha256sum /tmp/v036-runtime.patch.gz.b64 | cut -d' ' -f1)" = "2e78cca4ee768bbc6d7c3e5367ba6b923a8714cf2c056971fdc9dcc18f297f08"
           base64 -d /tmp/v036-runtime.patch.gz.b64 > /tmp/v036-runtime.patch.gz
