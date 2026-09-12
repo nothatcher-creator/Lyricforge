@@ -54,24 +54,39 @@ jobs:
           test "$(sha256sum /tmp/mobile-v034.patch | cut -d' ' -f1)" = "3d80e9d9afd431e2217c898e00006b9d2ca6e5baa5d9ab55e908a6e434a87355"
           patch --batch --forward -p1 -d _site < /tmp/mobile-v034.patch
 
-          touch _site/.nojekyll
-
-          echo "v0.3.4 app bytes: $(wc -c < _site/src/app.mjs)"
-          echo "v0.3.4 css bytes: $(wc -c < _site/styles.css)"
-          echo "v0.3.4 index bytes: $(wc -c < _site/index.html)"
-          echo "v0.3.4 app sha: $(sha256sum _site/src/app.mjs | cut -d' ' -f1)"
-          echo "v0.3.4 css sha: $(sha256sum _site/styles.css | cut -d' ' -f1)"
-          echo "v0.3.4 index sha: $(sha256sum _site/index.html | cut -d' ' -f1)"
-
           test "$(wc -c < _site/src/app.mjs)" -eq 66971
           test "$(wc -c < _site/styles.css)" -eq 36145
           test "$(wc -c < _site/index.html)" -eq 9206
           test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "4cf902bdc59329b6e8340bf881c3ca2e0f4e3a61a0fb3c1a570b2545b7f90dce"
           test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "f0fcbc60526c14fa6d40f3f96f2cd87104aaf31bf4d8c1d36442d12bec79f9d1"
           test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "f711127578275c9a02ef01d8a3e97a687debdc0f2614c1e6f392feb141b673fd"
-          grep -q 'preview-controls' _site/index.html
-          grep -q 'mobile-bottom-nav' _site/index.html
-          grep -q 'lyricforge-v0.3.4' _site/sw.js
+
+          # Apply the v0.3.5 portrait dock/sheet scrolling fix.
+          test "$(wc -c < .deploy/mobile-v035.patch)" -eq 6358
+          test "$(sha256sum .deploy/mobile-v035.patch | cut -d' ' -f1)" = "ef3d3a0dd4064e35d74d8ef40092ceb48a544768f8a8c9b0e25bc7461a0f8be9"
+          patch --batch --forward -p1 -d _site < .deploy/mobile-v035.patch
+
+          touch _site/.nojekyll
+
+          echo "v0.3.5 app bytes: $(wc -c < _site/src/app.mjs)"
+          echo "v0.3.5 css bytes: $(wc -c < _site/styles.css)"
+          echo "v0.3.5 index bytes: $(wc -c < _site/index.html)"
+          echo "v0.3.5 app sha: $(sha256sum _site/src/app.mjs | cut -d' ' -f1)"
+          echo "v0.3.5 css sha: $(sha256sum _site/styles.css | cut -d' ' -f1)"
+          echo "v0.3.5 index sha: $(sha256sum _site/index.html | cut -d' ' -f1)"
+
+          test "$(wc -c < _site/src/app.mjs)" -eq 66971
+          test "$(wc -c < _site/styles.css)" -eq 36903
+          test "$(wc -c < _site/index.html)" -eq 9497
+          test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "4cf902bdc59329b6e8340bf881c3ca2e0f4e3a61a0fb3c1a570b2545b7f90dce"
+          test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "fa9cd01970906272f56a892a9c86b18f52ac85cf3aa2b8cdce408eebf3f146d2"
+          test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "460fac5c33047a390e07ca275a2485e1a771ce593ee3715b8f12f36184ffd9ec"
+          grep -q 'data-mobile-tab="presets"' _site/index.html
+          grep -q 'data-mobile-tab="effects"' _site/index.html
+          grep -q 'data-mobile-tab="elements"' _site/index.html
+          grep -q 'overflow-x:auto' _site/styles.css
+          grep -q 'touch-action:pan-y' _site/styles.css
+          grep -q 'lyricforge-v0.3.5' _site/sw.js
           grep -q 'whisper-tiny_timestamped' _site/src/transcription/providers.mjs
 
       - name: Configure Pages
