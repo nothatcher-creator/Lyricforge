@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#090a10" />
+  <title>LyricForge</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+</head>
+<body>
+  <div id="app" class="app-shell" aria-label="LyricForge lyric video editor">
+    <header class="topbar">
+      <div class="brand" title="LyricForge — logo/name can be replaced in index.html">
+        <div class="brand-mark"><span>LF</span></div>
+        <div><strong>LyricForge <em>Studio</em></strong><span id="projectNameTop">Untitled Project</span></div>
+      </div>
+      <button class="mobile-project" data-action="project-menu" title="Project actions">Project</button>
+      <div class="top-actions">
+        <button class="toolbar-text" data-action="new" title="New Project">＋ New</button>
+        <button class="toolbar-text" data-action="open" title="Open a locally saved project">⌑ Open</button>
+        <button class="toolbar-text" data-action="save" title="Save Project (Ctrl/Cmd+S)">⌘ Save</button>
+        <button class="toolbar-text secondary-save" data-action="save-as" title="Save As">Save As</button>
+        <span class="divider"></span>
+        <button data-action="undo" title="Undo (Ctrl/Cmd+Z)">↶</button>
+        <button data-action="redo" title="Redo (Ctrl/Cmd+Shift+Z)">↷</button>
+        <span class="divider"></span>
+        <button class="ai-top-action" data-action="auto-transcribe" title="Automatically transcribe the imported song">✦ Auto Transcribe</button>
+        <button data-action="fullscreen" title="Full-screen preview">▣ Preview</button>
+        <button class="primary export-action" data-action="export" title="Export video, subtitles, audio, or project">Export <span>↗</span></button>
+      </div>
+      <div class="status-pill" id="saveStatus"><i></i> Local · unsaved</div>
+    </header>
+
+    <section class="guide" id="guide">
+      <button data-guide="media"><b>1</b><span>Add song</span></button>
+      <i></i>
+      <button data-guide="lyrics"><b>2</b><span>Add / detect lyrics</span></button>
+      <i></i>
+      <button data-guide="presets"><b>3</b><span>Pick style</span></button>
+      <i></i>
+      <button data-guide="adjust"><b>4</b><span>Adjust</span></button>
+      <i></i>
+      <button data-action="export"><b>5</b><span>Export</span></button>
+    </section>
+
+    <main class="workspace">
+      <aside class="left-panel panel">
+        <nav class="tool-rail" aria-label="Editor tools">
+          <button class="active" data-tab="media" title="Media">▣<span>Media</span></button>
+          <button data-tab="lyrics" title="Lyrics">≡<span>Lyrics</span></button>
+          <button data-tab="text" title="Text">T<span>Text</span></button>
+          <button data-tab="presets" title="Presets">✦<span>Presets</span></button>
+          <button data-tab="effects" title="Effects">◌<span>Effects</span></button>
+          <button data-tab="elements" title="Elements">◇<span>Elements</span></button>
+        </nav>
+        <div class="panel-content" id="leftContent"></div>
+        <button class="mobile-left-close" data-action="close-left-mobile" title="Close tools">×</button>
+        <div class="panel-resizer right-edge" id="leftResizer" title="Drag to resize"></div>
+      </aside>
+
+      <section class="stage-wrap">
+        <div class="stage-toolbar">
+          <div class="crumb"><span id="compositionLabel">1920×1080 · 16:9</span></div>
+          <div class="stage-actions">
+            <button data-action="toggle-guides" class="icon-btn active" title="Safe-area guides">#</button>
+            <button data-action="fit-stage" title="Fit preview">Fit</button>
+          </div>
+        </div>
+        <div class="stage" id="stage">
+          <canvas id="previewCanvas" width="1920" height="1080" aria-label="Video preview"></canvas>
+          <div class="drop-overlay" id="dropOverlay"><b>Drop media, lyrics, or fonts</b><span>Audio · video · images · TXT/LRC/SRT/VTT/ASS · TTF/OTF/WOFF</span></div>
+        </div>
+      </section>
+
+      <aside class="right-panel panel">
+        <div class="panel-title-row"><strong>Inspector</strong><button data-action="collapse-right" title="Collapse inspector">›</button></div>
+        <div class="panel-content" id="inspector"></div>
+        <div class="panel-resizer left-edge" id="rightResizer" title="Drag to resize"></div>
+      </aside>
+    </main>
+
+    <section class="transport">
+      <div class="transport-left">
+        <button class="transport-icon" data-action="prev-lyric" title="Previous lyric">⏮</button>
+        <button data-action="frame-back" title="Frame back">‹</button>
+        <button class="play" data-action="play" id="playButton" title="Play/Pause (Space)">▶</button>
+        <button data-action="stop" title="Stop">■</button>
+        <button data-action="frame-forward" title="Frame forward">›</button>
+        <button class="transport-icon" data-action="next-lyric" title="Next lyric">⏭</button>
+        <button data-action="loop" id="loopButton" title="Loop selected lyric / composition">↻</button>
+      </div>
+      <time id="timeDisplay">00:00.000 / 03:00.000</time>
+      <div class="transport-right">
+        <label>Speed <select id="playbackRate"><option>.25</option><option>.5</option><option>.75</option><option selected>1</option><option>1.25</option></select>×</label>
+        <label>Volume <input id="volume" type="range" min="0" max="1" step=".01" value="1" /></label>
+      </div>
+    </section>
+
+    <section class="timeline-panel">
+      <div class="timeline-tools">
+        <div>
+          <button data-action="add-marker" title="Add marker (M)">+ Marker</button>
+          <button data-action="split" title="Split selected lyric (S)">Split</button>
+          <button data-action="duplicate" title="Duplicate (Ctrl/Cmd+D)">Duplicate</button>
+          <button data-action="delete" title="Delete selection">Delete</button>
+        </div>
+        <div class="snap-controls">
+          <label><input id="snapToggle" type="checkbox" checked /> Snap</label>
+          <label>Nudge <select id="nudgeAmount"><option value="10000">10 ms</option><option value="50000" selected>50 ms</option><option value="100000">100 ms</option><option value="custom">Custom</option></select></label>
+          <label>Zoom <input id="timelineZoom" type="range" min=".35" max="6" step=".05" value="1" /></label>
+        </div>
+      </div>
+      <div class="timeline-shell" id="timelineShell">
+        <div class="track-headers" id="trackHeaders"></div>
+        <div class="timeline-scroll" id="timelineScroll">
+          <div class="timeline-content" id="timelineContent">
+            <div class="ruler" id="ruler"></div>
+            <div class="tracks" id="tracks"></div>
+            <div class="playhead" id="playhead"><span></span></div>
+            <div class="selection-box" id="selectionBox"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <input id="fileInput" type="file" hidden multiple accept="audio/*,video/*,image/*,.txt,.lrc,.srt,.vtt,.ass,.ssa,.ttf,.otf,.woff,.woff2,.json,.lyricforge" />
+  <dialog id="modal"><form method="dialog" id="modalForm"><div id="modalBody"></div></form></dialog>
+  <div id="toastRegion" class="toasts" aria-live="polite"></div>
+
+  <script type="module" src="./src/app.mjs"></script>
+</body>
+</html>
