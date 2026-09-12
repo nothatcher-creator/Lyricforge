@@ -1,4 +1,4 @@
-const CACHE='lyricforge-v0.3.4';
+const CACHE='lyricforge-v0.3.5';
 const APP=[
   './','./index.html','./styles.css','./manifest.webmanifest','./favicon.svg',
   './src/app.mjs','./src/core/model.mjs','./src/core/time.mjs','./src/core/history.mjs','./src/core/state.mjs','./src/core/snap.mjs',
