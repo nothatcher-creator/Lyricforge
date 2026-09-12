@@ -6,7 +6,14 @@ export const TRANSFORMERS_RUNTIME_URLS=[
   'https://esm.sh/@huggingface/transformers@4.0.1',
   'https://unpkg.com/@huggingface/transformers@4.0.1'
 ];
-const DEFAULT_MODEL='onnx-community/whisper-tiny';
+const DEFAULT_MODEL='onnx-community/whisper-tiny_timestamped';
+
+export function timestampedWhisperModel(model=DEFAULT_MODEL){
+  const value=String(model||DEFAULT_MODEL);
+  if(/_timestamped$/i.test(value))return value;
+  if(/^onnx-community\/whisper-(?:tiny|base|small)(?:\.en)?$/i.test(value))return `${value}_timestamped`;
+  return value;
+}
 
 function conf(seg){
   if(Number.isFinite(seg.confidence))return Math.max(0,Math.min(1,seg.confidence));
@@ -144,7 +151,7 @@ function throwIfAborted(signal){if(signal?.aborted)throw abortError();}
 
 export class BrowserWhisperProvider{
   constructor({runtimeLoader=null,audioDecoder=decodeAudioBlob16k,navigatorLike=globalThis.navigator||{},model=DEFAULT_MODEL,workerFactory=null}={}){
-    this.id='browser-whisper';this.name='Built-in Whisper';this.model=model;
+    this.id='browser-whisper';this.name='Built-in Whisper';this.model=timestampedWhisperModel(model);
     this.capabilities={uploads:false,wordTimestamps:true,confidence:true,requiresSetup:false,local:true};
     this.runtimeLoader=runtimeLoader;this.audioDecoder=audioDecoder;this.navigatorLike=navigatorLike;this.pipelineCache=new Map();
     this.workerFactory=workerFactory||(()=>new Worker(new URL('./whisper-worker.mjs',import.meta.url),{type:'module'}));
