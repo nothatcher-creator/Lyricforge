@@ -23,14 +23,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Build static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site/src
+          cp index.html favicon.svg manifest.webmanifest sw.js _site/
+          cp -R src/audio src/core src/export src/lyrics src/render src/storage src/transcription _site/src/
+          cat .siteparts/app00.part .siteparts/app01.part .siteparts/app02.part .siteparts/app03.part .siteparts/app04.part .siteparts/app05.part .siteparts/app06.part .siteparts/app07.part .siteparts/app08.part > _site/src/app.mjs
+          cat .siteparts/css00.part .siteparts/css01.part .siteparts/css02.part .siteparts/css03.part .siteparts/css04.part .siteparts/css05.part .siteparts/css06.part .siteparts/css07.part > _site/styles.css
+          touch _site/.nojekyll
+          test "$(wc -c < _site/src/app.mjs)" -eq 65259
+          test "$(wc -c < _site/styles.css)" -eq 29453
+          test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "236087aac26c754984090455d1e951a7bc6f372387b7fc45498ff4852a7af1a5"
+          test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "5ff97180d73032945545a712fe12994bb6561f8d269b509c53e18ae526a91b86"
+          grep -q 'src/app.mjs' _site/index.html
+          grep -q 'LyricForge' _site/index.html
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Upload static site
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
