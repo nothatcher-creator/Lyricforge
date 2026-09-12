@@ -1,0 +1,7 @@
+bile-timeline-open .timeline-panel{transform:translateY(0)}
++  .timeline-tools{height:46px;padding:0 8px;gap:6px}.timeline-tools>div:first-child{overflow-x:auto;white-space:nowrap}.timeline-tools button{font-size:9px;padding:5px 7px}.snap-controls label{display:none!important}.portrait-only{display:grid}.sheet-close{width:32px;height:32px;padding:0;place-items:center;border-radius:50%}
++  .timeline-shell{grid-template-columns:96px minmax(0,1fr)}.track-head .name{font-size:8.5px}.track-head button{padding:2px;font-size:8px}
++  .mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;height:calc(64px + env(safe-area-inset-bottom));padding:5px 5px env(safe-area-inset-bottom);display:grid;grid-template-columns:repeat(5,1fr);z-index:80;background:rgba(11,12,17,.96);border-top:1px solid #2b2e39;backdrop-filter:blur(18px);box-shadow:0 -8px 30px rgba(0,0,0,.35)}
++  .mobile-bottom-nav button{border:0;background:transparent;display:grid;place-items:center;align-content:center;gap:2px;padding:3px;color:#8f97a8;min-width:0}.mobile-bottom-nav button:active{background:#1a1d25}.mobile-bottom-nav b{font-size:17px;color:#cbd1dc}.mobile-bottom-nav span{font-size:8.5px;font-weight:700}
++  dialog{padding:10px}.modal-card{width:min(100%,calc(100vw - 20px));max-height:88dvh;padding:14px;border-radius:14px}.modal-hero{grid-template-columns:38px 1fr;gap:8px}.modal-hero .recommended{display:none}.tx-grid{grid-template-columns:1fr}.hero-action{min-width:0}
++}

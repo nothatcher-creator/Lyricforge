@@ -1,0 +1,14 @@
+dex:24;padding:8px 9px;border-radius:12px}
++  .preview-control-row{gap:4px;justify-content:space-between}.preview-control-row button{width:32px;height:32px}.preview-control-row .preview-play{width:40px;height:40px}.preview-control-row time{font-size:9px;flex:1;text-align:center;min-width:0;overflow:hidden;text-overflow:ellipsis}
++  .panel-resizer{display:none}
++  .left-panel{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom));height:min(62dvh,560px);z-index:60;display:grid;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr);border:0;background:transparent;overflow:visible;transform:translateY(calc(100% + 70px));transition:transform .22s ease}
++  .left-panel .tool-rail{display:none}
++  .left-panel .panel-content{display:none;background:#101219;border-top:1px solid #323645;border-radius:18px 18px 0 0;padding:16px 14px 18px;box-shadow:0 -20px 70px rgba(0,0,0,.58);overflow:auto}
++  .mobile-left-open .left-panel{transform:translateY(0)}
++  .mobile-left-open .left-panel .panel-content{display:block}
++  .mobile-left-open .mobile-left-close{display:grid;place-items:center;top:8px;right:10px;z-index:70;width:34px;height:34px;border-radius:50%;background:#21242e}
++  .right-panel{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom));height:min(58dvh,520px);z-index:62;display:grid;grid-template-rows:44px minmax(0,1fr);border:0;border-top:1px solid #343846;border-radius:18px 18px 0 0;background:#101219;box-shadow:0 -20px 70px rgba(0,0,0,.58);transform:translateY(calc(100% + 70px));transition:transform .22s ease;overflow:hidden}
++  .mobile-right-open .right-panel{transform:translateY(0)}
++  .right-panel .panel-title-row{height:44px;padding:0 14px}.right-panel .panel-title-row button{width:34px;height:34px;border-radius:50%;padding:0}.right-panel .panel-content{display:block;padding:14px;overflow:auto}
++  .timeline-panel{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom));height:min(58dvh,520px);z-index:61;display:grid;grid-template-rows:46px minmax(0,1fr);border-top:1px solid #343846;border-radius:18px 18px 0 0;box-shadow:0 -20px 70px rgba(0,0,0,.58);transform:translateY(calc(100% + 70px));transition:transform .22s ease;overflow:hidden}
++  .mo

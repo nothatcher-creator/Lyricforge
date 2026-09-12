@@ -1,0 +1,37 @@
+--- a/index.html
++++ b/index.html
+@@ -70,6 +70,19 @@
+         </div>
+         <div class="stage" id="stage">
+           <canvas id="previewCanvas" width="1920" height="1080" aria-label="Video preview"></canvas>
++          <div class="preview-controls" aria-label="Preview playback controls">
++            <input id="previewSeek" class="preview-seek" type="range" min="0" max="180000000" step="10000" value="0" aria-label="Preview position" />
++            <div class="preview-control-row">
++              <button data-action="prev-lyric" title="Previous lyric">⏮</button>
++              <button data-action="frame-back" title="Frame back">‹</button>
++              <button class="preview-play" data-action="play" title="Play/Pause">▶</button>
++              <button data-action="stop" title="Stop">■</button>
++              <button data-action="frame-forward" title="Frame forward">›</button>
++              <button data-action="next-lyric" title="Next lyric">⏭</button>
++              <time id="previewTimeDisplay">00:00.000 / 03:00.000</time>
++              <button data-action="fullscreen" title="Toggle full-screen preview">⛶</button>
++            </div>
++          </div>
+           <div class="drop-overlay" id="dropOverlay"><b>Drop media, lyrics, or fonts</b><span>Audio · video · images · TXT/LRC/SRT/VTT/ASS · TTF/OTF/WOFF</span></div>
+         </div>
+       </section>
+@@ -107,6 +120,7 @@
+           <button data-action="delete" title="Delete selection">Delete</button>
+         </div>
+         <div class="snap-controls">
++          <button class="portrait-only sheet-close" data-action="close-timeline-mobile" title="Close timeline">×</button>
+           <label><input id="snapToggle" type="checkbox" checked /> Snap</label>
+           <label>Nudge <select id="nudgeAmount"><option value="10000">10 ms</option><option value="50000" selected>50 ms</option><option value="100000">100 ms</option><option value="custom">Custom</option></select></label>
+           <label>Zoom <input id="timelineZoom" type="range" min=".35" max="6" step=".05" value="1" /></label>
+@@ -124,6 +138,14 @@
+         </div>
+       </div>
+     </section>
++
++    <nav class="mobile-bottom-nav" aria-label="Mobile editor sections">
++      <button da
