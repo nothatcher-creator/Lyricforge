@@ -1,0 +1,6 @@
+'right');
+let pinchDistance=null,pinchZoom=null;timelineScroll.addEventListener('touchstart',e=>{if(e.touches.length===2){pinchDistance=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);pinchZoom=Number($('#timelineZoom').value);}}, {passive:true});timelineScroll.addEventListener('touchmove',e=>{if(e.touches.length===2&&pinchDistance){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);const z=Math.max(.35,Math.min(6,pinchZoom*d/pinchDistance));$('#timelineZoom').value=z;renderTimeline();}}, {passive:true});timelineScroll.addEventListener('touchend',()=>{pinchDistance=null;pinchZoom=null;},{passive:true});
+
+
+async function boot(){if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});renderLeft();renderInspector();renderTimeline();updateTime();renderFrame();playbackLoop();try{const last=await lastProject();if(last){await loadIntoEditor(last);toast(`Reopened ${last.name}`,'good');}}catch(e){console.warn('Could not restore last project',e);}window.__LYRICFORGE__={state,audio,runtime,importFiles,renderFrame};}
+boot();
