@@ -33,6 +33,7 @@ jobs:
           cp index.html favicon.svg manifest.webmanifest sw.js _site/
           cp -R src/audio src/core src/export src/lyrics src/render src/storage src/transcription _site/src/
 
+          # Reconstruct the verified v0.3.3 app shell.
           for part in .fixparts/app04/p00.b64 .fixparts/app04/p01.b64 .fixparts/app04/p02.b64 .fixparts/app04/p03.b64; do
             base64 -d "$part"
           done > /tmp/app04.part
@@ -41,18 +42,37 @@ jobs:
 
           cat .siteparts/app00.part .siteparts/app01.part .siteparts/app02.part .siteparts/app03.part /tmp/app04.part .siteparts/app05.part .siteparts/app06.part .siteparts/app07.part .siteparts/app08.part > _site/src/app.mjs
           cat .siteparts/css00.part .siteparts/css01.part .siteparts/css02.part .siteparts/css03.part .siteparts/css04.part .siteparts/css05.part .siteparts/css06.part .siteparts/css07.part > _site/styles.css
-          touch _site/.nojekyll
 
-          echo "app bytes: $(wc -c < _site/src/app.mjs)"
-          echo "css bytes: $(wc -c < _site/styles.css)"
-          echo "app sha: $(sha256sum _site/src/app.mjs | cut -d' ' -f1)"
-          echo "css sha: $(sha256sum _site/styles.css | cut -d' ' -f1)"
           test "$(wc -c < _site/src/app.mjs)" -eq 65259
           test "$(wc -c < _site/styles.css)" -eq 29453
           test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "236087aac26c754984090455d1e951a7bc6f372387b7fc45498ff4852a7af1a5"
           test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "5ff97180d73032945545a712fe12994bb6561f8d269b509c53e18ae526a91b86"
-          grep -q 'src/app.mjs' _site/index.html
-          grep -q 'LyricForge' _site/index.html
+
+          # Apply the Chrome-tested v0.3.4 portrait/mobile patch.
+          cat .deploy/mobile-v034/p00.patch .deploy/mobile-v034/p01.patch .deploy/mobile-v034/p02.patch .deploy/mobile-v034/p03.patch .deploy/mobile-v034/p04.patch .deploy/mobile-v034/p05.patch .deploy/mobile-v034/p06.patch .deploy/mobile-v034/p07.patch .deploy/mobile-v034/p08.patch .deploy/mobile-v034/p09.patch > /tmp/mobile-v034.patch
+          test "$(wc -c < /tmp/mobile-v034.patch)" -eq 21709
+          test "$(sha256sum /tmp/mobile-v034.patch | cut -d' ' -f1)" = "3d80e9d9afd431e2217c898e00006b9d2ca6e5baa5d9ab55e908a6e434a87355"
+          patch --batch --forward -p1 -d _site < /tmp/mobile-v034.patch
+
+          touch _site/.nojekyll
+
+          echo "v0.3.4 app bytes: $(wc -c < _site/src/app.mjs)"
+          echo "v0.3.4 css bytes: $(wc -c < _site/styles.css)"
+          echo "v0.3.4 index bytes: $(wc -c < _site/index.html)"
+          echo "v0.3.4 app sha: $(sha256sum _site/src/app.mjs | cut -d' ' -f1)"
+          echo "v0.3.4 css sha: $(sha256sum _site/styles.css | cut -d' ' -f1)"
+          echo "v0.3.4 index sha: $(sha256sum _site/index.html | cut -d' ' -f1)"
+
+          test "$(wc -c < _site/src/app.mjs)" -eq 66971
+          test "$(wc -c < _site/styles.css)" -eq 36145
+          test "$(wc -c < _site/index.html)" -eq 9206
+          test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "4cf902bdc59329b6e8340bf881c3ca2e0f4e3a61a0fb3c1a570b2545b7f90dce"
+          test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "f0fcbc60526c14fa6d40f3f96f2cd87104aaf31bf4d8c1d36442d12bec79f9d1"
+          test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "f711127578275c9a02ef01d8a3e97a687debdc0f2614c1e6f392feb141b673fd"
+          grep -q 'preview-controls' _site/index.html
+          grep -q 'mobile-bottom-nav' _site/index.html
+          grep -q 'lyricforge-v0.3.4' _site/sw.js
+          grep -q 'whisper-tiny_timestamped' _site/src/transcription/providers.mjs
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
