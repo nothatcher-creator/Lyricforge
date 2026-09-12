@@ -158,9 +158,9 @@ Slip/slide editing is deferred unless it can be implemented without introducing 
 
 ## History and undo/redo
 
-Every mutating editor command must produce a coherent undoable history entry. Drag gestures and resize/rotate gestures create one history entry per completed gesture rather than hundreds of entries during pointer movement. Group commands, crop application, preset installation/removal, timeline split, trim, ripple delete, fades, layer ordering and style paste all use the same history infrastructure.
+Every mutating editor command must produce a coherent undoable history entry. Drag gestures and resize/rotate gestures create one history entry per completed gesture rather than hundreds of entries during pointer movement. Group commands, crop application, timeline split, trim, ripple delete, fades, layer ordering, style paste, and applying a preset to a project all use the same history infrastructure.
 
-Online library browsing/download progress is not undoable, but applying an installed preset to a project is undoable.
+Preset catalog browsing, downloading, installing, updating, and uninstalling affect the local preset library rather than project history and are not undoable. Applying an installed preset to a project is undoable.
 
 ## Mobile portrait behavior
 
