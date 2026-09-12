@@ -1,0 +1,68 @@
+import { createProject, createClip } from './core/model.mjs';
+import { EditorState } from './core/state.mjs';
+import { formatClock, msToUs, usToMs } from './core/time.mjs';
+import { snapTimeUs } from './core/snap.mjs';
+import { parseLyrics, exportLyrics, tapSync } from './lyrics/formats.mjs';
+import { AudioEngine } from './audio/engine.mjs';
+import { PRESETS, ANIMATIONS, applyPreset } from './render/presets.mjs';
+import { renderComposition } from './render/renderer.mjs';
+import { BrowserWhisperProvider, LocalTimingAssistProvider, WhisperRemoteProvider, browserWhisperSupport, inferSections, instrumentalGaps } from './transcription/providers.mjs';
+import { saveProject, loadProject, listProjects, putAsset, getAsset, lastProject } from './storage/db.mjs';
+import { createProjectBundle, restoreProjectBundle } from './storage/bundle.mjs';
+import { resolveResolution, estimateOutputBytes, downloadBlob, exportProjectFile } from './export/exporter.mjs';
+import { renderVideo, videoCapabilities } from './export/video-export.mjs';
+
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ext=name=>(name.split('.').pop()||'').toLowerCase();
+const toastRegion=$('#toastRegion');
+function toast(message,type=''){const d=document.createElement('div');d.className=`toast ${type}`;d.textContent=message;toastRegion.append(d);setTimeout(()=>d.remove(),3400);}
+function uid(p='asset'){return `${p}_${crypto.randomUUID()}`;}
+function bytes(n){if(!Number.isFinite(n))return '—';const u=['B','KB','MB','GB'];let i=0;while(n>=1024&&i<u.length-1){n/=1024;i++;}return `${n.toFixed(i?1:0)} ${u[i]}`;}
+function setSaveStatus(text){const el=$('#saveStatus');if(el)el.innerHTML=`<i aria-hidden="true"></i><span>${esc(text)}</span>`;}
+
+const audio=new AudioEngine();
+const runtime={assetElements:new Map(),assetUrls:new Map(),audioBlob:null,peaks:[],bpm:0,guides:true,loopEnabled:false,loopRange:null,transcriptionProviderFactory:null};
+let state=new EditorState(createProject('Untitled Project'));
+let leftTab='media', searchLyrics='', tapSyncIndex=0, autosaveTimer=null, renderRAF=0, lastRenderProjectVersion=0;
+let dragState=null, boxState=null;
+
+const canvas=$('#previewCanvas'), ctx=canvas.getContext('2d',{alpha:false});
+const isCompactMobile=()=>matchMedia('(max-width:820px) and (orientation:landscape)').matches;
+const left=$('#leftContent'), inspector=$('#inspector');
+const modal=$('#modal'), modalBody=$('#modalBody');
+const timelineContent=$('#timelineContent'), timelineScroll=$('#timelineScroll');
+
+function projectDuration(){return Math.max(1_000_000,state.project.durationUs||180_000_000);}
+function pxPerUs(){return (60 * Number($('#timelineZoom').value||1))/1_000_000;}
+function xForUs(us){return us*pxPerUs();}
+function usForX(x){return Math.max(0,Math.round(x/pxPerUs()));}
+function activeLyricIndex(time=state.playheadUs){const s=[...state.project.lyrics].sort((a,b)=>a.startUs-b.startUs);let i=s.findIndex(e=>time>=e.startUs&&time<e.endUs);if(i<0)i=s.findLastIndex?.(e=>e.startUs<=time)??-1;return {sorted:s,index:i,event:i>=0?s[i]:null};}
+function selectedLyric(){const id=[...state.selected.lyrics][0];return id?state.project.lyrics.find(e=>e.id===id):null;}
+function selectedClip(){const id=[...state.selected.clips][0];return id?state.project.clips.find(c=>c.id===id):null;}
+
+function projectChanged(){
+  $('#projectNameTop').textContent=state.project.name;setSaveStatus(`Local · ${state.dirty?'unsaved changes':'saved'}`);
+  const c=state.project.composition;$('#compositionLabel').textContent=`${c.width}×${c.height} · ${c.aspect}`;canvas.width=c.width;canvas.height=c.height;canvas.style.aspectRatio=`${c.width}/${c.height}`;
+  renderLeft();renderInspector();renderTimeline();updateGuide();scheduleAutosave();renderFrame();
+}
+function selectionChanged(){renderLeft();renderInspector();renderTimeline();}
+function playheadChanged(){updatePlayhead();renderFrame();updateTime();}
+state.addEventListener('change',projectChanged);state.addEventListener('selection',selectionChanged);state.addEventListener('playhead',playheadChanged);state.addEventListener('saved',()=>setSaveStatus('Local · saved'));
+
+function updateGuide(){const hasAudio=!!state.project.audioMasterAssetId,hasLyrics=state.project.lyrics.length>0,styled=state.project.lyricStyle?.activeColor!=='#ff365c'||state.project.visualizer?.enabled;const steps=$$('.guide button[data-guide]');for(const b of steps){const k=b.dataset.guide;b.classList.toggle('done',(k==='media'&&hasAudio)||(k==='lyrics'&&hasLyrics)||(k==='presets'&&styled));b.classList.toggle('current',(k==='media'&&!hasAudio)||(k==='lyrics'&&hasAudio&&!hasLyrics)||(k==='presets'&&hasLyrics&&!styled)||(k==='adjust'&&hasLyrics&&styled));}}
+
+function scheduleAutosave(){clearTimeout(autosaveTimer);if(!state.dirty)return;autosaveTimer=setTimeout(async()=>{try{await saveProject(state.project);state.markSaved();}catch(e){toast(`Autosave failed: ${e.message}`,'bad');}},1600);}
+async function saveNow(){try{await saveProject(state.project);state.markSaved();toast('Project saved locally','good');}catch(e){toast(e.message,'bad');}}
+
+function renderLeft(){
+  $$('.tool-rail button').forEach(b=>b.classList.toggle('active',b.dataset.tab===leftTab));
+  if(leftTab==='media')left.innerHTML=mediaPanel();
+  else if(leftTab==='lyrics')left.innerHTML=lyricsPanel();
+  else if(leftTab==='text')left.innerHTML=textPanel();
+  else if(leftTab==='presets')left.innerHTML=presetsPanel();
+  else if(leftTab==='effects')left.innerHTML=effectsPanel();
+  else left.innerHTML=elementsPanel();
+}
+function mediaPanel(){return `<div class="section"><h3>Project media</h3><div class="drop-card"><b>Drop files anywhere</b><span class="subtle">Audio, video, images, lyric files, project fonts</span><button class="primary" data-left="import">Import media</button></div></div><div class="section"><div class="row spread"><h3 style="margin:0">Assets</h3><small class="subtle">${state.project.assets.length}</small></div><div class="stack">${state.project.assets.map(a=>`<div class="asset-card"><span class="asset-icon">${a.type==='audio'?'♪':a.type==='video'?'▶':a.type==='image'?'▧':a.type==='font'?'Aa':'•'}</span><div><b title="${esc(a.name)}">${esc(a.name)}</b><small>${esc(a.type)}${a.role?` · ${esc(a.role)}`:''}</small></div><div class="row">${(a.type==='image'||a.type==='video')?`<button data-left="add-media-layer" data-id="${a.id}" title="Add as timeline layer">＋</button><button data-left="set-background" data-id="${a.id}" title="Use as background">BG</button>`:''}</div></div>`).join('')||'<p class="subtle">Nothing imported yet.</p>'}</div></div><div class="section"><h3>Project files</h3><div class="row"><button data-left="import-project">Import project</button><button data-left="export-project">Export project</button></div></div>`;}
+function lyricsPanel(){const lines=state.project.lyrics.filter(e=>!searchLyrics||e.text.toLowerCase().includes(searchLyrics.toLowerCase()));const support=browserWhisperSupport();return `<div class="section ai-section"><div class="section-heading"><div><span class="eyebrow">LYRIC AI</span><h3>Automatic transcription</h3></div><span class="privacy-badge">● Local</span></div><button class="primary ai-launch" data-left="auto-detect"><span class="ai-spark">✦</span><span><b>Auto Detect Lyrics</b><small>No API key · word timing · editable</small></span><span class="chevron">›</span></button><div class="ai-facts"><span>Runs on this device</span><span>${support.device==='webgpu'?'WebGPU acceleration':'WASM fallback'}</span></div><p class="subtle">On first use LyricForge downloads a small Whisper model, then your browser caches it for later sessions. Your song is not uploaded in built-in mode.</p></div><div class="section"><div class="section-heading"><h3>Paste / type lyrics</h3><span class="section-kicker">Manual</span></div><textarea id="lyricPaste" placeholder="Paste one lyric line 
