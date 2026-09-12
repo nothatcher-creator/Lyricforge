@@ -7,6 +7,12 @@ Status: Approved
 
 Make the public `nothatcher-creator/Lyricforge` repository useful to users and contributors while v0.3.7 adds downloadable presets and editor tools. The repository should explain what LyricForge does, how to run/test it, how presets work, how to contribute presets/code, and how to report security issues without inventing licensing terms the owner has not chosen.
 
+## Source completeness
+
+The public repository must contain the same human-readable source package that is used to build and test the release. At minimum this includes `styles.css`, `src/app.mjs`, the complete `tests/` directory, `tools/dev-server.mjs`, `CHANGELOG.md`, and `IMPLEMENTATION_STATUS.md` in addition to the existing modular `src/` files. Generated deployment fragments may remain for compatibility during the transition, but they must not be the only copy of core application source.
+
+`package.json` scripts must work from a normal clone. `npm run dev`, `npm test`, and `npm run test:browser` must reference files that actually exist in the repository. The v0.3.7 release process should sync direct source files from the exact fresh-ZIP build that passed verification, then make GitHub Pages verify those direct files by hash before deployment. If the existing reconstruction workflow is still needed during the migration, it may remain temporarily, but the direct source files are the canonical public copy.
+
 ## Public repository surface
 
 Add a current `README.md` with the live GitHub Pages demo, current release/download guidance, screenshots or screenshot placeholders only when committed image assets exist, feature overview, Android portrait support, local-first/privacy explanation, browser requirements, quick start, tests, project layout, preset-library overview, roadmap, and contribution links.
@@ -46,8 +52,9 @@ Document the current static/dependency-free development flow (`npm run dev`, Nod
 
 ## Acceptance criteria
 
-1. GitHub visitors can understand LyricForge and run it locally from the README alone.
-2. Contributors can submit a bug, feature, code change, or preset using documented workflows.
-3. `.lyricpreset` and catalog formats are documented and backed by example files plus automated validation.
-4. Changelog/status docs accurately describe the release.
-5. The repository contains no invented license, secret, broken local-only links, or unsupported compatibility claims.
+1. A normal repository clone contains the complete runnable/testable source package and `npm run dev`, `npm test`, and `npm run test:browser` resolve to real files.
+2. GitHub visitors can understand LyricForge and run it locally from the README alone.
+3. Contributors can submit a bug, feature, code change, or preset using documented workflows.
+4. `.lyricpreset` and catalog formats are documented and backed by example files plus automated validation.
+5. Changelog/status docs accurately describe the release.
+6. The repository contains no invented license, secret, broken local-only links, or unsupported compatibility claims.
