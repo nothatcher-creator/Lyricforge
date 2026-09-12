@@ -35,6 +35,10 @@ jobs:
           cat .siteparts/app00.part .siteparts/app01.part .siteparts/app02.part .siteparts/app03.part .siteparts/app04.part .siteparts/app05.part .siteparts/app06.part .siteparts/app07.part .siteparts/app08.part > _site/src/app.mjs
           cat .siteparts/css00.part .siteparts/css01.part .siteparts/css02.part .siteparts/css03.part .siteparts/css04.part .siteparts/css05.part .siteparts/css06.part .siteparts/css07.part > _site/styles.css
           touch _site/.nojekyll
+          echo "app bytes: $(wc -c < _site/src/app.mjs)"
+          echo "css bytes: $(wc -c < _site/styles.css)"
+          echo "app sha: $(sha256sum _site/src/app.mjs | cut -d' ' -f1)"
+          echo "css sha: $(sha256sum _site/styles.css | cut -d' ' -f1)"
           test "$(wc -c < _site/src/app.mjs)" -eq 65259
           test "$(wc -c < _site/styles.css)" -eq 29453
           test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "236087aac26c754984090455d1e951a7bc6f372387b7fc45498ff4852a7af1a5"
