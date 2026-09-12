@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Turn `nothatcher-creator/Lyricforge` into a useful public repository with accurate setup/docs, contribution templates, security guidance, and a first-party downloadable preset catalog.
+**Goal:** Turn `nothatcher-creator/Lyricforge` into a complete runnable/testable public source repository with accurate setup/docs, contribution templates, security guidance, and a first-party downloadable preset catalog.
 
-**Architecture:** Documentation and GitHub metadata live at repository root/`.github`, while preset catalog files live under `presets/` and are validated with Node tests against the v0.3.7 preset schema. No license or unsupported public claims are added automatically.
+**Architecture:** First sync the exact verified v0.3.7 source package into normal repository paths so a clone can run and test without deployment reconstruction fragments. Documentation and GitHub metadata live at repository root/`.github`, while preset catalog files live under `presets/` and are validated with Node tests against the v0.3.7 preset schema. No license or unsupported public claims are added automatically.
 
 **Tech Stack:** Markdown, GitHub issue forms, static JSON/`.lyricpreset`, Node built-in tests, GitHub Pages static deployment.
 
@@ -20,7 +20,47 @@
 
 ---
 
-### Task 1: Current public README
+### Task 1: Populate the repository with the verified source package
+
+**Files:**
+- Create or replace from the verified v0.3.7 package: `styles.css`, `src/app.mjs`, `tools/dev-server.mjs`, `tests/*.test.mjs`, `CHANGELOG.md`, `IMPLEMENTATION_STATUS.md`
+- Modify: `.github/workflows/pages.yml`
+- Verify: `package.json`
+
+**Interfaces:**
+- A normal clone must support `npm run dev`, `npm test`, and `npm run test:browser` without relying on `.siteparts`, `.fixparts`, or `.deploy` as the only source of core runtime files.
+
+- [ ] **Step 1: Add a failing source-completeness check**
+
+Create `tests/repository-source.test.mjs` that asserts `styles.css`, `src/app.mjs`, `tools/dev-server.mjs`, all package-script entrypoints, CHANGELOG/IMPLEMENTATION_STATUS, and the expected baseline test files exist. Also assert the direct runtime file hashes match the exact fresh-ZIP v0.3.7 verification manifest recorded during release packaging.
+
+- [ ] **Step 2: Run the check and confirm failure on the current repository**
+
+Run: `node --test tests/repository-source.test.mjs`
+Expected: FAIL because the current repository omits direct `styles.css`, `src/app.mjs`, `tools/`, `tests/`, and release docs even though package scripts reference them.
+
+- [ ] **Step 3: Copy the exact verified v0.3.7 source files into canonical repository paths**
+
+Use files from the fresh-extracted package that passed the full Node + Chrome suite. Do not regenerate or hand-retype runtime files. Keep deployment fragment directories temporarily if needed for rollback/history, but direct files become the public source-of-truth copy.
+
+- [ ] **Step 4: Make Pages verify and deploy the direct source**
+
+Update `.github/workflows/pages.yml` so `_site` receives direct `index.html`, `styles.css`, `src/app.mjs`, modular `src/`, service worker, manifest/favicon and `presets/`. Retain SHA-256 checks against the packaged v0.3.7 manifest before upload. Remove reconstruction steps only after the direct-file build produces identical hashes to the fresh ZIP.
+
+- [ ] **Step 5: Run source completeness and full tests**
+
+Run: `node --test tests/repository-source.test.mjs`
+Run: `node --test tests/*.test.mjs`
+Expected: PASS, excluding only explicitly opt-in external-network tests.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add styles.css src/app.mjs tools tests CHANGELOG.md IMPLEMENTATION_STATUS.md .github/workflows/pages.yml
+git commit -m "chore: publish complete verified LyricForge source"
+```
+
+### Task 2: Current public README
 
 **Files:**
 - Create or replace: `README.md`
@@ -54,7 +94,7 @@ git add README.md tests/repository-docs.test.mjs
 git commit -m "docs: add complete LyricForge README"
 ```
 
-### Task 2: Contribution and security guidance
+### Task 3: Contribution and security guidance
 
 **Files:**
 - Create: `CONTRIBUTING.md`
@@ -88,7 +128,7 @@ git add CONTRIBUTING.md SECURITY.md tests/repository-docs.test.mjs
 git commit -m "docs: add contribution and security guides"
 ```
 
-### Task 3: GitHub issue and pull-request templates
+### Task 4: GitHub issue and pull-request templates
 
 **Files:**
 - Create: `.github/ISSUE_TEMPLATE/bug_report.yml`
@@ -123,7 +163,7 @@ git add .github/ISSUE_TEMPLATE .github/PULL_REQUEST_TEMPLATE.md tests/repository
 git commit -m "docs: add GitHub contribution templates"
 ```
 
-### Task 4: Preset authoring and catalog documentation
+### Task 5: Preset authoring and catalog documentation
 
 **Files:**
 - Create: `docs/presets.md`
@@ -160,7 +200,7 @@ git add docs/presets.md docs/preset-format.md tests/repository-docs.test.mjs
 git commit -m "docs: document lyricpreset authoring and format"
 ```
 
-### Task 5: First-party preset catalog and automated validation
+### Task 6: First-party preset catalog and automated validation
 
 **Files:**
 - Create: `presets/catalog.json`
@@ -186,7 +226,7 @@ Use at least these original/config-only presets as downloadable samples: `Cyberp
 
 - [ ] **Step 4: Ensure GitHub Pages publishes the catalog**
 
-If the Pages workflow builds a staging `_site`, copy `presets/` into `_site/presets/` and add an integrity check that `presets/catalog.json` exists. Do not alter the runtime reconstruction strategy beyond what is needed to publish these static assets.
+The Pages workflow should copy `presets/` into `_site/presets/` and add an integrity check that `presets/catalog.json` exists. Keep this aligned with Task 1's direct-source deployment path.
 
 - [ ] **Step 5: Run tests and commit**
 
@@ -198,11 +238,11 @@ git add presets tests/preset-catalog.test.mjs .github/workflows/pages.yml
 git commit -m "feat: publish first-party preset catalog"
 ```
 
-### Task 6: Changelog, implementation status and release docs hygiene
+### Task 7: Changelog, implementation status and release docs hygiene
 
 **Files:**
-- Modify: `CHANGELOG.md`
-- Modify: `IMPLEMENTATION_STATUS.md`
+- Create or modify: `CHANGELOG.md`
+- Create or modify: `IMPLEMENTATION_STATUS.md`
 - Modify: `README.md`
 - Modify: `tests/repository-docs.test.mjs`
 
