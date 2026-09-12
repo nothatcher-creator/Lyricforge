@@ -10,7 +10,7 @@ async function loadRuntime(){let lastError;for(const url of TRANSFORMERS_RUNTIME
 const runtime=()=>runtimePromise??=loadRuntime();
 self.onmessage=async(event)=>{
   const data=event.data||{};if(data.type!=='transcribe')return;
-  const {id,waveform,model='onnx-community/whisper-tiny',device='wasm',dtype=device==='webgpu'?{encoder_model:'fp32',decoder_model_merged:'q4'}:'fp32',options={}}=data;
+  const {id,waveform,model='onnx-community/whisper-tiny_timestamped',device='wasm',dtype=device==='webgpu'?{encoder_model:'fp32',decoder_model_merged:'q4'}:'fp32',options={}}=data;
   try{
     const {pipeline,WhisperTextStreamer}=await runtime(),key=`${model}|${device}|${JSON.stringify(dtype)}`;
     if(!pipelines.has(key))pipelines.set(key,pipeline('automatic-speech-recognition',model,{device,dtype,progress_callback:info=>postMessage({type:'model-progress',id,info})}));
