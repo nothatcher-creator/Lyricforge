@@ -32,9 +32,17 @@ jobs:
           mkdir -p _site/src
           cp index.html favicon.svg manifest.webmanifest sw.js _site/
           cp -R src/audio src/core src/export src/lyrics src/render src/storage src/transcription _site/src/
-          cat .siteparts/app00.part .siteparts/app01.part .siteparts/app02.part .siteparts/app03.part .siteparts/app04.part .siteparts/app05.part .siteparts/app06.part .siteparts/app07.part .siteparts/app08.part > _site/src/app.mjs
+
+          for part in .fixparts/app04/p00.b64 .fixparts/app04/p01.b64 .fixparts/app04/p02.b64 .fixparts/app04/p03.b64; do
+            base64 -d "$part"
+          done > /tmp/app04.part
+          test "$(wc -c < /tmp/app04.part)" -eq 8000
+          test "$(git hash-object /tmp/app04.part)" = "c9d47b794bc83b33eb7decedd1860c80c5a843ff"
+
+          cat .siteparts/app00.part .siteparts/app01.part .siteparts/app02.part .siteparts/app03.part /tmp/app04.part .siteparts/app05.part .siteparts/app06.part .siteparts/app07.part .siteparts/app08.part > _site/src/app.mjs
           cat .siteparts/css00.part .siteparts/css01.part .siteparts/css02.part .siteparts/css03.part .siteparts/css04.part .siteparts/css05.part .siteparts/css06.part .siteparts/css07.part > _site/styles.css
           touch _site/.nojekyll
+
           echo "app bytes: $(wc -c < _site/src/app.mjs)"
           echo "css bytes: $(wc -c < _site/styles.css)"
           echo "app sha: $(sha256sum _site/src/app.mjs | cut -d' ' -f1)"
