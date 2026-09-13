@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-websocket --test tests/*.test.mjs",
+    "test": "node tools/run-node-tests.mjs",
     "serve": "node tools/dev-server.mjs",
     "dev": "node tools/dev-server.mjs",
     "test:browser": "node --experimental-websocket --test tests/browser-layout.test.mjs",
