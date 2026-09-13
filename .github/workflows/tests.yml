@@ -14,11 +14,9 @@ jobs:
           node-version: '20'
       - name: Node suite
         run: npm test
-        env:
-          CHROME_BIN: /usr/bin/chromium
-      - name: Chromium portrait and editor layout
+      - name: Chrome portrait and editor layout
         run: npm run test:browser
         env:
-          CHROME_BIN: /usr/bin/chromium
+          CHROME_BIN: /usr/bin/google-chrome
       - name: Build canonical Pages artifact
         run: bash tools/build-pages.sh
