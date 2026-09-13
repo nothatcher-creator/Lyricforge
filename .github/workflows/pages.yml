@@ -28,11 +28,11 @@ jobs:
       - name: Verify Node suite
         run: npm test
         env:
-          CHROME_BIN: /usr/bin/google-chrome
-      - name: Verify Chrome layout suite
+          CHROME_BIN: /usr/bin/chromium
+      - name: Verify Chromium layout suite
         run: npm run test:browser
         env:
-          CHROME_BIN: /usr/bin/google-chrome
+          CHROME_BIN: /usr/bin/chromium
       - name: Build static site from canonical source
         run: bash tools/build-pages.sh
       - uses: actions/configure-pages@v5
