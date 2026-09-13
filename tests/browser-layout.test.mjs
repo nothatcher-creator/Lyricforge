@@ -47,15 +47,14 @@ test('canvas selection handles are touch-sized in portrait and timeline tools ar
   for(const label of ['Select','Razor','Ripple','Keyframe'])assert.match(text,new RegExp(label,'i'));
 });
 
-test('portrait media import control loads audio and play starts it',async t=>{
+test('portrait media import yields back to preview and play starts imported audio',async t=>{
   if(!await load(t,412,915))return;
   await evalJs(`document.querySelector('[data-mobile-tab="media"]').click()`);await sleep(300);
-  const armed=await evalJs(`(()=>{const i=document.querySelector('#fileInput');window.__pickerHit=false;i.click=()=>{window.__pickerHit=true};return true})()`);assert.equal(armed,true);
-  await clickSelector('[data-left="import"]');
-  assert.equal(await evalJs(`window.__pickerHit`),true,'Import media button must trigger the file input');
-  const imported=await evalJs(`(async()=>{const sr=8000,n=sr/4,b=new ArrayBuffer(44+n*2),v=new DataView(b),w=(o,s)=>{for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))};w(0,'RIFF');v.setUint32(4,36+n*2,true);w(8,'WAVE');w(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,sr,true);v.setUint32(28,sr*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*2,true);for(let i=0;i<n;i++)v.setInt16(44+i*2,Math.sin(i*2*Math.PI*220/sr)*6000,true);const f=new File([b],'tone.wav',{type:'audio/wav'});await window.__LYRICFORGE__.importFiles([f]);return {master:!!window.__LYRICFORGE__.state.project.audioMasterAssetId,buffer:!!window.__LYRICFORGE__.audio.buffer,duration:window.__LYRICFORGE__.audio.durationUs()};})()`);
-  assert.equal(imported.master,true);assert.equal(imported.buffer,true);assert.ok(imported.duration>100000);
-  await clickSelector('#playButton');await sleep(150);
+  const pickerHit=await evalJs(`(()=>{const i=document.querySelector('#fileInput');window.__pickerHit=false;i.click=()=>{window.__pickerHit=true};document.querySelector('[data-left="import"]').click();return window.__pickerHit})()`);
+  assert.equal(pickerHit,true,'Import media button must trigger the file input');
+  const imported=await evalJs(`(async()=>{const sr=8000,n=sr/4,b=new ArrayBuffer(44+n*2),v=new DataView(b),w=(o,s)=>{for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))};w(0,'RIFF');v.setUint32(4,36+n*2,true);w(8,'WAVE');w(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,sr,true);v.setUint32(28,sr*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*2,true);for(let i=0;i<n;i++)v.setInt16(44+i*2,Math.sin(i*2*Math.PI*220/sr)*6000,true);const f=new File([b],'tone.wav',{type:'audio/wav'});await window.__LYRICFORGE__.importFiles([f]);return {master:!!window.__LYRICFORGE__.state.project.audioMasterAssetId,buffer:!!window.__LYRICFORGE__.audio.buffer,duration:window.__LYRICFORGE__.audio.durationUs(),sheetOpen:document.body.classList.contains('mobile-left-open')};})()`);
+  assert.equal(imported.master,true);assert.equal(imported.buffer,true);assert.ok(imported.duration>100000);assert.equal(imported.sheetOpen,false,'Media sheet must close after a successful mobile import so preview controls are reachable');
+  await clickSelector('.preview-play');await sleep(150);
   const playing=await evalJs(`({playing:window.__LYRICFORGE__.audio.playing,time:window.__LYRICFORGE__.audio.currentTimeUs()})`);
-  assert.equal(playing.playing,true,'Play button must start imported audio');assert.ok(playing.time>0,'Playback time must advance');
+  assert.equal(playing.playing,true,'Visible preview play button must start imported audio');assert.ok(playing.time>0,'Playback time must advance');
 });
