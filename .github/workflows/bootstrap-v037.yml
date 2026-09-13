@@ -58,6 +58,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          rm -rf /tmp/v037-package/.git
           cp -a /tmp/v037-package/. .
           rm -rf .sync-v037
           bash tools/build-pages.sh
