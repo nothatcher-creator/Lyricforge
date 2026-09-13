@@ -8,6 +8,9 @@ function isMediaFile(file){const type=String(file?.type||'');return type.startsW
 function closeCompactMediaSheet(files){if(typeof document==='undefined'||typeof matchMedia!=='function')return;if(!matchMedia('(max-width:820px)').matches)return;if(![...files||[]].some(isMediaFile))return;document.body.classList.remove('mobile-left-open');}
 function installCompactMediaFlow(){
   if(typeof document==='undefined'||typeof window==='undefined')return;
+  if(!document.querySelector('#compact-media-flow-style')){
+    const style=document.createElement('style');style.id='compact-media-flow-style';style.textContent='@media(max-width:820px) and (orientation:portrait){.preview-controls{bottom:calc(73px + env(safe-area-inset-bottom))!important}}';document.head.append(style);
+  }
   const input=document.querySelector('#fileInput');
   if(input&&!input.dataset.mediaFlowFix){
     input.dataset.mediaFlowFix='1';
