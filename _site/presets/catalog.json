@@ -1,0 +1,119 @@
+{
+  "signature": "lyricforge-preset-catalog",
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-13T01:14:14.613Z",
+  "entries": [
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "author": "LyricForge",
+      "category": "Electronic",
+      "tags": [
+        "cyberpunk",
+        "electronic",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/cyberpunk.lyricpreset"
+    },
+    {
+      "id": "phonk",
+      "name": "Phonk",
+      "author": "LyricForge",
+      "category": "Hip-Hop",
+      "tags": [
+        "phonk",
+        "hip-hop",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/phonk.lyricpreset"
+    },
+    {
+      "id": "vintage-film",
+      "name": "Vintage Film",
+      "author": "LyricForge",
+      "category": "Retro",
+      "tags": [
+        "vintage film",
+        "retro",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/vintage-film.lyricpreset"
+    },
+    {
+      "id": "metalcore",
+      "name": "Metalcore",
+      "author": "LyricForge",
+      "category": "Metal",
+      "tags": [
+        "metalcore",
+        "metal",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/metalcore.lyricpreset"
+    },
+    {
+      "id": "dreamy",
+      "name": "Dreamy",
+      "author": "LyricForge",
+      "category": "Ambient",
+      "tags": [
+        "dreamy",
+        "ambient",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/dreamy.lyricpreset"
+    },
+    {
+      "id": "minimal-karaoke",
+      "name": "Minimal Karaoke",
+      "author": "LyricForge",
+      "category": "Karaoke",
+      "tags": [
+        "minimal karaoke",
+        "karaoke",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/minimal-karaoke.lyricpreset"
+    },
+    {
+      "id": "western",
+      "name": "Western",
+      "author": "LyricForge",
+      "category": "Country",
+      "tags": [
+        "western",
+        "country",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/western.lyricpreset"
+    },
+    {
+      "id": "documentary",
+      "name": "Documentary",
+      "author": "LyricForge",
+      "category": "Cinematic",
+      "tags": [
+        "documentary",
+        "cinematic",
+        "lyricforge"
+      ],
+      "version": "1.0.0",
+      "minAppVersion": "0.3.7",
+      "downloadUrl": "./library/documentary.lyricpreset"
+    }
+  ]
+}

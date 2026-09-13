@@ -1,78 +1,30 @@
 #!/usr/bin/env bash
 set -euo pipefail
+cd "$(dirname "$0")/.."
+
+node --input-type=module <<'NODE'
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const manifest=JSON.parse(await readFile('release-manifest.json','utf8'));
+if(manifest.version!=='0.3.7')throw new Error(`Unexpected release manifest version ${manifest.version}`);
+for(const [path,expected] of Object.entries(manifest.files||{})){
+  const actual=createHash('sha256').update(await readFile(path)).digest('hex');
+  if(actual!==expected)throw new Error(`Release hash mismatch for ${path}`);
+}
+console.log(`Verified ${Object.keys(manifest.files||{}).length} release hashes for v${manifest.version}`);
+NODE
+
 rm -rf _site
-mkdir -p _site/src
-cp index.html favicon.svg manifest.webmanifest sw.js ui-polish.css _site/
-cp -R src/audio src/core src/export src/lyrics src/render src/storage src/transcription _site/src/
-
-# Keep the repository index ready for direct-source use, but reconstruct the
-# byte-verified runtime from the same baseline GitHub Pages has shipped.
-sed -i '/ui-polish\.css/d' _site/index.html
-
-for part in .fixparts/app04/p00.b64 .fixparts/app04/p01.b64 .fixparts/app04/p02.b64 .fixparts/app04/p03.b64; do
-  base64 -d "$part"
-done > /tmp/app04.part
-test "$(wc -c < /tmp/app04.part)" -eq 8000
-test "$(git hash-object /tmp/app04.part)" = "c9d47b794bc83b33eb7decedd1860c80c5a843ff"
-
-cat .siteparts/app00.part .siteparts/app01.part .siteparts/app02.part .siteparts/app03.part /tmp/app04.part .siteparts/app05.part .siteparts/app06.part .siteparts/app07.part .siteparts/app08.part > _site/src/app.mjs
-cat .siteparts/css00.part .siteparts/css01.part .siteparts/css02.part .siteparts/css03.part .siteparts/css04.part .siteparts/css05.part .siteparts/css06.part .siteparts/css07.part > _site/styles.css
-
-test "$(wc -c < _site/src/app.mjs)" -eq 65259
-test "$(wc -c < _site/styles.css)" -eq 29453
-test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "236087aac26c754984090455d1e951a7bc6f372387b7fc45498ff4852a7af1a5"
-test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "5ff97180d73032945545a712fe12994bb6561f8d269b509c53e18ae526a91b86"
-
-cat .deploy/mobile-v034/p00.patch .deploy/mobile-v034/p01.patch .deploy/mobile-v034/p02.patch .deploy/mobile-v034/p03.patch .deploy/mobile-v034/p04.patch .deploy/mobile-v034/p05.patch .deploy/mobile-v034/p06.patch .deploy/mobile-v034/p07.patch .deploy/mobile-v034/p08.patch .deploy/mobile-v034/p09.patch > /tmp/mobile-v034.patch
-test "$(wc -c < /tmp/mobile-v034.patch)" -eq 21709
-test "$(sha256sum /tmp/mobile-v034.patch | cut -d' ' -f1)" = "3d80e9d9afd431e2217c898e00006b9d2ca6e5baa5d9ab55e908a6e434a87355"
-patch --batch --forward -p1 -d _site < /tmp/mobile-v034.patch
-
-test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "4cf902bdc59329b6e8340bf881c3ca2e0f4e3a61a0fb3c1a570b2545b7f90dce"
-test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "f0fcbc60526c14fa6d40f3f96f2cd87104aaf31bf4d8c1d36442d12bec79f9d1"
-test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "f711127578275c9a02ef01d8a3e97a687debdc0f2614c1e6f392feb141b673fd"
-
-test "$(sha256sum .deploy/mobile-v035.patch | cut -d' ' -f1)" = "ef3d3a0dd4064e35d74d8ef40092ceb48a544768f8a8c9b0e25bc7461a0f8be9"
-patch --batch --forward -p1 -d _site < .deploy/mobile-v035.patch
-
-test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "4cf902bdc59329b6e8340bf881c3ca2e0f4e3a61a0fb3c1a570b2545b7f90dce"
-test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "fa9cd01970906272f56a892a9c86b18f52ac85cf3aa2b8cdce408eebf3f146d2"
-test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "460fac5c33047a390e07ca275a2485e1a771ce593ee3715b8f12f36184ffd9ec"
-
-cat .deploy/v036/runtime-p00a.b64 .deploy/v036/runtime-p00b.b64 .deploy/v036/runtime-p01.b64 .deploy/v036/runtime-p02.b64 .deploy/v036/runtime-p03.b64 > /tmp/v036-runtime.patch.gz.b64
-test "$(sha256sum /tmp/v036-runtime.patch.gz.b64 | cut -d' ' -f1)" = "2e78cca4ee768bbc6d7c3e5367ba6b923a8714cf2c056971fdc9dcc18f297f08"
-base64 -d /tmp/v036-runtime.patch.gz.b64 > /tmp/v036-runtime.patch.gz
-test "$(sha256sum /tmp/v036-runtime.patch.gz | cut -d' ' -f1)" = "8a45bac2d6a652a1aa06391fb98f835300df1b13fea670141db1460e5da1c7c4"
-gzip -dc /tmp/v036-runtime.patch.gz > /tmp/v036-runtime.patch
-test "$(sha256sum /tmp/v036-runtime.patch | cut -d' ' -f1)" = "75cf00c7d6b5bd831611d8680308eb3792a81d850ca53dbe440f674e5042ad60"
-patch --batch --forward -p1 -d _site < /tmp/v036-runtime.patch
-
-# Verify exact runtime before layering any presentation-only changes.
-test "$(wc -c < _site/src/app.mjs)" -eq 73030
-test "$(wc -c < _site/styles.css)" -eq 38240
-test "$(wc -c < _site/index.html)" -eq 9679
-test "$(sha256sum _site/src/app.mjs | cut -d' ' -f1)" = "a4a329f6a4b0df51fe37e9219f106d8391d6e401015a6207f3322c37da3b2e4b"
-test "$(sha256sum _site/styles.css | cut -d' ' -f1)" = "3a4b655a1089b3117c0aa8086cb33833d4958a4e38ab23a5b7dec5eb5f0db90a"
-test "$(sha256sum _site/index.html | cut -d' ' -f1)" = "72c7dbabe69dca1625b6d714f0771adf6c631f36d8a3692a01691af5576eca79"
-test "$(sha256sum _site/src/core/model.mjs | cut -d' ' -f1)" = "24cae1d5a59cf2c82175d353386a252844d37810a1f072dc955ee2ee95933a68"
-test "$(sha256sum _site/src/render/presets.mjs | cut -d' ' -f1)" = "de14b57406c17a28316af0231e96c8b8de19b69dab955a9aa128c29127b79b0f"
-test "$(sha256sum _site/src/render/renderer.mjs | cut -d' ' -f1)" = "0de5bb7eee82defd52adb0f43d5c5afbd7ba925e0d910d540652f38e9442e347"
-test "$(sha256sum _site/src/core/gestures.mjs | cut -d' ' -f1)" = "6f40499192d7bd57f51399c2e5b48ffd104b32b94921a4f77e594ace77bdfb1b"
-test "$(sha256sum _site/src/render/web-fonts.mjs | cut -d' ' -f1)" = "71cfbc6f0c97f1cdd91006258de2268a895df77c72685440c88c93ef14592602"
-test "$(sha256sum _site/src/render/effects.mjs | cut -d' ' -f1)" = "37faca135349ed945caafee7785a4b3590bb513e88900e8c0b5a4dfb8fd11d0a"
-test "$(sha256sum _site/sw.js | cut -d' ' -f1)" = "22c44ba076c4bb0573f11d9d5d36987cd06ff69d595e1e9bdc0f6ce8eef9ae6e"
-
-grep -q 'lyricforge-v0.3.6' _site/sw.js
-grep -q 'Cyberpunk' _site/src/render/presets.mjs
-grep -q 'Film Grain' _site/src/render/effects.mjs
-grep -q 'data-action="undo"' _site/index.html
-grep -q 'data-action="redo"' _site/index.html
-
-# Presentation-only v0.3.7 UI upgrade.
-sed -i 's#</head>#  <link rel="stylesheet" href="./ui-polish.css" />\n</head>#' _site/index.html
-test -s _site/ui-polish.css
-grep -q 'ui-polish.css' _site/index.html
-grep -q -- '--lf-accent' _site/ui-polish.css
-grep -q '@media (max-width: 760px)' _site/ui-polish.css
-
+mkdir -p _site
+cp index.html styles.css ui-polish.css favicon.svg manifest.webmanifest sw.js _site/
+cp -R src _site/src
+cp -R presets _site/presets
 touch _site/.nojekyll
+
+test -f _site/src/app.mjs
+test -f _site/src/presets/schema.mjs
+test -f _site/src/editor/timeline-tools.mjs
+test -f _site/presets/catalog.json
+grep -q 'lyricforge-v0.3.7' _site/sw.js
+grep -q 'data-action="timeline-razor"' _site/index.html
+grep -q 'Import Preset' _site/src/app.mjs

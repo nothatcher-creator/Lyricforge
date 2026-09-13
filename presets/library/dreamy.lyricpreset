@@ -1,0 +1,111 @@
+{
+  "signature": "lyricforge-preset",
+  "schemaVersion": 1,
+  "id": "dreamy",
+  "name": "Dreamy",
+  "author": "LyricForge",
+  "description": "First-party Dreamy LyricForge preset.",
+  "category": "Ambient",
+  "tags": [
+    "dreamy",
+    "ambient",
+    "lyricforge"
+  ],
+  "version": "1.0.0",
+  "minAppVersion": "0.3.7",
+  "accent": "#b7c9ff",
+  "style": {
+    "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+    "fontSize": 76,
+    "fontWeight": 600,
+    "italic": false,
+    "underline": false,
+    "textTransform": "none",
+    "letterSpacing": 0,
+    "wordSpacing": 0,
+    "lineHeight": 1.1,
+    "align": "center",
+    "color": "#ffffff",
+    "activeColor": "#b7c9ff",
+    "previousColor": "#a7adbd",
+    "upcomingColor": "#d7d9e0",
+    "opacity": 1,
+    "strokeColor": "#06070b",
+    "strokeWidth": 4,
+    "shadowColor": "rgba(0,0,0,.65)",
+    "shadowBlur": 18,
+    "glow": 0,
+    "blur": 0,
+    "backgroundColor": "rgba(0,0,0,.18)",
+    "backgroundOpacity": 0,
+    "radius": 16,
+    "padding": 18,
+    "x": 0.5,
+    "y": 0.72,
+    "scale": 1,
+    "rotation": 0,
+    "maxWidth": 0.82,
+    "karaoke": "progressive-fill",
+    "entrance": {
+      "name": "float",
+      "durationMs": 280,
+      "intensity": 1
+    },
+    "idle": {
+      "name": "none",
+      "durationMs": 1000,
+      "intensity": 1
+    },
+    "exit": {
+      "name": "fade",
+      "durationMs": 240,
+      "intensity": 1
+    }
+  },
+  "background": {
+    "type": "gradient",
+    "value": [
+      "#15152b",
+      "#06070b"
+    ],
+    "fit": "cover",
+    "blur": 0,
+    "brightness": 1,
+    "contrast": 1,
+    "saturation": 1,
+    "hue": 0,
+    "opacity": 1,
+    "vignette": 0.25
+  },
+  "visualizer": {
+    "type": "pulse",
+    "enabled": true,
+    "sensitivity": 1,
+    "smoothing": 0.8,
+    "size": 0.75,
+    "y": 0.55,
+    "opacity": 0.55,
+    "color": "#b7c9ff"
+  },
+  "videoEffects": {
+    "filmGrain": 0,
+    "vhs": 0,
+    "scanlines": 0,
+    "rgbSplit": 0,
+    "bloom": 0.5,
+    "shake": 0,
+    "strobe": 0,
+    "monochrome": 0,
+    "sepia": 0,
+    "posterize": 0,
+    "contrastCrush": 0,
+    "tint": 0,
+    "temperature": 0,
+    "oldFilm": 0,
+    "crt": 0,
+    "chromaticAberration": 0,
+    "beatPulse": 0.08,
+    "vignette": 0.18,
+    "tintColor": "#ff3b7b"
+  }
+}

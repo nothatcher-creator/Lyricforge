@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
+const root=new URL('../',import.meta.url),text=p=>readFile(new URL(p,root),'utf8');
+test('Pages deployment builds from canonical source and verifies release manifest',async()=>{const [workflow,build]=await Promise.all([text('.github/workflows/pages.yml'),text('tools/build-pages.sh')]);assert.match(workflow,/bash tools\/build-pages\.sh/);assert.doesNotMatch(workflow,/\.siteparts|\.fixparts|\.deploy\/v0?36/i);assert.match(build,/release-manifest\.json/);for(const p of ['index.html','styles.css','src','presets'])assert.match(build,new RegExp(p.replace('.','\\.')));});
+test('CI runs Node and browser suites on pull requests',async()=>{const ci=await text('.github/workflows/tests.yml');assert.match(ci,/pull_request/);assert.match(ci,/npm test/);assert.match(ci,/npm run test:browser/);assert.match(ci,/chromium|chrome/i);});
