@@ -9,7 +9,7 @@ function closeCompactMediaSheet(files){if(typeof document==='undefined'||typeof 
 function installCompactMediaFlow(){
   if(typeof document==='undefined'||typeof window==='undefined')return;
   if(!document.querySelector('#compact-media-flow-style')){
-    const style=document.createElement('style');style.id='compact-media-flow-style';style.textContent='@media(max-width:820px) and (orientation:portrait){.preview-controls{bottom:calc(73px + env(safe-area-inset-bottom))!important}}';document.head.append(style);
+    const style=document.createElement('style');style.id='compact-media-flow-style';style.textContent='@media(max-width:820px) and (orientation:portrait){.preview-controls{bottom:calc(73px + env(safe-area-inset-bottom))!important}.left-panel{pointer-events:none}.mobile-left-open .left-panel{pointer-events:auto}}';document.head.append(style);
   }
   const input=document.querySelector('#fileInput');
   if(input&&!input.dataset.mediaFlowFix){
