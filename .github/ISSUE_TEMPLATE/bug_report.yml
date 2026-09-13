@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a reproducible LyricForge problem
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes: {label: LyricForge version, placeholder: "v0.3.7"}
+    validations: {required: true}
+  - type: input
+    id: browser
+    attributes: {label: Browser and version}
+    validations: {required: true}
+  - type: input
+    id: device
+    attributes: {label: OS / device}
+    validations: {required: true}
+  - type: dropdown
+    id: orientation
+    attributes: {label: Orientation, options: [Landscape, Portrait, Not applicable]}
+    validations: {required: true}
+  - type: dropdown
+    id: build
+    attributes: {label: Build, options: [GitHub Pages, Local clone, Other deployment]}
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes: {label: Reproduction steps}
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected result}
+    validations: {required: true}
+  - type: textarea
+    id: actual
+    attributes: {label: Actual result}
+    validations: {required: true}
+  - type: textarea
+    id: console
+    attributes: {label: Console error / logs, description: "Remove secrets and personal information first."}

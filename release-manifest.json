@@ -1,0 +1,14 @@
+{
+  "version": "0.3.7",
+  "generatedAt": "2026-09-13T01:17:10.833Z",
+  "files": {
+    "index.html": "dfd4ea442c3c25c0603903a44cf0d4da6e5944bcdb7bb503a1b453a6f6c21460",
+    "styles.css": "c9a5685a3e2cc6d78805b0f6f95fb89c8b994824171661d0558277fdf60d888f",
+    "ui-polish.css": "ab1bb8480639cf5af02b9d6731a53ca8aa678a5217f430dbde5994f024e3940b",
+    "src/app.mjs": "49e90c071bbc145a6cb44a2b1f3cebdc0e8a5551ab30f093ffcbd0abe8924e6d",
+    "src/core/model.mjs": "a3b90828c2868547162a8f700721f6c42168e9e9c2128f1cc6a3ae1c28fbb2c8",
+    "src/render/renderer.mjs": "479a21576c53589a86c863b7d05ffa612cfaccb179016b66c932490c30e92459",
+    "sw.js": "71fc20de1902514bff09914781b604ebc2e52f556a54013065c106cbd5bc657e",
+    "package.json": "33637830b540c0afef78f60809c1c58e58df022b7b347efa03216218feb8af4a"
+  }
+}

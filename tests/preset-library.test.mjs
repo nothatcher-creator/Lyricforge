@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {PRESETS} from '../src/render/presets.mjs';
+import {factoryPresetToRecord,serializePreset} from '../src/presets/schema.mjs';
+const load=()=>import('../src/presets/library.mjs');
+const rec=factoryPresetToRecord(PRESETS[0]);
+const catalog=(downloadUrl='./one.lyricpreset')=>({signature:'lyricforge-preset-catalog',schemaVersion:1,updatedAt:'2026-09-12T00:00:00Z',entries:[{id:rec.id,name:rec.name,author:'LyricForge',category:'Rock',tags:['rock'],version:rec.version,minAppVersion:'0.3.7',downloadUrl}]});
+const responder=(body,status=200,headers={})=>async()=>new Response(typeof body==='string'?body:JSON.stringify(body),{status,headers});
+
+test('catalog accepts HTTPS and localhost HTTP but rejects insecure remote HTTP',async()=>{const {fetchPresetCatalog}=await load();assert.equal((await fetchPresetCatalog('https://example.com/catalog.json',{fetchImpl:responder(catalog())})).entries.length,1);assert.equal((await fetchPresetCatalog('http://localhost:4173/catalog.json',{fetchImpl:responder(catalog())})).entries.length,1);await assert.rejects(()=>fetchPresetCatalog('http://example.com/catalog.json',{fetchImpl:responder(catalog())}),/https/i);});
+test('catalog enforces manifest size and malformed json',async()=>{const {fetchPresetCatalog}=await load();await assert.rejects(()=>fetchPresetCatalog('https://example.com/catalog.json',{fetchImpl:responder('x'.repeat(524289))}),/large/i);await assert.rejects(()=>fetchPresetCatalog('https://example.com/catalog.json',{fetchImpl:responder('{bad')}),/json|catalog/i);});
+test('search filters name author tags and category',async()=>{const {searchPresetCatalog}=await load();const entries=[...catalog().entries,{...catalog().entries[0],id:'dream',name:'Dreamy',author:'Brad',category:'Ambient',tags:['soft']}];assert.equal(searchPresetCatalog(entries,{query:'brad'}).length,1);assert.equal(searchPresetCatalog(entries,{query:'soft'}).length,1);assert.equal(searchPresetCatalog(entries,{category:'Rock'}).length,1);});
+test('download validates size and id/version match',async()=>{const {fetchPresetCatalog,downloadPreset}=await load();const c=await fetchPresetCatalog('https://example.com/catalog.json',{fetchImpl:responder(catalog('https://example.com/one.lyricpreset'))});const entry=c.entries[0];const out=await downloadPreset(entry,{fetchImpl:responder(serializePreset(rec))});assert.equal(out.id,rec.id);await assert.rejects(()=>downloadPreset({...entry,id:'wrong'},{fetchImpl:responder(serializePreset(rec))}),/match/i);await assert.rejects(()=>downloadPreset(entry,{fetchImpl:responder('x'.repeat(262145))}),/large/i);});
