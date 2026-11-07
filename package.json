@@ -10,7 +10,10 @@
     "studio": "remotion studio src/video/index.ts --no-open --port 3001",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "format": "prettier --write src server tests *.ts *.json"
+    "format": "prettier --write src server tests *.ts *.json",
+    "setup:alignment": "node scripts/setup-alignment.mjs",
+    "alignment:serve": "node scripts/serve-alignment.mjs",
+    "test:alignment": "node scripts/test-alignment.mjs"
   },
   "dependencies": {
     "@fontsource/bebas-neue": "^5.3.0",

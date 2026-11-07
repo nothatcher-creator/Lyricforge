@@ -1,18 +1,10 @@
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import type { Word } from '../src/core/types';
+import { alignmentEndpoint, getAlignmentStatus } from './alignmentRuntime';
 import { lyricsFromWords, validateWords } from '../src/core/lyrics';
 
-/** Administrator-configured service; request bodies cannot choose arbitrary URLs. */
-export const alignmentAvailable = Boolean(process.env.ALIGNMENT_URL);
-export function alignmentStatus() {
-  return {
-    available: alignmentAvailable,
-    provider: alignmentAvailable
-      ? 'Configured word-alignment service'
-      : 'Import LRC/SRT or edit estimated timings',
-  };
-}
+export const alignmentStatus = getAlignmentStatus;
 const normalize = (text: string) =>
   text
     .normalize('NFKC')
@@ -70,12 +62,16 @@ export async function alignProject(
   audioPath: string,
   words: Word[],
   duration = Infinity,
+  options: { signal?: AbortSignal; language?: string } = {},
 ): Promise<Word[]> {
-  const endpoint = process.env.ALIGNMENT_URL;
-  if (!endpoint)
+  const status = await getAlignmentStatus();
+  if (!status.available) throw new Error(status.reason || 'The alignment service is unavailable.');
+  const language = options.language || 'en';
+  if (!status.languages.includes(language))
     throw new Error(
-      'Automatic vocal alignment is not configured. Import LRC/SRT timestamps or manually correct the estimated word timings. Configure ALIGNMENT_URL for a local or remote forced-alignment service.',
+      `This alignment service supports ${status.languages.join(', ')}. Choose a supported language or import timestamps.`,
     );
+  const endpoint = alignmentEndpoint();
   if (!words.length) throw new Error('Import lyrics before aligning.');
   const details = await stat(audioPath);
   if (details.size > 256 * 1024 * 1024)
@@ -85,18 +81,39 @@ export async function alignProject(
   const type = path.extname(audioPath).toLowerCase() === '.wav' ? 'audio/wav' : 'audio/mpeg';
   multipart.append('audio', new Blob([new Uint8Array(bytes)], { type }), path.basename(audioPath));
   multipart.append('lyrics', lyricsFromWords(words));
+  multipart.append('language', language);
   const headers: Record<string, string> = {};
   if (process.env.ALIGNMENT_TOKEN) headers.Authorization = `Bearer ${process.env.ALIGNMENT_TOKEN}`;
+  // Materialize the multipart body before fetch: aborting Undici's streamed Blob
+  // FormData encoder can otherwise enqueue into a closed stream on Node 24.
+  options.signal?.throwIfAborted();
+  const encoded = new Request(endpoint, { method: 'POST', body: multipart });
+  const payload = await encoded.arrayBuffer();
+  headers['Content-Type'] = encoded.headers.get('content-type')!;
   const response = await fetch(endpoint, {
     method: 'POST',
-    body: multipart,
+    body: payload,
     headers,
-    signal: AbortSignal.timeout(300000),
+    signal: AbortSignal.any([
+      AbortSignal.timeout(Number(process.env.ALIGNMENT_TIMEOUT_MS) || 900000),
+      ...(options.signal ? [options.signal] : []),
+    ]),
   });
-  if (!response.ok)
+  if (!response.ok) {
+    let detail = '';
+    try {
+      const body = await response.json();
+      detail =
+        typeof body.detail === 'string'
+          ? body.detail
+          : typeof body.error === 'string'
+            ? body.error
+            : '';
+    } catch {}
     throw new Error(
-      `Alignment service failed (${response.status}). Your existing timings were kept.`,
+      `Alignment failed (${response.status}). ${detail || 'Your existing timings were kept.'}`,
     );
+  }
   return validateAlignment(await response.json(), words, duration);
 }
 export async function alignLyrics({

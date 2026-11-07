@@ -6,6 +6,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assetPath, projectRoot, RenderQueue, validateRenderRequest } from './render';
 import { alignmentStatus } from './alignment';
+import { startManagedAlignment } from './alignmentRuntime';
+import { AlignmentQueue, validateAlignmentRequest } from './alignmentJobs';
 
 const extensions = new Set([
   '.mp3',
@@ -42,6 +44,8 @@ const upload = multer({
 });
 export function createApp(port = Number(process.env.API_PORT) || 3002) {
   const app = express();
+  const alignmentQueue = new AlignmentQueue();
+  app.locals.alignmentQueue = alignmentQueue;
   const queue = new RenderQueue(`http://127.0.0.1:${port}`);
   app.disable('x-powered-by');
   app.use((req, res, next) => {
@@ -71,14 +75,41 @@ export function createApp(port = Number(process.env.API_PORT) || 3002) {
         res.setHeader('Content-Disposition', 'attachment; filename="lyricforge.mp4"'),
     }),
   );
-  app.get('/api/health', (_req, res) =>
-    res.json({
-      ok: true,
-      rendering: true,
-      alignmentAvailable: alignmentStatus().available,
-      alignment: alignmentStatus(),
-    }),
-  );
+  app.get('/api/health', async (_req, res) => {
+    const alignment = await alignmentStatus();
+    res.json({ ok: true, rendering: true, alignmentAvailable: alignment.available, alignment });
+  });
+  app.get('/api/alignment/status', async (_req, res) => res.json(await alignmentStatus()));
+  app.post('/api/alignment-jobs', async (req, res) => {
+    try {
+      const request = validateAlignmentRequest(req.body);
+      const status = await alignmentStatus();
+      if (!status.available) {
+        res.status(503).json({ error: status.reason });
+        return;
+      }
+      res.status(202).json(alignmentQueue.enqueue(request));
+    } catch (error) {
+      res
+        .status(400)
+        .json({ error: error instanceof Error ? error.message : 'Invalid alignment request.' });
+    }
+  });
+  app.get('/api/alignment-jobs/:id', (req, res) => {
+    const job = alignmentQueue.jobs.get(req.params.id);
+    if (!job) {
+      res.status(404).json({ error: 'Alignment job not found. The server may have restarted.' });
+      return;
+    }
+    res.json(job);
+  });
+  app.delete('/api/alignment-jobs/:id', (req, res) => {
+    if (!alignmentQueue.cancel(req.params.id)) {
+      res.status(404).json({ error: 'Alignment job not found.' });
+      return;
+    }
+    res.json(alignmentQueue.jobs.get(req.params.id));
+  });
   app.post('/api/upload', upload.single('file'), (req, res) => {
     if (!req.file) {
       res.status(400).json({ error: 'Choose a file to upload.' });
@@ -118,27 +149,15 @@ export function createApp(port = Number(process.env.API_PORT) || 3002) {
   });
   app.post('/api/align', async (req, res) => {
     try {
-      const { audioUrl, words, duration } = req.body;
-      if (typeof audioUrl !== 'string' || !/\.(mp3|wav)$/i.test(audioUrl))
-        throw new Error('Choose an uploaded MP3 or WAV.');
-      if (
-        duration !== undefined &&
-        (!Number.isFinite(duration) || duration <= 0 || duration > 1800)
-      )
-        throw new Error('Invalid audio duration.');
-      const audioPath = assetPath(audioUrl);
-      if (
-        !Array.isArray(words) ||
-        words.length > 20000 ||
-        !words.every((w) => typeof w?.text === 'string' && w.text.length <= 500)
-      )
-        throw new Error('Provide the original imported lyrics.');
+      const request = validateAlignmentRequest(req.body);
       const { alignProject } = await import('./alignment');
-      res.json({ words: await alignProject(audioPath, words, duration) });
+      res.json({
+        words: await alignProject(assetPath(request.audioUrl), request.words, request.duration, {
+          language: request.language,
+        }),
+      });
     } catch (error) {
-      res
-        .status(process.env.ALIGNMENT_URL ? 400 : 503)
-        .json({ error: error instanceof Error ? error.message : 'Alignment failed.' });
+      res.status(400).json({ error: error instanceof Error ? error.message : 'Alignment failed.' });
     }
   });
   app.use('/api', (_req, res) => res.status(404).json({ error: 'API endpoint not found.' }));
@@ -155,6 +174,9 @@ export function createApp(port = Number(process.env.API_PORT) || 3002) {
   return app;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  void startManagedAlignment();
+  const alignmentWatch = setInterval(() => void startManagedAlignment(), 10000);
+  alignmentWatch.unref();
   const port = Number(process.env.API_PORT) || 3002;
   createApp(port).listen(port, '0.0.0.0', () =>
     console.log(`LyricForge render API: http://localhost:${port}`),

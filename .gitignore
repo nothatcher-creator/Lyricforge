@@ -12,3 +12,6 @@ __pycache__/
 *.pyc
 .env.*
 !.env.example
+
+.venv-alignment/
+.models/

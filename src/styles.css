@@ -2548,3 +2548,71 @@ kbd {
     display: none;
   }
 }
+.alignment-panel {
+  margin: 15px 0;
+  padding: 12px;
+  border: 1px solid #494035;
+  background: #28231e66;
+  border-radius: 6px;
+}
+.alignment-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  color: #d1c1b2;
+}
+.alignment-toggle small {
+  display: block;
+  font-size: 8px;
+  margin-top: 6px;
+  color: #91877d;
+  line-height: 1.5;
+}
+.alignment-panel > p {
+  font-size: 9px;
+  color: #b8a48e;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.alignment-panel > small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+.alignment-job {
+  margin-top: 12px;
+  border-top: 1px solid #484037;
+  padding-top: 12px;
+}
+.alignment-job strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #e3b389;
+  line-height: 1.6;
+}
+.alignment-job small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.8;
+  margin-top: 7px;
+  color: #be9283;
+}
+.alignment-job progress {
+  width: 100%;
+  height: 4px;
+  accent-color: #ed9c6a;
+  margin: 10px 0;
+}
+.alignment-job button {
+  display: block;
+  font-size: 9px;
+  color: #d3b191;
+  padding: 4px 0;
+}
+.alignment-panel .toggle {
+  flex-shrink: 0;
+}

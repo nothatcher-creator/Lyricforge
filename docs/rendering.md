@@ -31,7 +31,9 @@ This starter is a single-user local studio. Before exposing it on the public int
 - `POST /api/render`: JSON `{project,resolution}` with resolution `720p`, `1080p` or `4k`. Returns a job with `id`, `status`, `progress` (0–100).
 - `GET /api/render/:id`: poll the job; on completion use its `url` to download MP4. Failed jobs include `error`.
 - `DELETE /api/render/:id`: cancels a queued or active job.
-- `POST /api/align`: JSON `{audioUrl,words}`; requires the optional `ALIGNMENT_URL` service described in `alignment.md`.
+- `GET /api/alignment/status`: reports local/external availability and supported language.
+- `POST /api/alignment-jobs`: JSON `{audioUrl,words,duration,language:"en"}` starts a queued job. `GET` or `DELETE /api/alignment-jobs/:id` polls/cancels it. In-flight progress is indeterminate; completed jobs include validated words.
+- `POST /api/align`: compatibility synchronous endpoint with the same fields. Uses the managed local CPU service after `npm run setup:alignment`, or an optional `ALIGNMENT_URL` provider. See `alignment.md`.
 
 Resolution options are 1280×720, 1920×1080 and 3840×2160. Vertical projects swap the dimensions. All renders use 30 fps, H.264 video, AAC audio and MP4. 4K needs substantially more memory/time. Duration is capped at 30 minutes, 20,000 lyric words and 500 scenes per job. Set `RENDER_CONCURRENCY` to control frame-render parallelism (default 2).
 
@@ -70,3 +72,7 @@ The first export combines the synthwave atmosphere, Bounce typography, an upload
 All ten styles and eight animation presets produced distinct browser frames. Repeated screenshots of each animation and seek-away/seek-back screenshots of a fixed frame matched exactly. Desktop/mobile screenshots are `artifacts/editor-desktop.png` and `artifacts/editor-mobile.png`; the HTML test report is `artifacts/playwright-report/index.html`. 4K dimensions and accepted resolution settings are unit-tested, but a 4K MP4 was not rendered in this verification.
 
 Vite ignores generated uploads and renders in its file watcher to prevent development reloads from disrupting editing or export state. This is development watcher hardening; production serving does not use Vite.
+
+## Automatic alignment integration verification
+
+After adding managed CPU alignment, 18 Node/API tests, eight Python tests (including real model inference), and all 16 browser tests passed. The opt-in real alignment browser test uploaded original synthetic speech with accompaniment, received nine measured word cues, and exported `artifacts/real-alignment/aligned-vocals.mp4` as H.264 1280×720 with AAC audio, duration 2.581 seconds. Model timings were carried unchanged into the shared Remotion composition. See [alignment setup and limits](alignment.md).

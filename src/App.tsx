@@ -56,6 +56,7 @@ import type { Project, Word } from './core/types';
 import { readProject } from './core/validate';
 import { createDemo } from './core/demo';
 import { presets, animations } from './core/presets';
+import { useAlignment } from './core/useAlignment';
 import { useProject, savedProjects, downloadJson } from './core/storage';
 const analyzeAudio = async (input: File | ArrayBuffer) =>
   (await import('./core/analysis')).analyzeAudio(input);
@@ -132,7 +133,6 @@ export default function App() {
     url?: string;
     error?: string;
   } | null>(null);
-  const [alignmentAvailable, setAlignmentAvailable] = useState(false);
   const [customTemplates, setCustomTemplates] = useState<
     { name: string; presetId: string; style: Project['style'] }[]
   >(() => {
@@ -171,6 +171,7 @@ export default function App() {
     [project.words],
   );
   const notify = (message: string) => setToast(message);
+  const alignment = useAlignment(project, update, notify);
   const seek = (seconds: number) => {
     const f = Math.max(
       0,
@@ -184,11 +185,6 @@ export default function App() {
     const t = setTimeout(() => setToast(''), 5000);
     return () => clearTimeout(t);
   }, [toast]);
-  useEffect(() => {
-    request('/api/health')
-      .then((d) => setAlignmentAvailable(d.alignmentAvailable || d.alignment?.available))
-      .catch(() => {});
-  }, []);
   useEffect(() => {
     const ref = player.current;
     if (!ref) return;
@@ -319,6 +315,7 @@ export default function App() {
         } else throw new Error('Choose an MP3, WAV, TXT, LRC, or SRT file.');
       }
       update(next);
+      alignment.autoAlign(next);
       setSelectedScene(next.scenes[0].id);
       setModal(null);
       seek(0);
@@ -332,26 +329,6 @@ export default function App() {
     } finally {
       setBusy('');
       if (fileInput.current) fileInput.current.value = '';
-    }
-  }
-  async function align() {
-    setBusy('Aligning lyrics to vocals…');
-    try {
-      const data = await request('/api/align', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          audioUrl: project.audioUrl,
-          words: project.words,
-          duration: project.duration,
-        }),
-      });
-      update({ words: data.words });
-      notify('Alignment complete. Review every word before export.');
-    } catch (e) {
-      notify((e as Error).message);
-    } finally {
-      setBusy('');
     }
   }
   async function exportVideo() {
@@ -726,12 +703,72 @@ export default function App() {
             </button>
             <button
               className="secondary-button wide"
-              onClick={align}
-              disabled={!alignmentAvailable || !!busy}
+              onClick={() => void alignment.align()}
+              disabled={
+                !alignment.status.available ||
+                !!busy ||
+                alignment.processing ||
+                !project.audioUrl ||
+                !project.words.length
+              }
             >
               <WandSparkles size={15} />
-              {alignmentAvailable ? 'Align to vocals' : 'Alignment server not connected'}
+              {alignment.status.available ? 'Align to vocals' : 'Alignment service unavailable'}
             </button>
+            <div className="alignment-panel" data-testid="alignment-status">
+              <div className="alignment-toggle">
+                <span>
+                  Auto-align new lyrics<small>English vocals · supplied lyrics only</small>
+                </span>
+                <button
+                  role="switch"
+                  aria-label="Automatically align imported lyrics"
+                  aria-checked={alignment.autoEnabled}
+                  className={`toggle ${alignment.autoEnabled ? 'on' : ''}`}
+                  onClick={() => alignment.setAutoEnabled(!alignment.autoEnabled)}
+                >
+                  <i />
+                </button>
+              </div>
+              <p>{alignment.status.provider}</p>
+              {!alignment.status.available && (
+                <>
+                  <small>{alignment.status.reason}</small>
+                  <button className="font-upload" onClick={() => void alignment.refresh()}>
+                    Check connection
+                  </button>
+                </>
+              )}
+              {alignment.status.available && alignment.status.modelLoaded === false && (
+                <small>
+                  First alignment downloads the English model. It is cached for later songs.
+                </small>
+              )}
+              {alignment.job && (
+                <div className="alignment-job" role="status">
+                  <strong>
+                    {alignment.job.status === 'completed'
+                      ? 'Vocal alignment complete'
+                      : alignment.job.status === 'failed'
+                        ? 'Alignment failed · timings kept'
+                        : alignment.job.status === 'cancelled'
+                          ? 'Alignment cancelled'
+                          : alignment.job.status === 'discarded'
+                            ? 'Newer edits preserved'
+                            : alignment.job.status === 'queued'
+                              ? 'Waiting for alignment…'
+                              : 'Aligning words to vocals…'}
+                  </strong>
+                  {alignment.processing && (
+                    <>
+                      <progress max={100} value={alignment.job.progress ?? undefined} />
+                      <button onClick={() => void alignment.cancel()}>Cancel alignment</button>
+                    </>
+                  )}
+                  {alignment.job.error && <small>{alignment.job.error}</small>}
+                </div>
+              )}
+            </div>
             <p className="small-note">
               {project.words.some((w) => w.source === 'estimated')
                 ? 'Estimated timings need your review. Drag words or edit precise times.'
@@ -1346,6 +1383,11 @@ export default function App() {
                   ? 'Estimated · review timing'
                   : `${word.source} timing`}
               </small>
+              {word.source === 'aligned' && word.confidence !== null && (
+                <small aria-label="Alignment confidence">
+                  Model confidence: {Math.round(word.confidence * 100)}% · review timing
+                </small>
+              )}
             </div>
           )}
           <div className="inspector-section">
@@ -1646,6 +1688,12 @@ export default function App() {
           </button>
         </div>
       )}
+      {alignment.processing && !busy && tab !== 'Lyrics' && (
+        <button className="busy-indicator" onClick={() => setTab('Lyrics')}>
+          <LoaderCircle className="spin" size={16} />
+          Aligning vocal timings · View progress
+        </button>
+      )}
       {busy && (
         <div className="busy-indicator">
           <LoaderCircle className="spin" size={16} />
@@ -1692,7 +1740,12 @@ export default function App() {
                   className="export-button wide"
                   disabled={!lyricsText.trim()}
                   onClick={() => {
-                    update({ words: parseLyrics(lyricsText, 'lyrics.txt', project.duration) });
+                    const next = {
+                      ...project,
+                      words: parseLyrics(lyricsText, 'lyrics.txt', project.duration),
+                    };
+                    update(next);
+                    alignment.autoAlign(next);
                     setModal(null);
                     setTab('Lyrics');
                     notify('Lyrics added with estimated timings. Review and adjust each word.');

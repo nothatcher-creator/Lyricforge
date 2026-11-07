@@ -1,48 +1,52 @@
-"""Optional CPU/GPU forced alignment. See docs/alignment.md."""
+"""Local CPU vocal alignment service, independent from the rendering host.
+
+Run: .venv-alignment/bin/python -m uvicorn scripts.align_service:app --host 127.0.0.1 --port 8000
+The model is downloaded on first alignment and cached; no GPU, PyTorch or WhisperX is required.
+"""
 import os
 import tempfile
 import threading
-import whisperx
+import shutil
+from pathlib import Path
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from scripts.ctc_alignment import CpuAligner, AlignmentError, MODEL_ID, MODEL_REVISION, MAX_DURATION
 
-app = FastAPI()
+app = FastAPI(title='LyricForge CPU vocal alignment', version='1.0')
 lock = threading.Lock()
+aligner = CpuAligner()
+
+@app.get('/health')
+def health():
+    available = shutil.which('ffmpeg') is not None
+    return {'available': available, 'reason': None if available else 'FFmpeg is missing on the alignment host.',
+            'provider': 'Local CPU CTC alignment', 'language': 'en', 'languages': ['en'],
+            'model': MODEL_ID, 'revision': MODEL_REVISION, 'license': 'Apache-2.0 (upstream)',
+            'modelLoaded': aligner.session is not None, 'maxDuration': MAX_DURATION}
 
 @app.post('/align')
-def align(audio: UploadFile = File(...), lyrics: str = Form(...)):
-    # Supplied transcript is forced-aligned; no transcription invents lyrics.
-    # Bound this simple whole-clip example to short songs for memory use.
+def align(audio: UploadFile = File(...), lyrics: str = Form(...), language: str = Form('en')):
     ext = os.path.splitext(audio.filename or '')[1].lower()
     if ext not in ('.wav', '.mp3'):
         raise HTTPException(400, 'Expected MP3 or WAV')
-    with tempfile.NamedTemporaryFile(suffix=ext) as temporary:
-        total = 0
-        while chunk := audio.file.read(1024 * 1024):
-            total += len(chunk)
-            if total > 256 * 1024 * 1024:
-                raise HTTPException(413, 'Audio exceeds 256 MB')
-            temporary.write(chunk)
-        temporary.flush()
-        waveform = whisperx.load_audio(temporary.name)
-    duration = len(waveform) / 16000
-    if duration <= 0 or duration > 180:
-        raise HTTPException(422, 'Reference adapter supports clips up to 180 seconds')
     if not lyrics.strip():
-        raise HTTPException(422, 'Lyrics are required')
-    with lock:
-        # Set language to the supplied lyric language; do not guess it.
-        model, metadata = whisperx.load_align_model(
-            language_code=os.environ.get('ALIGN_LANGUAGE', 'en'),
-            device=os.environ.get('ALIGN_DEVICE', 'cpu'))
-        result = whisperx.align(
-            [{'start': 0.0, 'end': duration, 'text': lyrics}],
-            model, metadata, waveform,
-            device=os.environ.get('ALIGN_DEVICE', 'cpu'),
-            return_char_alignments=False)
-    words = []
-    for item in result.get('word_segments', []):
-        if 'start' not in item or 'end' not in item:
-            raise HTTPException(422, 'Some words could not be aligned; use imported/manual timestamps')
-        words.append({'text': item['word'], 'start': item['start'],
-                      'end': item['end'], 'confidence': item.get('score')})
-    return {'words': words}
+        raise HTTPException(422, 'Supply the original lyrics before aligning.')
+    if len(lyrics) > 100_000:
+        raise HTTPException(413, 'Lyric transcript is too large.')
+    try:
+        with tempfile.TemporaryDirectory() as directory:
+            filename = Path(directory) / ('audio' + ext)
+            total = 0
+            with filename.open('wb') as temporary:
+                while chunk := audio.file.read(1024 * 1024):
+                    total += len(chunk)
+                    if total > 250 * 1024 * 1024:
+                        raise HTTPException(413, 'Audio exceeds 250 MB')
+                    temporary.write(chunk)
+            # Close the upload before FFmpeg opens it (required on Windows).
+            with lock:
+                words = aligner.align(str(filename), lyrics, language)
+        return {'words': words, 'provider': 'Local CPU CTC alignment', 'model': MODEL_ID}
+    except AlignmentError as error:
+        raise HTTPException(422, str(error)) from error
+    except RuntimeError as error:
+        raise HTTPException(503, str(error)) from error

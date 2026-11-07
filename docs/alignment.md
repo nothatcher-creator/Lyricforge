@@ -1,99 +1,103 @@
-# Audio analysis and lyric timing
+# Automatic vocal alignment
 
-## What is measured
+LyricForge now includes a real CPU forced-alignment service. Supply your original lyrics and audio; the model measures character/word positions in the audio and returns word timestamps. It does **not** generate or substitute lyrics. Automatic alignment can run after importing estimated lyrics, and the Lyrics panel also offers a manual **Align to vocals** action. Every successful word is labeled `aligned`; failed/cancelled jobs keep the previous timings. Cancelling stops the editor job and discards its result; a provider may finish an inference already executing. Exact imported word timestamps are not automatically overwritten, and newer manual edits are protected from stale results.
 
-`src/core/analysis.ts` decodes MP3/WAV with the browser Web Audio API, mixes channels to mono, and measures Meyda RMS, positive FFT spectral flux, and low-frequency energy below 180 Hz. `Analysis.intensity` and `Analysis.bass` use 50 ms steps (20 Hz), starting at time zero. The waveform contains up to 1,000 peak buckets covering the full song. Transients are adaptive spectral-flux peaks; beats are bass-bearing onset candidates with a 250 ms refractory period. Tempo is a measured onset-interval histogram and remains `null` without enough agreement. These are musical estimates, not a guarantee of every beat or downbeat. Everything is deterministic for the same decoded PCM.
+## Local setup
 
-## What timing labels mean
+Requirements: Python 3.10–3.12 on an ONNX Runtime-supported platform, FFmpeg on PATH, and enough memory for audio-model inference. No GPU, PyTorch, Whisper, or WhisperX is required. Python 3.12 on Linux x86-64 is verified.
 
-- TXT: evenly distributed **estimated** word timings. This is only an editable starting point and does not detect vocals.
-- Standard LRC/SRT: imported line boundaries; words within multiword cues are **estimated** by subdivision.
-- Enhanced LRC (`[00:01.00]<00:01.00>Hello <00:01.50>world <00:02.00>`): explicit word starts and following boundaries are **imported**. The last word ends at the next line or audio end when no terminal word timestamp is supplied.
-- One-word SRT cues: both boundaries are **imported**. Exporting corrected words to SRT preserves all word boundaries.
-- Manual edits are **manual**.
-- A successful external forced-alignment response is **aligned**. No words are generated or substituted.
+```sh
+npm run setup:alignment
+npm run dev
+```
 
-Imports reject negative, non-finite, backwards, and out-of-audio timings. Alignment rejects mismatched words, missing words, invalid times, and out-of-order results. Your existing lyrics and timings remain intact if alignment fails.
+`setup:alignment` creates `.venv-alignment` and installs the isolated Python dependencies. Starting the Node server through `npm run dev` or `npm start` detects this environment and starts the local alignment service automatically. If it is not installed or cannot start, the studio remains usable with imported/manual timestamps.
 
-## Optional local or remote forced alignment
+The first alignment downloads the pinned quantized model (about 91 MB) from Hugging Face into the normal Hugging Face cache. Keep that cache between deployments to avoid repeated downloads. Later requests reuse one loaded model process. Allow the initial download to complete; the editor shows job progress/status rather than inventing estimated results and labeling them aligned.
 
-No model, GPU, Python installation, WhisperX deployment, or external account is assumed. Import LRC/SRT or correct timings manually without configuring a service. To enable the Align action, configure the Node API process:
+To run the Python service independently:
+
+```sh
+npm run alignment:serve
+# http://127.0.0.1:8000/health
+```
+
+The equivalent explicit command on POSIX systems is:
+
+```sh
+.venv-alignment/bin/python -m uvicorn scripts.align_service:app --host 127.0.0.1 --port 8000
+```
+
+For an existing Python environment set `ALIGNMENT_PYTHON` to its Python executable. `ALIGNMENT_MODE=off` disables managed local startup. `LOCAL_ALIGNMENT_ORIGIN` changes the local service address (default `http://127.0.0.1:8000`). `ALIGNMENT_TIMEOUT_MS` controls the Node request timeout (default 900,000 ms).
+
+## What the bundled model supports
+
+The local model supports English alphabetic lyrics, including apostrophes and common punctuation. Original spelling, casing, and punctuation remain in the project. Unsupported scripts, numeric tokens, empty words, and unsupported languages fail with an explanation; choose a compatible external service or import timestamps instead. No language is guessed.
+
+The model is `Xenova/wav2vec2-base-960h`, pinned to revision `a19f851b3d42865797e410752b4c570c871e4825`, using `onnx/model_quantized.onnx` and `vocab.json`. It is an ONNX conversion of [`facebook/wav2vec2-base-960h`](https://huggingface.co/facebook/wav2vec2-base-960h), whose upstream model card declares **Apache-2.0**. The ONNX repository identifies the upstream model, but does not declare a separate license in its model-card metadata. Review those upstream terms when redistributing model weights; weights are downloaded separately and are not committed to this repository.
+
+This is a speech-trained CTC model applied to supplied vocal lyrics. Clear, intelligible vocals work best. Distorted metal vocals, overlapping backing vocals, long sustained notes, heavy accompaniment, inaccurate transcripts and vocal effects can reduce reliability. Low-confidence words and low-confidence overall alignments are rejected rather than silently replaced by uniform estimates. A successful confidence check is not proof of perfect singing alignment; review the waveform and every lyric cue before export.
+
+Local limits are 600 seconds, 2,000 whitespace-delimited words, 250 MiB uploads, and a 75-million-cell CTC backtracking budget. Typical shorter songs fit; unusually long/dense songs may need sections or an external service. Inputs that exceed a limit return an actionable error. FFmpeg decoding is bounded and model inference uses 20-second windows with one-second context. Window positions preserve absolute song time; one exact CTC Viterbi path aligns the entire supplied transcript, including blank/repeated-character transitions.
+
+## Offline model deployment
+
+Set `ALIGN_MODEL_DIR` on the alignment process to a directory containing:
+
+```text
+model_quantized.onnx
+vocab.json
+```
+
+The service also accepts the repository-shaped `onnx/model_quantized.onnx` subpath. Obtain both files from the pinned revision above. This avoids a runtime network download and supports isolated render/processing hosts. `ALIGN_THREADS` controls ONNX CPU threads (default 2, bounded to 1–8).
+
+## External or multilingual service
+
+Set `ALIGNMENT_URL` on the Node API process to use a separate local, GPU or hosted forced-alignment provider instead of managed CPU processing:
 
 ```sh
 ALIGNMENT_URL=http://127.0.0.1:8000/align npm run dev
-# Optional bearer credential, supplied from your environment/secret manager:
-# ALIGNMENT_TOKEN=...
+# Optional: ALIGNMENT_HEALTH_URL=http://127.0.0.1:8000/health
+# Optional: ALIGNMENT_TOKEN=...  (set through your environment/secret manager)
 ```
 
-The application sends HTTP `multipart/form-data` with an `audio` file and `lyrics` text. The endpoint must return seconds:
+The administrator-configured endpoint receives `multipart/form-data` fields `audio` and `lyrics`, plus `language=en` from the current English editor. Direct API clients can supply another language supported by their configured service. It must return:
 
 ```json
-{"words":[{"text":"Hello","start":1.02,"end":1.41,"confidence":0.95},{"text":"world","start":1.42,"end":1.9}]}
+{"words":[{"text":"Hello","start":1.02,"end":1.41,"confidence":0.95},{"text":"world","start":1.42,"end":1.9,"confidence":0.9}]}
 ```
 
-Return exactly one item for each whitespace-delimited supplied lyric word, in order. Case and punctuation differences are accepted for matching, while the project always preserves the user's original spelling and punctuation. Timestamps must be finite, positive-length, chronological, and within the audio duration. Confidence is optional and remains `null` if not supplied. Use an alignment provider that accepts the supplied transcript; an arbitrary transcription response often will not match sung lyrics and will correctly be rejected.
+Times are seconds relative to the beginning of the source audio. Return exactly one word for each supplied whitespace-delimited word, in order. The Node adapter checks supplied-word matches, finite positive-length times, duration bounds and chronology. Case/punctuation differences are accepted for matching while original project text is retained. No provider credential is sent to the browser. Unavailable services or invalid responses do not overwrite lyrics/timings.
 
-### Reference CPU WhisperX adapter
+The Python API exposes `GET /health` and `POST /align`. Health reports service availability, supported language, pinned model, and whether weights are loaded. `/align` returns 422 for unsupported/unreliable input and 503 for model/dependency/network failures. Keep the service private to the API host, or protect it with an authenticated reverse proxy when exposing it remotely.
 
-This optional example is a small local service, not part of the default browser build. Install it in a separate Python virtual environment on a machine where its dependencies are supported. WhisperX, PyTorch, alignment models, FFmpeg, and their dependencies have separate installation/hardware/license requirements. Check the selected language model's license before downloading; the adapter does not select a model on behalf of the user. GPU acceleration is optional. The first request downloads the selected language alignment model.
+## Timing provenance and imported fallbacks
+
+- TXT: distributed **estimated** word timing is an editable starting point, not vocal detection. Automatic alignment can replace it only after a successful measured result.
+- Standard LRC/SRT: imported line boundaries; multiword cues are subdivided into **estimated** word boundaries.
+- Enhanced LRC: explicit word starts/following boundaries are **imported**. A final word may use the next line/audio end if no terminal cue is present.
+- One-word SRT: explicit start/end are **imported**.
+- Manual correction: **manual**.
+- Valid model/provider result: **aligned** with measured confidence.
+
+Meyda waveform/intensity/bass/onset analysis is separate from vocal alignment. `src/core/analysis.ts` uses 50 ms intensity/bass steps, up to 1,000 waveform peak buckets, adaptive spectral-flux transients and bass-bearing onset candidates. Tempo stays null without enough agreement. These musical estimates do not establish vocal word timing.
+
+## Tests and measured verification
 
 ```sh
-python -m venv .venv
-. .venv/bin/activate
-pip install -r scripts/alignment-requirements.txt
-uvicorn scripts.align_service:app --host 127.0.0.1 --port 8000
+npm run test:alignment
+# Optional actual model/inference test (downloads weights if absent):
+ALIGNMENT_SMOKE=1 npm run test:alignment
 ```
 
-```python
-import os
-import tempfile
-import threading
-import whisperx
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+Seven deterministic algorithm/decode tests cover exact supplied words, unsupported characters, CTC repeated-letter constraints, nonuniform word durations, confidence rejection, memory limits, and silent audio rejection. The optional eighth test runs genuine CPU ONNX inference on original FFmpeg/flite synthetic speech mixed with a generated musical tone. It also rejects mismatched lyrics and instrumental-only audio, and verifies absolute word positions after a 21-second lead-in across a model-window boundary.
 
-app = FastAPI()
-lock = threading.Lock()
+On 2026-11-07, all eight tests passed on this host with the pinned real model. The phrase “We rise from the ashes and chase the light” produced nine preserved words with nonuniform measured starts at 0.24, 0.40, 0.70, 0.92, 1.14, 1.48, 1.64, 2.04, and 2.16 seconds. This fixture demonstrates model inference, timing and rejection behavior; it does not claim evaluation accuracy on real sung music. The generated verification report is `artifacts/alignment-model-smoke.json`.
 
-@app.post('/align')
-def align(audio: UploadFile = File(...), lyrics: str = Form(...)):
-    # Supplied transcript is forced-aligned; no transcription invents lyrics.
-    # Bound this simple whole-clip example to short songs for memory use.
-    ext = os.path.splitext(audio.filename or '')[1].lower()
-    if ext not in ('.wav', '.mp3'):
-        raise HTTPException(400, 'Expected MP3 or WAV')
-    with tempfile.NamedTemporaryFile(suffix=ext) as temporary:
-        total = 0
-        while chunk := audio.file.read(1024 * 1024):
-            total += len(chunk)
-            if total > 256 * 1024 * 1024:
-                raise HTTPException(413, 'Audio exceeds 256 MB')
-            temporary.write(chunk)
-        temporary.flush()
-        waveform = whisperx.load_audio(temporary.name)
-    duration = len(waveform) / 16000
-    if duration <= 0 or duration > 180:
-        raise HTTPException(422, 'Reference adapter supports clips up to 180 seconds')
-    if not lyrics.strip():
-        raise HTTPException(422, 'Lyrics are required')
-    with lock:
-        # Set language to the supplied lyric language; do not guess it.
-        model, metadata = whisperx.load_align_model(
-            language_code=os.environ.get('ALIGN_LANGUAGE', 'en'),
-            device=os.environ.get('ALIGN_DEVICE', 'cpu'))
-        result = whisperx.align(
-            [{'start': 0.0, 'end': duration, 'text': lyrics}],
-            model, metadata, waveform,
-            device=os.environ.get('ALIGN_DEVICE', 'cpu'),
-            return_char_alignments=False)
-    words = []
-    for item in result.get('word_segments', []):
-        if 'start' not in item or 'end' not in item:
-            raise HTTPException(422, 'Some words could not be aligned; use imported/manual timestamps')
-        words.append({'text': item['word'], 'start': item['start'],
-                      'end': item['end'], 'confidence': item.get('score')})
-    return {'words': words}
+The complete browser suite also passed 16 tests on this host, including an opt-in genuine end-to-end test: generated speech plus accompaniment was uploaded through the editor, nine words were aligned by the local service without mocked provider routes, and a 1280×720 H.264/AAC MP4 (2.581 seconds) was downloaded. An extracted frame at 1.2 seconds showed “ashes” highlighted within its measured 1.14–1.40 second interval. The same suite checks automatic imports, opt-out, failure preservation, cancellation and stale-edit protection with explicitly mocked providers. To reproduce the real browser test after starting the app:
+
+```sh
+ALIGNMENT_SMOKE=1 npm run test:e2e -- tests/alignment-real.spec.ts
 ```
 
-The adapter deliberately fails on unsupported words and unalignable audio. Forced alignment of singing is less reliable than speech, especially with distorted vocals, long instrumental passages, or backing vocals; visually review every result. For longer songs, run a production alignment service that segments known vocal regions while preserving absolute timestamps. Never substitute uniform estimates and label them aligned.
-
-The API has a five-minute service timeout and never exposes `ALIGNMENT_TOKEN` to the browser. A remote endpoint receives the supplied audio and lyrics only when the user requests alignment. Keep a remote provider's retention and access policies appropriate for your music.
+The synthesis fixture requires an FFmpeg build with the `flite` filter; this is a test dependency, not a runtime requirement. Evidence is generated under `artifacts/real-alignment/`. The application itself needs FFmpeg audio decoding, not speech synthesis.
