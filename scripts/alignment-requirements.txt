@@ -1,0 +1,5 @@
+# Optional service only; install in an isolated Python virtual environment.
+whisperx>=3.3,<4
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+python-multipart>=0.0.18,<1
