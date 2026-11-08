@@ -1,0 +1,61 @@
+{
+  "warnings": [
+    "Estimated lyric timing requires listening review"
+  ],
+  "phraseCount": 53,
+  "wordCount": 213,
+  "unreviewedWords": 194,
+  "addedRepetitions": [
+    {
+      "text": "Replace the contaminated air",
+      "start": 63.68,
+      "end": 67.06
+    },
+    {
+      "text": "Replace emotions that are gray",
+      "start": 68.16,
+      "end": 71.66
+    },
+    {
+      "text": "Replace lost hate to found love",
+      "start": 72.7,
+      "end": 76.14
+    },
+    {
+      "text": "Replace emptiness for security",
+      "start": 77.22,
+      "end": 80.34
+    },
+    {
+      "text": "Replace false idols into reality",
+      "start": 81.82,
+      "end": 84.6
+    },
+    {
+      "text": "Replace my bruised soul please",
+      "start": 84.82,
+      "end": 87.28
+    },
+    {
+      "text": "Replace emptiness for security",
+      "start": 106.1,
+      "end": 108.04
+    },
+    {
+      "text": "Replace false idols into reality",
+      "start": 108.48,
+      "end": 111.3
+    },
+    {
+      "text": "Replace my bruised soul please",
+      "start": 111.58,
+      "end": 114.54
+    }
+  ],
+  "limits": [
+    "Original V1 lyrics and word timings retained per approved V2 brief. Low-confidence acoustic estimates remain flagged.",
+    "Generated stills animate with procedural layers; these are not generated performance video clips.",
+    "Three artist images were generated using the inspected composite of both supplied reference photos.",
+    "Tempo is estimated; strongest movement follows measured impacts and bass energy."
+  ]
+}

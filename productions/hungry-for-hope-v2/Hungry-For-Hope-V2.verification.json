@@ -1,0 +1,24 @@
+{
+  "file": "Hungry-For-Hope-V2.mp4",
+  "sizeBytes": 90756740,
+  "sha256": "25e226660a76c9c8f7d81a074da7b210692aa35fe9a5634c76cf33ede942b3b1",
+  "duration": 176.896,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1",
+    "frames": 4245
+  },
+  "audio": {
+    "codec": "aac",
+    "channels": 2,
+    "peakDbfs": -6.12065
+  },
+  "streamStartDifferenceSeconds": 0.0,
+  "decodeErrors": "",
+  "darkFrameCandidates": [],
+  "layoutReport": "hope-v2-layout-check.json",
+  "lyricReviewReport": "Hungry-For-Hope-V2.qc.json",
+  "limits": "No claim of manually verified word-perfect timing. Low confidence words remain flagged."
+}
