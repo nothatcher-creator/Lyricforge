@@ -1,0 +1,41 @@
+{
+  "assets": [
+    {
+      "file": "coast.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "57db044e499630662c623bcd3716e9fea4fdb0d2d63707c88b0c7f998156054e",
+      "origin": "Generated with image_gen for this production",
+      "kind": "environment image plate; animated procedurally during rendering"
+    },
+    {
+      "file": "cathedral.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "354d73ba29e9e02f5f054676de68d98175828fc45f91a35b763609fb5173cbce",
+      "origin": "Generated with image_gen for this production",
+      "kind": "environment image plate; animated procedurally during rendering"
+    },
+    {
+      "file": "light.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3e6c4b7fadecd6a414c783f25fe79a90229c171edcd4a4f5c059d220e72b836b",
+      "origin": "Generated with image_gen for this production",
+      "kind": "environment image plate; animated procedurally during rendering"
+    },
+    {
+      "file": "portrait.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "ca7549b20ccb4f4db4ee6c0f01fb7f00c976f943d190ada6793c79f6f5af84be",
+      "origin": "image_gen edit of the two user-reattached portraits",
+      "kind": "designed photographic composite; not filmed or generated performance footage"
+    }
+  ],
+  "fonts": [
+    "Anton \u2014 OFL",
+    "Oswald \u2014 OFL"
+  ],
+  "portraitStatus": "Both reattached user portraits incorporated into a generated editorial portrait composite."
+}

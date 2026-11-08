@@ -1,0 +1,1493 @@
+[
+  {
+    "text": "Another",
+    "startMs": 9560,
+    "endMs": 10020,
+    "timestampMs": 9560,
+    "confidence": 0.0597
+  },
+  {
+    "text": "sunset",
+    "startMs": 10200,
+    "endMs": 10660,
+    "timestampMs": 10200,
+    "confidence": 0.0312
+  },
+  {
+    "text": "witnessed",
+    "startMs": 11360,
+    "endMs": 12140,
+    "timestampMs": 11360,
+    "confidence": 0.0439
+  },
+  {
+    "text": "alone",
+    "startMs": 12160,
+    "endMs": 13020,
+    "timestampMs": 12160,
+    "confidence": 0.0122
+  },
+  {
+    "text": "Another",
+    "startMs": 13980,
+    "endMs": 14580,
+    "timestampMs": 13980,
+    "confidence": 0.1854
+  },
+  {
+    "text": "tear",
+    "startMs": 14760,
+    "endMs": 15080,
+    "timestampMs": 14760,
+    "confidence": 0.3468
+  },
+  {
+    "text": "falls",
+    "startMs": 15320,
+    "endMs": 15740,
+    "timestampMs": 15320,
+    "confidence": 0.0581
+  },
+  {
+    "text": "without",
+    "startMs": 15900,
+    "endMs": 16480,
+    "timestampMs": 15900,
+    "confidence": 0.063
+  },
+  {
+    "text": "a",
+    "startMs": 16620,
+    "endMs": 16640,
+    "timestampMs": 16620,
+    "confidence": 0.0227
+  },
+  {
+    "text": "home",
+    "startMs": 17060,
+    "endMs": 17240,
+    "timestampMs": 17060,
+    "confidence": 0.0145
+  },
+  {
+    "text": "Another",
+    "startMs": 18460,
+    "endMs": 19140,
+    "timestampMs": 18460,
+    "confidence": 0.1414
+  },
+  {
+    "text": "night",
+    "startMs": 19280,
+    "endMs": 19480,
+    "timestampMs": 19280,
+    "confidence": 0.0283
+  },
+  {
+    "text": "stuck",
+    "startMs": 19520,
+    "endMs": 19820,
+    "timestampMs": 19520,
+    "confidence": 0.0654
+  },
+  {
+    "text": "in",
+    "startMs": 19920,
+    "endMs": 19960,
+    "timestampMs": 19920,
+    "confidence": 0.1279
+  },
+  {
+    "text": "nightmares",
+    "startMs": 20140,
+    "endMs": 20960,
+    "timestampMs": 20140,
+    "confidence": 0.1096
+  },
+  {
+    "text": "Another",
+    "startMs": 21100,
+    "endMs": 21360,
+    "timestampMs": 21100,
+    "confidence": 0.0854
+  },
+  {
+    "text": "scream",
+    "startMs": 21380,
+    "endMs": 21720,
+    "timestampMs": 21380,
+    "confidence": 0.1707
+  },
+  {
+    "text": "goes",
+    "startMs": 21840,
+    "endMs": 22100,
+    "timestampMs": 21840,
+    "confidence": 0.0718
+  },
+  {
+    "text": "unheard",
+    "startMs": 22200,
+    "endMs": 22740,
+    "timestampMs": 22200,
+    "confidence": 0.0604
+  },
+  {
+    "text": "Another",
+    "startMs": 23060,
+    "endMs": 23660,
+    "timestampMs": 23060,
+    "confidence": 0.0722
+  },
+  {
+    "text": "heart",
+    "startMs": 23840,
+    "endMs": 24000,
+    "timestampMs": 23840,
+    "confidence": 0.0295
+  },
+  {
+    "text": "filled",
+    "startMs": 24100,
+    "endMs": 24340,
+    "timestampMs": 24100,
+    "confidence": 0.0464
+  },
+  {
+    "text": "with",
+    "startMs": 24400,
+    "endMs": 24540,
+    "timestampMs": 24400,
+    "confidence": 0.0321
+  },
+  {
+    "text": "holes",
+    "startMs": 24640,
+    "endMs": 24940,
+    "timestampMs": 24640,
+    "confidence": 0.0494
+  },
+  {
+    "text": "Another",
+    "startMs": 25320,
+    "endMs": 25960,
+    "timestampMs": 25320,
+    "confidence": 0.0334
+  },
+  {
+    "text": "life",
+    "startMs": 26060,
+    "endMs": 26260,
+    "timestampMs": 26060,
+    "confidence": 0.0437
+  },
+  {
+    "text": "folded",
+    "startMs": 26360,
+    "endMs": 26620,
+    "timestampMs": 26360,
+    "confidence": 0.0368
+  },
+  {
+    "text": "into",
+    "startMs": 26680,
+    "endMs": 27580,
+    "timestampMs": 26680,
+    "confidence": 0.0131
+  },
+  {
+    "text": "a",
+    "startMs": 27760,
+    "endMs": 27780,
+    "timestampMs": 27760,
+    "confidence": 0.0078
+  },
+  {
+    "text": "grave",
+    "startMs": 28020,
+    "endMs": 28560,
+    "timestampMs": 28020,
+    "confidence": 0.0344
+  },
+  {
+    "text": "Hungry",
+    "startMs": 29080,
+    "endMs": 29580,
+    "timestampMs": 29080,
+    "confidence": 0.0299
+  },
+  {
+    "text": "for",
+    "startMs": 29740,
+    "endMs": 29940,
+    "timestampMs": 29740,
+    "confidence": 0.0676
+  },
+  {
+    "text": "Hope",
+    "startMs": 30340,
+    "endMs": 31060,
+    "timestampMs": 30340,
+    "confidence": 0.0437
+  },
+  {
+    "text": "Running",
+    "startMs": 31200,
+    "endMs": 31600,
+    "timestampMs": 31200,
+    "confidence": 0.03
+  },
+  {
+    "text": "for",
+    "startMs": 31740,
+    "endMs": 31940,
+    "timestampMs": 31740,
+    "confidence": 0.1273
+  },
+  {
+    "text": "Remorse",
+    "startMs": 32080,
+    "endMs": 33020,
+    "timestampMs": 32080,
+    "confidence": 0.0331
+  },
+  {
+    "text": "Jumping",
+    "startMs": 33640,
+    "endMs": 34180,
+    "timestampMs": 33640,
+    "confidence": 0.0102
+  },
+  {
+    "text": "for",
+    "startMs": 34280,
+    "endMs": 34620,
+    "timestampMs": 34280,
+    "confidence": 0.034
+  },
+  {
+    "text": "Joy",
+    "startMs": 34800,
+    "endMs": 35560,
+    "timestampMs": 34800,
+    "confidence": 0.0066
+  },
+  {
+    "text": "Flying",
+    "startMs": 35840,
+    "endMs": 36420,
+    "timestampMs": 35840,
+    "confidence": 0.0159
+  },
+  {
+    "text": "from",
+    "startMs": 36540,
+    "endMs": 36800,
+    "timestampMs": 36540,
+    "confidence": 0.0135
+  },
+  {
+    "text": "Fears",
+    "startMs": 37000,
+    "endMs": 37620,
+    "timestampMs": 37000,
+    "confidence": 0.0132
+  },
+  {
+    "text": "Replace",
+    "startMs": 37700,
+    "endMs": 38180,
+    "timestampMs": 37700,
+    "confidence": 0.0402
+  },
+  {
+    "text": "the",
+    "startMs": 38240,
+    "endMs": 38420,
+    "timestampMs": 38240,
+    "confidence": 0.0231
+  },
+  {
+    "text": "contaminated",
+    "startMs": 38540,
+    "endMs": 39600,
+    "timestampMs": 38540,
+    "confidence": 0.0106
+  },
+  {
+    "text": "air",
+    "startMs": 39680,
+    "endMs": 39740,
+    "timestampMs": 39680,
+    "confidence": 0.001
+  },
+  {
+    "text": "Replace",
+    "startMs": 39960,
+    "endMs": 40420,
+    "timestampMs": 39960,
+    "confidence": 0.0017
+  },
+  {
+    "text": "emotions",
+    "startMs": 40560,
+    "endMs": 41040,
+    "timestampMs": 40560,
+    "confidence": 0.0005
+  },
+  {
+    "text": "that",
+    "startMs": 41080,
+    "endMs": 41300,
+    "timestampMs": 41080,
+    "confidence": 0.0005
+  },
+  {
+    "text": "are",
+    "startMs": 41660,
+    "endMs": 41740,
+    "timestampMs": 41660,
+    "confidence": 0.0006
+  },
+  {
+    "text": "gray",
+    "startMs": 41760,
+    "endMs": 41860,
+    "timestampMs": 41760,
+    "confidence": 0.0003
+  },
+  {
+    "text": "Replace",
+    "startMs": 41860,
+    "endMs": 42400,
+    "timestampMs": 41860,
+    "confidence": 0.0005
+  },
+  {
+    "text": "lost",
+    "startMs": 42560,
+    "endMs": 42780,
+    "timestampMs": 42560,
+    "confidence": 0.0004
+  },
+  {
+    "text": "hate",
+    "startMs": 43120,
+    "endMs": 43280,
+    "timestampMs": 43120,
+    "confidence": 0.0011
+  },
+  {
+    "text": "to",
+    "startMs": 43460,
+    "endMs": 43520,
+    "timestampMs": 43460,
+    "confidence": 0.0002
+  },
+  {
+    "text": "found",
+    "startMs": 43720,
+    "endMs": 43860,
+    "timestampMs": 43720,
+    "confidence": 0.0004
+  },
+  {
+    "text": "love",
+    "startMs": 44400,
+    "endMs": 44660,
+    "timestampMs": 44400,
+    "confidence": 0.0001
+  },
+  {
+    "text": "Replace",
+    "startMs": 45520,
+    "endMs": 46260,
+    "timestampMs": 45520,
+    "confidence": 0.0003
+  },
+  {
+    "text": "emptiness",
+    "startMs": 46760,
+    "endMs": 47000,
+    "timestampMs": 46760,
+    "confidence": 0.0005
+  },
+  {
+    "text": "for",
+    "startMs": 47280,
+    "endMs": 47380,
+    "timestampMs": 47280,
+    "confidence": 0.0003
+  },
+  {
+    "text": "security",
+    "startMs": 47560,
+    "endMs": 47880,
+    "timestampMs": 47560,
+    "confidence": 0.0005
+  },
+  {
+    "text": "Replace",
+    "startMs": 47960,
+    "endMs": 48140,
+    "timestampMs": 47960,
+    "confidence": 0.0006
+  },
+  {
+    "text": "false",
+    "startMs": 48320,
+    "endMs": 48800,
+    "timestampMs": 48320,
+    "confidence": 0.0003
+  },
+  {
+    "text": "idols",
+    "startMs": 49220,
+    "endMs": 49700,
+    "timestampMs": 49220,
+    "confidence": 0.0007
+  },
+  {
+    "text": "into",
+    "startMs": 49740,
+    "endMs": 49840,
+    "timestampMs": 49740,
+    "confidence": 0.001
+  },
+  {
+    "text": "reality",
+    "startMs": 50100,
+    "endMs": 50300,
+    "timestampMs": 50100,
+    "confidence": 0.0024
+  },
+  {
+    "text": "Replace",
+    "startMs": 50300,
+    "endMs": 50440,
+    "timestampMs": 50300,
+    "confidence": 0.0003
+  },
+  {
+    "text": "my",
+    "startMs": 50460,
+    "endMs": 50500,
+    "timestampMs": 50460,
+    "confidence": 0.0002
+  },
+  {
+    "text": "bruised",
+    "startMs": 50740,
+    "endMs": 50960,
+    "timestampMs": 50740,
+    "confidence": 0.0008
+  },
+  {
+    "text": "soul",
+    "startMs": 52240,
+    "endMs": 52580,
+    "timestampMs": 52240,
+    "confidence": 0.001
+  },
+  {
+    "text": "please",
+    "startMs": 53000,
+    "endMs": 53400,
+    "timestampMs": 53000,
+    "confidence": 0.0023
+  },
+  {
+    "text": "Hungry",
+    "startMs": 54580,
+    "endMs": 55140,
+    "timestampMs": 54580,
+    "confidence": 0.0002
+  },
+  {
+    "text": "for",
+    "startMs": 55200,
+    "endMs": 55320,
+    "timestampMs": 55200,
+    "confidence": 0.0002
+  },
+  {
+    "text": "Hope",
+    "startMs": 55340,
+    "endMs": 55640,
+    "timestampMs": 55340,
+    "confidence": 0.0002
+  },
+  {
+    "text": "Running",
+    "startMs": 56400,
+    "endMs": 57180,
+    "timestampMs": 56400,
+    "confidence": 0.0007
+  },
+  {
+    "text": "for",
+    "startMs": 57200,
+    "endMs": 57260,
+    "timestampMs": 57200,
+    "confidence": 0.0002
+  },
+  {
+    "text": "Remorse",
+    "startMs": 57380,
+    "endMs": 57960,
+    "timestampMs": 57380,
+    "confidence": 0.0004
+  },
+  {
+    "text": "Jumping",
+    "startMs": 58680,
+    "endMs": 58960,
+    "timestampMs": 58680,
+    "confidence": 0.0004
+  },
+  {
+    "text": "for",
+    "startMs": 59220,
+    "endMs": 60060,
+    "timestampMs": 59220,
+    "confidence": 0.0007
+  },
+  {
+    "text": "Joy",
+    "startMs": 60300,
+    "endMs": 60380,
+    "timestampMs": 60300,
+    "confidence": 0.0016
+  },
+  {
+    "text": "Flying",
+    "startMs": 60620,
+    "endMs": 61320,
+    "timestampMs": 60620,
+    "confidence": 0.0166
+  },
+  {
+    "text": "from",
+    "startMs": 61440,
+    "endMs": 61760,
+    "timestampMs": 61440,
+    "confidence": 0.0158
+  },
+  {
+    "text": "Fears",
+    "startMs": 62020,
+    "endMs": 62740,
+    "timestampMs": 62020,
+    "confidence": 0.0901
+  },
+  {
+    "text": "Replace",
+    "startMs": 63680,
+    "endMs": 64940,
+    "timestampMs": 63680,
+    "confidence": 0.0499
+  },
+  {
+    "text": "the",
+    "startMs": 65120,
+    "endMs": 65340,
+    "timestampMs": 65120,
+    "confidence": 0.2956
+  },
+  {
+    "text": "contaminated",
+    "startMs": 65420,
+    "endMs": 66420,
+    "timestampMs": 65420,
+    "confidence": 0.0445
+  },
+  {
+    "text": "air",
+    "startMs": 66740,
+    "endMs": 67060,
+    "timestampMs": 66740,
+    "confidence": 0.067
+  },
+  {
+    "text": "Replace",
+    "startMs": 68160,
+    "endMs": 68740,
+    "timestampMs": 68160,
+    "confidence": 0.5859
+  },
+  {
+    "text": "emotions",
+    "startMs": 68880,
+    "endMs": 69920,
+    "timestampMs": 68880,
+    "confidence": 0.0387
+  },
+  {
+    "text": "that",
+    "startMs": 70200,
+    "endMs": 70460,
+    "timestampMs": 70200,
+    "confidence": 0.2696
+  },
+  {
+    "text": "are",
+    "startMs": 70720,
+    "endMs": 70900,
+    "timestampMs": 70720,
+    "confidence": 0.1698
+  },
+  {
+    "text": "gray",
+    "startMs": 71020,
+    "endMs": 71660,
+    "timestampMs": 71020,
+    "confidence": 0.0563
+  },
+  {
+    "text": "Replace",
+    "startMs": 72700,
+    "endMs": 73360,
+    "timestampMs": 72700,
+    "confidence": 0.5926
+  },
+  {
+    "text": "lost",
+    "startMs": 73580,
+    "endMs": 73940,
+    "timestampMs": 73580,
+    "confidence": 0.0798
+  },
+  {
+    "text": "hate",
+    "startMs": 74140,
+    "endMs": 74480,
+    "timestampMs": 74140,
+    "confidence": 0.341
+  },
+  {
+    "text": "to",
+    "startMs": 74720,
+    "endMs": 74840,
+    "timestampMs": 74720,
+    "confidence": 0.468
+  },
+  {
+    "text": "found",
+    "startMs": 75020,
+    "endMs": 75540,
+    "timestampMs": 75020,
+    "confidence": 0.1479
+  },
+  {
+    "text": "love",
+    "startMs": 75620,
+    "endMs": 76140,
+    "timestampMs": 75620,
+    "confidence": 0.3128
+  },
+  {
+    "text": "Replace",
+    "startMs": 77220,
+    "endMs": 77900,
+    "timestampMs": 77220,
+    "confidence": 0.5612
+  },
+  {
+    "text": "emptiness",
+    "startMs": 78200,
+    "endMs": 78860,
+    "timestampMs": 78200,
+    "confidence": 0.1362
+  },
+  {
+    "text": "for",
+    "startMs": 78980,
+    "endMs": 79100,
+    "timestampMs": 78980,
+    "confidence": 0.5452
+  },
+  {
+    "text": "security",
+    "startMs": 79280,
+    "endMs": 80340,
+    "timestampMs": 79280,
+    "confidence": 0.0719
+  },
+  {
+    "text": "Replace",
+    "startMs": 81820,
+    "endMs": 82300,
+    "timestampMs": 81820,
+    "confidence": 0.0744
+  },
+  {
+    "text": "false",
+    "startMs": 82360,
+    "endMs": 82620,
+    "timestampMs": 82360,
+    "confidence": 0.1112
+  },
+  {
+    "text": "idols",
+    "startMs": 82920,
+    "endMs": 83200,
+    "timestampMs": 82920,
+    "confidence": 0.1017
+  },
+  {
+    "text": "into",
+    "startMs": 83320,
+    "endMs": 83620,
+    "timestampMs": 83320,
+    "confidence": 0.2042
+  },
+  {
+    "text": "reality",
+    "startMs": 84100,
+    "endMs": 84600,
+    "timestampMs": 84100,
+    "confidence": 0.0675
+  },
+  {
+    "text": "Replace",
+    "startMs": 84820,
+    "endMs": 85200,
+    "timestampMs": 84820,
+    "confidence": 0.0133
+  },
+  {
+    "text": "my",
+    "startMs": 85580,
+    "endMs": 85620,
+    "timestampMs": 85580,
+    "confidence": 0.0025
+  },
+  {
+    "text": "bruised",
+    "startMs": 86040,
+    "endMs": 86280,
+    "timestampMs": 86040,
+    "confidence": 0.0179
+  },
+  {
+    "text": "soul",
+    "startMs": 86300,
+    "endMs": 86460,
+    "timestampMs": 86300,
+    "confidence": 0.0111
+  },
+  {
+    "text": "please",
+    "startMs": 86620,
+    "endMs": 87280,
+    "timestampMs": 86620,
+    "confidence": 0.0261
+  },
+  {
+    "text": "Starving",
+    "startMs": 87660,
+    "endMs": 88280,
+    "timestampMs": 87660,
+    "confidence": 0.0155
+  },
+  {
+    "text": "in",
+    "startMs": 88420,
+    "endMs": 88460,
+    "timestampMs": 88420,
+    "confidence": 0.0719
+  },
+  {
+    "text": "salvation",
+    "startMs": 88600,
+    "endMs": 89880,
+    "timestampMs": 88600,
+    "confidence": 0.0412
+  },
+  {
+    "text": "Life",
+    "startMs": 90280,
+    "endMs": 90660,
+    "timestampMs": 90280,
+    "confidence": 0.0421
+  },
+  {
+    "text": "or",
+    "startMs": 91040,
+    "endMs": 91160,
+    "timestampMs": 91040,
+    "confidence": 0.2361
+  },
+  {
+    "text": "death",
+    "startMs": 91460,
+    "endMs": 91760,
+    "timestampMs": 91460,
+    "confidence": 0.0101
+  },
+  {
+    "text": "Screaming",
+    "startMs": 92240,
+    "endMs": 92720,
+    "timestampMs": 92240,
+    "confidence": 0.0576
+  },
+  {
+    "text": "to",
+    "startMs": 92840,
+    "endMs": 92980,
+    "timestampMs": 92840,
+    "confidence": 0.2997
+  },
+  {
+    "text": "myself",
+    "startMs": 93120,
+    "endMs": 94000,
+    "timestampMs": 93120,
+    "confidence": 0.0306
+  },
+  {
+    "text": "Loving",
+    "startMs": 94140,
+    "endMs": 94460,
+    "timestampMs": 94140,
+    "confidence": 0.0089
+  },
+  {
+    "text": "my",
+    "startMs": 94580,
+    "endMs": 94680,
+    "timestampMs": 94580,
+    "confidence": 0.0887
+  },
+  {
+    "text": "Hate",
+    "startMs": 94880,
+    "endMs": 95440,
+    "timestampMs": 94880,
+    "confidence": 0.0187
+  },
+  {
+    "text": "Hungry",
+    "startMs": 95660,
+    "endMs": 95920,
+    "timestampMs": 95660,
+    "confidence": 0.0144
+  },
+  {
+    "text": "for",
+    "startMs": 95980,
+    "endMs": 96120,
+    "timestampMs": 95980,
+    "confidence": 0.0246
+  },
+  {
+    "text": "Hope",
+    "startMs": 96360,
+    "endMs": 96580,
+    "timestampMs": 96360,
+    "confidence": 0.0779
+  },
+  {
+    "text": "Starved",
+    "startMs": 99040,
+    "endMs": 99360,
+    "timestampMs": 99040,
+    "confidence": 0.0418
+  },
+  {
+    "text": "to",
+    "startMs": 99380,
+    "endMs": 99460,
+    "timestampMs": 99380,
+    "confidence": 0.0413
+  },
+  {
+    "text": "solace",
+    "startMs": 99620,
+    "endMs": 99940,
+    "timestampMs": 99620,
+    "confidence": 0.0117
+  },
+  {
+    "text": "Awake",
+    "startMs": 100300,
+    "endMs": 100800,
+    "timestampMs": 100300,
+    "confidence": 0.0033
+  },
+  {
+    "text": "or",
+    "startMs": 101100,
+    "endMs": 101160,
+    "timestampMs": 101100,
+    "confidence": 0.0053
+  },
+  {
+    "text": "asleep",
+    "startMs": 101300,
+    "endMs": 101880,
+    "timestampMs": 101300,
+    "confidence": 0.0028
+  },
+  {
+    "text": "Screams",
+    "startMs": 102540,
+    "endMs": 103020,
+    "timestampMs": 102540,
+    "confidence": 0.0024
+  },
+  {
+    "text": "in",
+    "startMs": 103140,
+    "endMs": 103180,
+    "timestampMs": 103140,
+    "confidence": 0.0117
+  },
+  {
+    "text": "my",
+    "startMs": 103340,
+    "endMs": 103600,
+    "timestampMs": 103340,
+    "confidence": 0.0029
+  },
+  {
+    "text": "head",
+    "startMs": 103760,
+    "endMs": 103860,
+    "timestampMs": 103760,
+    "confidence": 0.006
+  },
+  {
+    "text": "Loving",
+    "startMs": 103920,
+    "endMs": 104920,
+    "timestampMs": 103920,
+    "confidence": 0.0018
+  },
+  {
+    "text": "the",
+    "startMs": 105040,
+    "endMs": 105140,
+    "timestampMs": 105040,
+    "confidence": 0.0053
+  },
+  {
+    "text": "misery",
+    "startMs": 105340,
+    "endMs": 106100,
+    "timestampMs": 105340,
+    "confidence": 0.0088
+  },
+  {
+    "text": "Replace",
+    "startMs": 106100,
+    "endMs": 106280,
+    "timestampMs": 106100,
+    "confidence": 0.001
+  },
+  {
+    "text": "emptiness",
+    "startMs": 106540,
+    "endMs": 106960,
+    "timestampMs": 106540,
+    "confidence": 0.0029
+  },
+  {
+    "text": "for",
+    "startMs": 107040,
+    "endMs": 107300,
+    "timestampMs": 107040,
+    "confidence": 0.0016
+  },
+  {
+    "text": "security",
+    "startMs": 107440,
+    "endMs": 108040,
+    "timestampMs": 107440,
+    "confidence": 0.0013
+  },
+  {
+    "text": "Replace",
+    "startMs": 108480,
+    "endMs": 109060,
+    "timestampMs": 108480,
+    "confidence": 0.0012
+  },
+  {
+    "text": "false",
+    "startMs": 109080,
+    "endMs": 109280,
+    "timestampMs": 109080,
+    "confidence": 0.0013
+  },
+  {
+    "text": "idols",
+    "startMs": 109640,
+    "endMs": 110340,
+    "timestampMs": 109640,
+    "confidence": 0.0023
+  },
+  {
+    "text": "into",
+    "startMs": 110880,
+    "endMs": 110960,
+    "timestampMs": 110880,
+    "confidence": 0.0022
+  },
+  {
+    "text": "reality",
+    "startMs": 111100,
+    "endMs": 111300,
+    "timestampMs": 111100,
+    "confidence": 0.004
+  },
+  {
+    "text": "Replace",
+    "startMs": 111580,
+    "endMs": 112080,
+    "timestampMs": 111580,
+    "confidence": 0.0022
+  },
+  {
+    "text": "my",
+    "startMs": 112380,
+    "endMs": 112440,
+    "timestampMs": 112380,
+    "confidence": 0.0007
+  },
+  {
+    "text": "bruised",
+    "startMs": 112680,
+    "endMs": 113380,
+    "timestampMs": 112680,
+    "confidence": 0.0028
+  },
+  {
+    "text": "soul",
+    "startMs": 113400,
+    "endMs": 113680,
+    "timestampMs": 113400,
+    "confidence": 0.0038
+  },
+  {
+    "text": "please",
+    "startMs": 114040,
+    "endMs": 114540,
+    "timestampMs": 114040,
+    "confidence": 0.0056
+  },
+  {
+    "text": "Hungry",
+    "startMs": 115500,
+    "endMs": 115960,
+    "timestampMs": 115500,
+    "confidence": 0.0028
+  },
+  {
+    "text": "for",
+    "startMs": 116060,
+    "endMs": 116200,
+    "timestampMs": 116060,
+    "confidence": 0.0053
+  },
+  {
+    "text": "Hope",
+    "startMs": 116740,
+    "endMs": 116900,
+    "timestampMs": 116740,
+    "confidence": 0.0027
+  },
+  {
+    "text": "Running",
+    "startMs": 117440,
+    "endMs": 117620,
+    "timestampMs": 117440,
+    "confidence": 0.0013
+  },
+  {
+    "text": "for",
+    "startMs": 117800,
+    "endMs": 117940,
+    "timestampMs": 117800,
+    "confidence": 0.0039
+  },
+  {
+    "text": "Remorse",
+    "startMs": 118120,
+    "endMs": 119060,
+    "timestampMs": 118120,
+    "confidence": 0.0049
+  },
+  {
+    "text": "Jumping",
+    "startMs": 119520,
+    "endMs": 120140,
+    "timestampMs": 119520,
+    "confidence": 0.0046
+  },
+  {
+    "text": "for",
+    "startMs": 120300,
+    "endMs": 120680,
+    "timestampMs": 120300,
+    "confidence": 0.0437
+  },
+  {
+    "text": "Joy",
+    "startMs": 120880,
+    "endMs": 121460,
+    "timestampMs": 120880,
+    "confidence": 0.0221
+  },
+  {
+    "text": "Flying",
+    "startMs": 122060,
+    "endMs": 122400,
+    "timestampMs": 122060,
+    "confidence": 0.02
+  },
+  {
+    "text": "from",
+    "startMs": 122560,
+    "endMs": 122920,
+    "timestampMs": 122560,
+    "confidence": 0.0518
+  },
+  {
+    "text": "Fears",
+    "startMs": 123120,
+    "endMs": 123800,
+    "timestampMs": 123120,
+    "confidence": 0.1047
+  },
+  {
+    "text": "Becoming",
+    "startMs": 124820,
+    "endMs": 125380,
+    "timestampMs": 124820,
+    "confidence": 0.0552
+  },
+  {
+    "text": "stuck",
+    "startMs": 125620,
+    "endMs": 125960,
+    "timestampMs": 125620,
+    "confidence": 0.0103
+  },
+  {
+    "text": "where",
+    "startMs": 126240,
+    "endMs": 126580,
+    "timestampMs": 126240,
+    "confidence": 0.877
+  },
+  {
+    "text": "insects",
+    "startMs": 126900,
+    "endMs": 127460,
+    "timestampMs": 126900,
+    "confidence": 0.2503
+  },
+  {
+    "text": "die",
+    "startMs": 127660,
+    "endMs": 128320,
+    "timestampMs": 127660,
+    "confidence": 0.0318
+  },
+  {
+    "text": "Becoming",
+    "startMs": 129360,
+    "endMs": 130120,
+    "timestampMs": 129360,
+    "confidence": 0.3582
+  },
+  {
+    "text": "the",
+    "startMs": 130740,
+    "endMs": 130860,
+    "timestampMs": 130740,
+    "confidence": 0.7144
+  },
+  {
+    "text": "reasons",
+    "startMs": 131060,
+    "endMs": 131560,
+    "timestampMs": 131060,
+    "confidence": 0.2327
+  },
+  {
+    "text": "we",
+    "startMs": 131660,
+    "endMs": 131860,
+    "timestampMs": 131660,
+    "confidence": 0.917
+  },
+  {
+    "text": "cry",
+    "startMs": 132080,
+    "endMs": 132720,
+    "timestampMs": 132080,
+    "confidence": 0.1566
+  },
+  {
+    "text": "Becoming",
+    "startMs": 133880,
+    "endMs": 134640,
+    "timestampMs": 133880,
+    "confidence": 0.2817
+  },
+  {
+    "text": "God's",
+    "startMs": 134740,
+    "endMs": 135140,
+    "timestampMs": 134740,
+    "confidence": 0.0299
+  },
+  {
+    "text": "best",
+    "startMs": 135320,
+    "endMs": 135660,
+    "timestampMs": 135320,
+    "confidence": 0.3065
+  },
+  {
+    "text": "mistake",
+    "startMs": 136160,
+    "endMs": 137080,
+    "timestampMs": 136160,
+    "confidence": 0.1317
+  },
+  {
+    "text": "Becoming",
+    "startMs": 138420,
+    "endMs": 139160,
+    "timestampMs": 138420,
+    "confidence": 0.1448
+  },
+  {
+    "text": "half",
+    "startMs": 139260,
+    "endMs": 139540,
+    "timestampMs": 139260,
+    "confidence": 0.0707
+  },
+  {
+    "text": "of",
+    "startMs": 139960,
+    "endMs": 140000,
+    "timestampMs": 139960,
+    "confidence": 0.0509
+  },
+  {
+    "text": "a",
+    "startMs": 140200,
+    "endMs": 140220,
+    "timestampMs": 140200,
+    "confidence": 0.0387
+  },
+  {
+    "text": "man",
+    "startMs": 140420,
+    "endMs": 140800,
+    "timestampMs": 140420,
+    "confidence": 0.334
+  },
+  {
+    "text": "today",
+    "startMs": 140980,
+    "endMs": 141640,
+    "timestampMs": 140980,
+    "confidence": 0.0453
+  },
+  {
+    "text": "Becoming",
+    "startMs": 142960,
+    "endMs": 143660,
+    "timestampMs": 142960,
+    "confidence": 0.0831
+  },
+  {
+    "text": "lost",
+    "startMs": 143800,
+    "endMs": 144020,
+    "timestampMs": 143800,
+    "confidence": 0.0034
+  },
+  {
+    "text": "in",
+    "startMs": 144420,
+    "endMs": 144480,
+    "timestampMs": 144420,
+    "confidence": 0.0189
+  },
+  {
+    "text": "a",
+    "startMs": 144540,
+    "endMs": 144560,
+    "timestampMs": 144540,
+    "confidence": 0.0261
+  },
+  {
+    "text": "depressive",
+    "startMs": 145220,
+    "endMs": 146100,
+    "timestampMs": 145220,
+    "confidence": 0.0141
+  },
+  {
+    "text": "state",
+    "startMs": 146220,
+    "endMs": 147720,
+    "timestampMs": 146220,
+    "confidence": 0.0463
+  },
+  {
+    "text": "Becoming",
+    "startMs": 147760,
+    "endMs": 148180,
+    "timestampMs": 147760,
+    "confidence": 0.0115
+  },
+  {
+    "text": "someone",
+    "startMs": 148320,
+    "endMs": 148800,
+    "timestampMs": 148320,
+    "confidence": 0.0101
+  },
+  {
+    "text": "for",
+    "startMs": 148900,
+    "endMs": 149020,
+    "timestampMs": 148900,
+    "confidence": 0.0267
+  },
+  {
+    "text": "all",
+    "startMs": 149460,
+    "endMs": 149620,
+    "timestampMs": 149460,
+    "confidence": 0.0318
+  },
+  {
+    "text": "to",
+    "startMs": 149760,
+    "endMs": 149920,
+    "timestampMs": 149760,
+    "confidence": 0.0142
+  },
+  {
+    "text": "Hate",
+    "startMs": 150040,
+    "endMs": 150440,
+    "timestampMs": 150040,
+    "confidence": 0.006
+  },
+  {
+    "text": "Hungry",
+    "startMs": 151620,
+    "endMs": 151980,
+    "timestampMs": 151620,
+    "confidence": 0.0126
+  },
+  {
+    "text": "for",
+    "startMs": 152380,
+    "endMs": 152460,
+    "timestampMs": 152380,
+    "confidence": 0.0091
+  },
+  {
+    "text": "Hope",
+    "startMs": 152620,
+    "endMs": 153040,
+    "timestampMs": 152620,
+    "confidence": 0.0036
+  },
+  {
+    "text": "Running",
+    "startMs": 153420,
+    "endMs": 154680,
+    "timestampMs": 153420,
+    "confidence": 0.0056
+  },
+  {
+    "text": "for",
+    "startMs": 155040,
+    "endMs": 155240,
+    "timestampMs": 155040,
+    "confidence": 0.0034
+  },
+  {
+    "text": "Remorse",
+    "startMs": 155740,
+    "endMs": 155900,
+    "timestampMs": 155740,
+    "confidence": 0.0049
+  },
+  {
+    "text": "Jumping",
+    "startMs": 156000,
+    "endMs": 156360,
+    "timestampMs": 156000,
+    "confidence": 0.0033
+  },
+  {
+    "text": "for",
+    "startMs": 156520,
+    "endMs": 156780,
+    "timestampMs": 156520,
+    "confidence": 0.1133
+  },
+  {
+    "text": "Joy",
+    "startMs": 157080,
+    "endMs": 157700,
+    "timestampMs": 157080,
+    "confidence": 0.008
+  },
+  {
+    "text": "Flying",
+    "startMs": 157920,
+    "endMs": 158680,
+    "timestampMs": 157920,
+    "confidence": 0.0102
+  },
+  {
+    "text": "from",
+    "startMs": 158780,
+    "endMs": 159040,
+    "timestampMs": 158780,
+    "confidence": 0.0142
+  },
+  {
+    "text": "Fears",
+    "startMs": 159380,
+    "endMs": 160100,
+    "timestampMs": 159380,
+    "confidence": 0.075
+  },
+  {
+    "text": "Hungry",
+    "startMs": 160440,
+    "endMs": 161240,
+    "timestampMs": 160440,
+    "confidence": 0.0145
+  },
+  {
+    "text": "for",
+    "startMs": 161360,
+    "endMs": 161540,
+    "timestampMs": 161360,
+    "confidence": 0.0256
+  },
+  {
+    "text": "Hope",
+    "startMs": 161680,
+    "endMs": 162200,
+    "timestampMs": 161680,
+    "confidence": 0.0194
+  }
+]
