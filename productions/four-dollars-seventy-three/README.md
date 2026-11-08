@@ -1,6 +1,6 @@
 # Four Dollars Seventy-Three
 
-[Download the complete 1080p video](https://github.com/nothatcher-creator/Lyricforge/releases/download/four-dollars-seventy-three-v1/Four-Dollars-Seventy-Three.mp4) · [Release and source files](https://github.com/nothatcher-creator/Lyricforge/releases/tag/four-dollars-seventy-three-v1)
+[Download the complete 1080p video](https://github.com/nothatcher-creator/Lyricforge/raw/refs/heads/production/four-dollars-seventy-three/productions/four-dollars-seventy-three/Four-Dollars-Seventy-Three.mp4) · [Studio source ZIP](./Four-Dollars-Seventy-Three-studio-source.zip)
 
 ![Four Dollars Seventy-Three](poster.jpg)
 
@@ -8,7 +8,7 @@ Approved jazz-finance treatment, November 8, 2026. Full supplied recording, 16:9
 
 ## Contents
 
-- `Four-Dollars-Seventy-Three.mp4`: complete rendered video (GitHub release asset).
+- `Four-Dollars-Seventy-Three.mp4`: complete rendered video (included in this directory).
 - `Four-Dollars-Seventy-Three.srt`: editable phrase cues.
 - `project.json`: complete editable production; all supplied lyric wording is preserved.
 - `captions.json`: word timestamps with acoustic confidence where available.
@@ -49,3 +49,9 @@ The beat grid uses an 85.7 BPM half-time interpretation of the automatic onset e
 ## Fonts
 
 Liberation Serif and Liberation Mono (SIL Open Font License); Open Sans (Apache 2.0 distribution on this host). Original notices accompany the source package. The project does not imply third-party endorsement.
+
+## Verified final file
+
+H.264 1920×1080 at 24 fps; 5,385 video frames; stereo 48 kHz AAC. Container duration 224.426667 seconds includes encoder padding. Audio/video start difference is zero. Full decode found no errors; decoded AAC peak is −3.155 dBFS. All 78 lyric midpoint layouts were checked in Chromium; eight automated tests and the TypeScript build passed. See `verification.json` and the [rendered contact sheet](contact-sheet.png).
+
+The release upload endpoint rejected the available CLI credential, so the complete video and source archive are delivered directly on this production branch.
