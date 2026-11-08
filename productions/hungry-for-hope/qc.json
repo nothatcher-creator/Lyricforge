@@ -1,0 +1,61 @@
+{
+  "warnings": [
+    "Estimated lyric timing requires listening review"
+  ],
+  "phraseCount": 53,
+  "wordCount": 213,
+  "unreviewedWords": 194,
+  "addedRepetitions": [
+    {
+      "text": "Replace the contaminated air",
+      "start": 63.68,
+      "end": 67.06
+    },
+    {
+      "text": "Replace emotions that are gray",
+      "start": 68.16,
+      "end": 71.66
+    },
+    {
+      "text": "Replace lost hate to found love",
+      "start": 72.7,
+      "end": 76.14
+    },
+    {
+      "text": "Replace emptiness for security",
+      "start": 77.22,
+      "end": 80.34
+    },
+    {
+      "text": "Replace false idols into reality",
+      "start": 81.82,
+      "end": 84.6
+    },
+    {
+      "text": "Replace my bruised soul please",
+      "start": 84.82,
+      "end": 87.28
+    },
+    {
+      "text": "Replace emptiness for security",
+      "start": 106.1,
+      "end": 108.04
+    },
+    {
+      "text": "Replace false idols into reality",
+      "start": 108.48,
+      "end": 111.3
+    },
+    {
+      "text": "Replace my bruised soul please",
+      "start": 111.58,
+      "end": 114.54
+    }
+  ],
+  "limits": [
+    "Word timings are acoustic estimates, not manually verified frame-perfect singing alignment.",
+    "Repeated supplied verse/reprise fills extra vocal repetitions heard by the independent speech pass. No new lyrical wording was invented.",
+    "Both reattached artist portraits incorporated into a generated photographic composite. Generated environments and composite are image assets animated procedurally, not filmed performance footage.",
+    "Tempo is an estimate; strongest motion follows measured transient impacts and bass energy."
+  ]
+}
