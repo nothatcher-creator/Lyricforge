@@ -54,4 +54,4 @@ Liberation Serif and Liberation Mono (SIL Open Font License); Open Sans (Apache 
 
 H.264 1920×1080 at 24 fps; 5,385 video frames; stereo 48 kHz AAC. Container duration 224.426667 seconds includes encoder padding. Audio/video start difference is zero. Full decode found no errors; decoded AAC peak is −3.155 dBFS. All 78 lyric midpoint layouts were checked in Chromium; eight automated tests and the TypeScript build passed. See `verification.json` and the [rendered contact sheet](contact-sheet.png).
 
-The release upload endpoint rejected the available CLI credential, so the complete video and source archive are delivered directly on this production branch.
+The complete video and source archive are included directly on this production branch.
