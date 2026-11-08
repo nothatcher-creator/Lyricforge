@@ -1,0 +1,152 @@
+{
+  "generated": [
+    {
+      "id": "aperture-detail",
+      "file": "hope-v2/aperture-detail.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0ec385d61b665d7df2896903a3d0d36dcaa07c95bfa134972586a6d625b281f3",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "environment"
+    },
+    {
+      "id": "foreground-rain",
+      "file": "hope-v2/foreground-rain.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "2c406035e927a13f6aaa484c69ee8e968d1ced4e35ba68cfc7f75b82c074fc8e",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "foreground",
+      "transparentFraction": 0.8907834991788233,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "artist-storm",
+      "file": "hope-v2/artist-storm.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "e8f6b7c6abccb12a32a7ad1757a12490c8bbabed4a790aa79be74d171753e89c",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "artist"
+    },
+    {
+      "id": "foreground-stone",
+      "file": "hope-v2/foreground-stone.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3ff80c8706098c58aa6d6c01186fe00b3f3e853dfda6cd243aa9420e33e0c5f4",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "foreground",
+      "transparentFraction": 0.882206906019759,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "title-open",
+      "file": "hope-v2/title-open.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "079b532c581d17ee3a1d9ef995c10cdab63af8e33f332e75d87cd63052fefde8",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "title",
+      "transparentFraction": 0.5755336377365015,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "cathedral-vault",
+      "file": "hope-v2/cathedral-vault.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "86e57f96db76415769236b8ff7ae69e6cbc25074fb0f5fb37e7bb9e17b41abe5",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "environment"
+    },
+    {
+      "id": "aperture-wide",
+      "file": "hope-v2/aperture-wide.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "abc95a2bd421bf621296787a32dced9d840b24e262a935522aae2f35dbfa9dde",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "environment"
+    },
+    {
+      "id": "coast-high",
+      "file": "hope-v2/coast-high.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "1bcd4380cb09d3edf5f3267ad2e7ea3cd50aba56bde5cff1199943eec39a9ae3",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "environment"
+    },
+    {
+      "id": "coast-detail",
+      "file": "hope-v2/coast-detail.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "cea943bcb3abba90b89b25fa736c9736af74456e945c1d4e8c51ced3860b09ad",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "environment"
+    },
+    {
+      "id": "artist-amber",
+      "file": "hope-v2/artist-amber.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "9aa1c2aa0b87665460b50143dd40bae98e51e1e577e2dbfc2c9d6b730c2715bc",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "artist"
+    },
+    {
+      "id": "title-close",
+      "file": "hope-v2/title-close.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "482a484365744bf1a8be342ba9d8d482fa23fd32279239751b07efdd025df26e",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "title",
+      "transparentFraction": 0.8062893745328445,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "foreground-arch",
+      "file": "hope-v2/foreground-arch.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "27e38c30d6afb2870f19b5cb4e099e7714ccdf6207ddd2546e182f043a8963a2",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "foreground",
+      "transparentFraction": 0.8667933177064001,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "artist-silhouette",
+      "file": "hope-v2/artist-silhouette.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "5d997c50ccbf94a625bab48f9a55443a66077299ade26ece40b49b42ad245ceb",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "artist"
+    },
+    {
+      "id": "cathedral-wall",
+      "file": "hope-v2/cathedral-wall.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "1fe2024ddd7cf9e1ed48330c4d313a2e644c724aef74399d65a29e3b9a8bcf0b",
+      "origin": "image_gen; generated specifically for V2",
+      "kind": "environment"
+    }
+  ],
+  "reused": [
+    "hope/coast.png",
+    "hope/cathedral.png",
+    "hope/light.png",
+    "hope/portrait.png"
+  ],
+  "note": "Generated image assets are procedurally animated and composited. No generated video or real performance footage is claimed."
+}
