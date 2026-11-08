@@ -1,0 +1,13 @@
+{
+  "warnings": [
+    "Estimated lyric timing requires listening review"
+  ],
+  "wordCount": 317,
+  "lyricPhraseCount": 78,
+  "unreviewedWords": 132,
+  "notes": [
+    "Nice and synthetic bank/notification speech remain uncertain. Timing is acoustic alignment with corrections, not manually verified sung-word ground truth.",
+    "Original lyrical punctuation and profanity preserved. Bracketed cues control scenes and are not printed as lyrics.",
+    "Instrumental tail preserved in full."
+  ]
+}

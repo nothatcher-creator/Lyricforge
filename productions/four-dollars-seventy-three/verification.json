@@ -1,0 +1,24 @@
+{
+  "file": "Four-Dollars-Seventy-Three.mp4",
+  "sizeBytes": 46453107,
+  "sha256": "38a417b82bebdbf75e4865791b6135cf6472389c2393e2b8f775d91e03ae8139",
+  "duration": 224.426667,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1",
+    "frames": 5385
+  },
+  "audio": {
+    "codec": "aac",
+    "channels": 2,
+    "peakDbfs": -3.155073
+  },
+  "streamStartDifferenceSeconds": 0.0,
+  "decodeErrors": "",
+  "darkFrameCandidates": [],
+  "layoutReport": "layout-check.json",
+  "lyricReviewReport": "Four-Dollars-Seventy-Three.qc.json",
+  "limits": "No claim of manually verified word-perfect timing. Low confidence words remain flagged."
+}
