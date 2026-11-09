@@ -1,0 +1,12 @@
+{
+  "phrases": 67,
+  "words": 361,
+  "reviewWords": 137,
+  "notes": [
+    "Exact supplied text preserved, including spellings.",
+    "Initial whispered phrase has no independent ASR phrase anchor and remains marked for review.",
+    "Additional non-supplied ad-libs and backing repetitions are not invented as primary lyric text.",
+    "Phrase-constrained CTC with independent ordered Whisper anchors; timings remain estimates.",
+    "Generated artist scenes use supplied references. Fatherhood scenes are anonymous fictional imagery."
+  ]
+}

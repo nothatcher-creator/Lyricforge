@@ -1,0 +1,24 @@
+{
+  "file": "A-Better-Man-master.mp4",
+  "sizeBytes": 287223929,
+  "sha256": "b79159551f190682af1af5e291d4434371d018d9c6204460a39a531550913474",
+  "duration": 304.916667,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "fps": "24/1",
+    "frames": 7318
+  },
+  "audio": {
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "48000",
+    "peakDbfs": -3.506235
+  },
+  "streamStartDifferenceSeconds": 0.0,
+  "decodeErrors": "",
+  "darkFrameCandidates": [],
+  "layoutSamples": 190,
+  "timingReview": "A-Better-Man.qc.json; word boundaries remain acoustic estimates, not manually verified word-perfect timing."
+}

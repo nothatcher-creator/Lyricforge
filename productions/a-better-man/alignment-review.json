@@ -1,0 +1,538 @@
+[
+  {
+    "text": "Pssss listen to me for a minute or five",
+    "start": 22.3,
+    "end": 24.58,
+    "anchorCoverage": 0.111,
+    "needsReview": true,
+    "note": "No independent phrase anchor; supplied wording preserved"
+  },
+  {
+    "text": "I wanna share some life changing light",
+    "start": 24.76,
+    "end": 26.96,
+    "anchorCoverage": 0.714,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Reaching for the dark corners we hide",
+    "start": 26.97,
+    "end": 30.1,
+    "anchorCoverage": 0.857,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "No more shadows creeping with demon holds",
+    "start": 33.18,
+    "end": 35.68,
+    "anchorCoverage": 0.714,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "All truths exposed then explained why",
+    "start": 36.12,
+    "end": 38.4,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Take a seat and wait for your story to die",
+    "start": 38.41,
+    "end": 41.94,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now is the time",
+    "start": 43.88,
+    "end": 45.72,
+    "anchorCoverage": 0.75,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "For my first time",
+    "start": 45.73,
+    "end": 48.68,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "I do not want to die",
+    "start": 48.69,
+    "end": 52.72,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Said fuck that dream",
+    "start": 54.54,
+    "end": 56.48,
+    "anchorCoverage": 0.75,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "How to stay alive",
+    "start": 56.49,
+    "end": 59.48,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Find a better man in me",
+    "start": 60.3,
+    "end": 64.5,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Looking ahead past all the yesterday's",
+    "start": 66.02,
+    "end": 68.6,
+    "anchorCoverage": 0.833,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Fuck the history writing tomorrows Fate",
+    "start": 68.61,
+    "end": 70.54,
+    "anchorCoverage": 0.5,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "It's now time to loosen the hateful gripp",
+    "start": 71.22,
+    "end": 74.0,
+    "anchorCoverage": 0.875,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Flush out the hurt that grew from birth",
+    "start": 76.4,
+    "end": 79.56,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Give into a conceited self worship",
+    "start": 79.92,
+    "end": 82.1,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Silence the degrading screams inside my head",
+    "start": 82.11,
+    "end": 85.38,
+    "anchorCoverage": 0.714,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now is the time",
+    "start": 87.15,
+    "end": 89.48,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "For my first time",
+    "start": 89.49,
+    "end": 92.28,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "I do not want to die",
+    "start": 92.29,
+    "end": 96.46,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Said fuck that dream",
+    "start": 98.36,
+    "end": 100.3,
+    "anchorCoverage": 0.5,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "How to stay alive",
+    "start": 100.31,
+    "end": 103.36,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Find a better man in me",
+    "start": 104.26,
+    "end": 109.62,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Stepping blindly into the unknown life",
+    "start": 112.32,
+    "end": 115.22,
+    "anchorCoverage": 0.833,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Watching everything held close dieing",
+    "start": 115.32,
+    "end": 117.66,
+    "anchorCoverage": 0.6,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "A new start to this blank slate of mirrors",
+    "start": 117.84,
+    "end": 122.06,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Impeding reflections none of them seem right",
+    "start": 123.88,
+    "end": 126.36,
+    "anchorCoverage": 0.857,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "What flowering dreams do we reach for",
+    "start": 126.37,
+    "end": 128.73,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Is there an achievable move to be made",
+    "start": 128.74,
+    "end": 133.18,
+    "anchorCoverage": 0.75,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now is the time",
+    "start": 133.8,
+    "end": 136.1,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "For my first time",
+    "start": 136.11,
+    "end": 139.04,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "I do not want to die",
+    "start": 139.05,
+    "end": 143.44,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Said fuck that dream",
+    "start": 143.74,
+    "end": 147.08,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "How to stay alive",
+    "start": 148.16,
+    "end": 149.98,
+    "anchorCoverage": 0.75,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Find a better man in me",
+    "start": 149.99,
+    "end": 154.62,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "What's is real",
+    "start": 160.44,
+    "end": 162.6,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Without the pain",
+    "start": 162.61,
+    "end": 165.22,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Expressions of Fate",
+    "start": 165.66,
+    "end": 170.34,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "The better man in me",
+    "start": 171.8,
+    "end": 178,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Can't be real",
+    "start": 178,
+    "end": 180.84,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Longing for pain",
+    "start": 180.89,
+    "end": 183.72,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Expressions of Hate",
+    "start": 184.2,
+    "end": 188.84,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now is the time",
+    "start": 210.18,
+    "end": 212.92,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "For my first time",
+    "start": 212.93,
+    "end": 215.8,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "I do not want to die",
+    "start": 215.81,
+    "end": 220.04,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Said fuck that dream",
+    "start": 221.74,
+    "end": 223.8,
+    "anchorCoverage": 0.5,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "How to stay alive",
+    "start": 223.81,
+    "end": 226.9,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Find a better man in me",
+    "start": 227.82,
+    "end": 234.5,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Destiny spoke once to a lost version of me",
+    "start": 240.96,
+    "end": 244.18,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Be the father that never walks away",
+    "start": 244.19,
+    "end": 246.78,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Never pass down all the hate I felt",
+    "start": 246.79,
+    "end": 249.06,
+    "anchorCoverage": 0.875,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "A true pain that takes a lifetime to wash away",
+    "start": 249.07,
+    "end": 251.87,
+    "anchorCoverage": 0.9,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Fulfillment of destiny's demands now what",
+    "start": 251.87,
+    "end": 257.7,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now is the time",
+    "start": 257.84,
+    "end": 259.54,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "For my first time",
+    "start": 259.55,
+    "end": 262.54,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "I do not want to die",
+    "start": 262.55,
+    "end": 266.62,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Said fuck that dream",
+    "start": 267.8,
+    "end": 270.39,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "How to stay alive",
+    "start": 270.39,
+    "end": 273.52,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Find a better man in me",
+    "start": 274.52,
+    "end": 277.36,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Can't be real",
+    "start": 277.5,
+    "end": 279.2,
+    "anchorCoverage": 1.0,
+    "needsReview": false,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Longing for pain",
+    "start": 279.21,
+    "end": 282.26,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Expressions of Hate",
+    "start": 282.98,
+    "end": 285.9,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now is the time",
+    "start": 287.66,
+    "end": 289.36,
+    "anchorCoverage": 0.75,
+    "needsReview": true,
+    "note": "First exact ordered ASR sequence in final call; raw CTC timing retained in word metadata"
+  },
+  {
+    "text": "For my first time",
+    "start": 290.72,
+    "end": 292.18,
+    "anchorCoverage": 1.0,
+    "needsReview": true,
+    "note": "First exact ordered ASR sequence in final call; raw CTC timing retained in word metadata"
+  },
+  {
+    "text": "I do not want to die",
+    "start": 293.7,
+    "end": 296.76,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  },
+  {
+    "text": "Now a better man in me",
+    "start": 298.56,
+    "end": 302.26,
+    "anchorCoverage": 0.667,
+    "needsReview": true,
+    "note": "CTC constrained by independent ordered speech anchors"
+  }
+]
