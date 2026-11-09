@@ -1,0 +1,176 @@
+[
+  {
+    "id": "artist-intimate",
+    "file": "better-man/artist-intimate.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "5b9bf6944c742717f1aaa8fd3b3091f7ea2949c0307302e83cdc94c9be5560da",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "artist"
+  },
+  {
+    "id": "suspended-detail",
+    "file": "better-man/suspended-detail.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "e4e7128914e8801c9f1dd56cf92b85cb713f92af64c219d6e2c86eafc87b78ee",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "artist-fractured",
+    "file": "better-man/artist-fractured.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "d6fb94d9b510236e47ec03dfa3f24f78a828499af7b6dc12d06ee360a941467c",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "artist"
+  },
+  {
+    "id": "artist-industrial",
+    "file": "better-man/artist-industrial.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "79ba7cb232e5b4348e840c61d83b9c3d80d76db18928a4a7d444e353ab45dd00",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "artist"
+  },
+  {
+    "id": "suspended-wide",
+    "file": "better-man/suspended-wide.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "e4eb3485c3ed04bdc7f360773833ed9857f1595b096ccefd1fa1612a4f0fdd9d",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "title-open",
+    "file": "better-man/title-open.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "83bcb7bbef0fcc4a2426d3d3b3e807732a43f17d6e359e91e0f74dd17b849755",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "title",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentFraction": 0.6823
+  },
+  {
+    "id": "father-detail",
+    "file": "better-man/father-detail.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "938e56a445ff8fb1e056577e1238765fdafbc44028eaaf61a742e484e2b7d112",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "symbolic fatherhood"
+  },
+  {
+    "id": "artist-mosaic",
+    "file": "better-man/artist-mosaic.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "103ed7d89f52257f4d1d3ecc28d4b2d3d638d383fa97468996279b3316e011d8",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "artist"
+  },
+  {
+    "id": "mirror-detail",
+    "file": "better-man/mirror-detail.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "d81d29cae8950b9d5fd81ee6387fc14ed994e92c8cfec1f4e58d06850c6c928e",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "industrial-wide",
+    "file": "better-man/industrial-wide.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "5bb27522474bfa6e05df0ecd743d8cacc6fe2cc44c5e09a389511ca7aea1680e",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "foreground-mirror",
+    "file": "better-man/foreground-mirror.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "f7e15a537e2e0e38aaf982d67416561a0f7b557dbc6c6c4f839a794d2b615916",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "foreground",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentFraction": 0.8757
+  },
+  {
+    "id": "daylight-wide",
+    "file": "better-man/daylight-wide.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "23329dbb583c99e7f0c9e3a0794b652c53df57910960d15099a37abc21dec304",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "artist-resolved",
+    "file": "better-man/artist-resolved.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "f7b493fdc77b5221e99fe050fe3c43df01bcd13a1f07a906e1bdf64c7c0b9116",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "artist"
+  },
+  {
+    "id": "title-close",
+    "file": "better-man/title-close.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "73c25ef1c3a668f95cc41418c01803f7a835c704ea7b9a73f6eb0afd901a8398",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "title",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentFraction": 0.7285
+  },
+  {
+    "id": "father-wide",
+    "file": "better-man/father-wide.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "be5d2f83e3a90b3f9e6710b241017f22550c1147b8a5306313ce4b5bc4171962",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "symbolic fatherhood"
+  },
+  {
+    "id": "mirror-hall",
+    "file": "better-man/mirror-hall.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "959de2f13946e088f513eb50b7aa168f2020bb966beaa7a0ab55d40dbac05930",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "industrial-detail",
+    "file": "better-man/industrial-detail.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "2bd8d810cebedc76f6bba373f9855c0181b88b93c045344f636ac7c36af36136",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "environment"
+  },
+  {
+    "id": "foreground-window",
+    "file": "better-man/foreground-window.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "f285e609a306572c5af6f76b0ad92024da2e41213d705e8a7d8cfd2efd3e0371",
+    "origin": "image_gen; generated for A Better Man",
+    "kind": "foreground",
+    "alphaMin": 0,
+    "alphaMax": 254,
+    "transparentFraction": 0.8646
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "purpose": "Visual parity of consolidated software compositor against approved DOM frames",
+  "samples": [
+    {
+      "time": 4.0,
+      "meanRgbDifference": [
+        1.2622111304012347,
+        1.4469487847222222,
+        1.7942640817901234
+      ]
+    },
+    {
+      "time": 45.0,
+      "meanRgbDifference": [
+        1.6636665702160494,
+        2.142068383487654,
+        2.7809871720679014
+      ]
+    },
+    {
+      "time": 136.0,
+      "meanRgbDifference": [
+        1.9186448688271605,
+        2.3525646219135803,
+        3.0055748456790123
+      ]
+    },
+    {
+      "time": 164.0,
+      "meanRgbDifference": [
+        0.8733222415123457,
+        1.0519979745370371,
+        1.387785011574074
+      ]
+    },
+    {
+      "time": 243.0,
+      "meanRgbDifference": [
+        1.1677734375,
+        1.2830362654320988,
+        1.514143036265432
+      ]
+    },
+    {
+      "time": 303.5,
+      "meanRgbDifference": [
+        1.2400935570987655,
+        1.3040904706790124,
+        1.4939250578703704
+      ]
+    }
+  ],
+  "result": "visually inspected; mean channel difference below 4/255"
+}

@@ -1,0 +1,23 @@
+{
+  "master": {
+    "codec": "H.264",
+    "crf": 18,
+    "preset": "veryfast",
+    "audio": "AAC 320k 48kHz stereo",
+    "frames": 7318,
+    "width": 1920,
+    "height": 1080,
+    "fps": 24
+  },
+  "githubViewingCopy": {
+    "videoBitrate": "2100k",
+    "maxRate": "2400k",
+    "buffer": "4800k",
+    "preset": "medium",
+    "audio": "copied unchanged from master"
+  },
+  "sourceArchives": [
+    "A-Better-Man-studio-source.zip",
+    "A-Better-Man-assets.zip"
+  ]
+}

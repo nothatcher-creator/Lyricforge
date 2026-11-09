@@ -1,0 +1,15 @@
+{
+  "result": "identical decoded audio in master and GitHub copy",
+  "streams": [
+    {
+      "file": "A-Better-Man-master.mp4",
+      "pcmBytes": 58540032,
+      "decodedAudioSha256": "921754268437037f2841d06675cf56605387d79c6d058c3b457691f31bcded17"
+    },
+    {
+      "file": "A-Better-Man.mp4",
+      "pcmBytes": 58540032,
+      "decodedAudioSha256": "921754268437037f2841d06675cf56605387d79c6d058c3b457691f31bcded17"
+    }
+  ]
+}
