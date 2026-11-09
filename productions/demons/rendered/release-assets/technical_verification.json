@@ -1,0 +1,38 @@
+{
+  "source": "attachments/2078f7ad-6365-4eb7-80cd-d2a0245298a8/mixing Demons.m4a",
+  "output": "output/DEMONS_SWAN_1080p.mp4",
+  "pcm_sha256_source": "SHA256=613cb64d598a26d43597d3c91beabcccc435478fab550ff908e6397891d462fa",
+  "pcm_sha256_output": "SHA256=613cb64d598a26d43597d3c91beabcccc435478fab550ff908e6397891d462fa",
+  "pcm_identical": true,
+  "aac_sha256_source": "e362427b46dd1083f3ffe4dad70b095d89a0b5d65727aaab180d80cc8da55c29",
+  "aac_sha256_output": "e362427b46dd1083f3ffe4dad70b095d89a0b5d65727aaab180d80cc8da55c29",
+  "aac_bitstream_identical": true,
+  "streams": [
+    {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "sample_rate": null,
+      "channels": null,
+      "start_time": "0.000000",
+      "duration": "368.066667",
+      "nb_frames": "11042"
+    },
+    {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "width": null,
+      "height": null,
+      "r_frame_rate": "0/0",
+      "sample_rate": "44100",
+      "channels": 2,
+      "start_time": "0.000000",
+      "duration": "368.011995",
+      "nb_frames": "15851"
+    }
+  ],
+  "duration": "368.066667",
+  "size_bytes": 146576246
+}

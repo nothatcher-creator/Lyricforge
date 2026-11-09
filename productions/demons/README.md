@@ -58,3 +58,13 @@ python render.py --start 73 --duration 12 --output renders/preview-picture.mp4
 `render.py` produces picture only; `mux.py` adds the complete original recording and checks both AAC packet-content and decoded PCM hashes. Use the full-length picture for the full-length mux command. `lyric_timeline.json` edits timing, `shots.json` edits camera setups, `visual.frag` edits atmosphere, and `render.py` edits typography and procedural geometry.
 
 The SRT/LRC sidecars allow timing reuse in other software. Original supplied lyrics remain in `LYRICS_original.txt`. Font license files are included beside the fonts. Generated scenery is new artwork for this production; song and credit ownership remain with the credited creators.
+
+## Recover the rendered MP4 directly from Git
+
+The full-quality master is also stored as checksum-verified chunks in `rendered/parts` so it remains recoverable even when release-asset uploads are unavailable. After cloning the repository, run:
+
+```sh
+python productions/demons/assemble_video.py
+```
+
+This joins the existing bytes into `productions/demons/renders/DEMONS_SWAN_1080p.mp4` and verifies its SHA-256; it performs no re-encoding. The narrowly scoped `publish-demons.yml` workflow can publish these verified assets to the GitHub Release using the repository's own runner.

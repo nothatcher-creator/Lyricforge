@@ -1,0 +1,34 @@
+name: Publish rendered DEMONS video
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-demons.yml'
+      - 'productions/demons/rendered/**'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify the rendered video
+        run: |
+          mkdir -p /tmp/demons-release
+          python productions/demons/assemble_video.py --output /tmp/demons-release/DEMONS_SWAN_1080p.mp4
+          cp productions/demons/rendered/release-assets/* /tmp/demons-release/
+          cd /tmp/demons-release
+          sha256sum -c SHA256SUMS.txt
+      - name: Publish the verified MP4 and production files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: demons-swan-2026-11-09
+        run: |
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --draft --target "$GITHUB_SHA" --title 'DEMONS — SWAN · 1080p cinematic lyric video' --notes-file productions/demons/rendered/release-notes.md
+          fi
+          gh release upload "$TAG" /tmp/demons-release/* --clobber
+          gh release edit "$TAG" --draft=false

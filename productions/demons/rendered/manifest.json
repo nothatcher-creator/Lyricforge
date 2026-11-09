@@ -1,0 +1,22 @@
+{
+  "name": "DEMONS_SWAN_1080p.mp4",
+  "size_bytes": 146576246,
+  "sha256": "94549faac4c6cf58c2c98081c2fe05f004737a8485329545fc63bcd4e0c06ede",
+  "parts": [
+    {
+      "name": "DEMONS_SWAN_1080p.mp4.part-00",
+      "size_bytes": 50331648,
+      "sha256": "a7b45e85a4ad58affc7df52e5f36e89ebd48a55435f48288078390440a50fbce"
+    },
+    {
+      "name": "DEMONS_SWAN_1080p.mp4.part-01",
+      "size_bytes": 50331648,
+      "sha256": "0dfcfc195c39d90663451b7545c96da814f54af009941654f079f723eca4ce9d"
+    },
+    {
+      "name": "DEMONS_SWAN_1080p.mp4.part-02",
+      "size_bytes": 45912950,
+      "sha256": "9e50a27f5839ee0fbba987fc2b14cc5c8230a4085055ba18b2ee3f4255fe04d5"
+    }
+  ]
+}
