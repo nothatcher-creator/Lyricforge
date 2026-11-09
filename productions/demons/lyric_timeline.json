@@ -1,0 +1,2835 @@
+{
+  "title": "DEMONS",
+  "artist": "SWAN",
+  "source": "mixing Demons.m4a",
+  "duration": 368.059501,
+  "lyrics": [
+    {
+      "id": 0,
+      "text": "Things to keep you awake at Night",
+      "start": 56.519999999999996,
+      "vocal_end": 59.5,
+      "words": [
+        {
+          "text": "Things",
+          "start": 56.519999999999996,
+          "end": 57.22,
+          "confidence": 0.3034,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 57.22,
+          "end": 57.46,
+          "confidence": 0.9702,
+          "asr_onset": true
+        },
+        {
+          "text": "keep",
+          "start": 57.46,
+          "end": 57.74,
+          "confidence": 0.9221,
+          "asr_onset": true
+        },
+        {
+          "text": "you",
+          "start": 57.74,
+          "end": 58.0,
+          "confidence": 0.9772,
+          "asr_onset": true
+        },
+        {
+          "text": "awake",
+          "start": 58.06,
+          "end": 58.44,
+          "confidence": 0.9659,
+          "asr_onset": true
+        },
+        {
+          "text": "at",
+          "start": 58.44,
+          "end": 58.7,
+          "confidence": 0.9925,
+          "asr_onset": true
+        },
+        {
+          "text": "Night",
+          "start": 58.8,
+          "end": 59.5,
+          "confidence": 0.0006,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.733,
+      "ctc_confidence": 0.215,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 59.5
+    },
+    {
+      "id": 1,
+      "text": "Shadows formed from Moonlight",
+      "start": 59.5,
+      "vocal_end": 63.04,
+      "words": [
+        {
+          "text": "Shadows",
+          "start": 59.5,
+          "end": 61.5,
+          "confidence": 0.4689
+        },
+        {
+          "text": "formed",
+          "start": 61.5,
+          "end": 62.12,
+          "confidence": 0.9743,
+          "asr_onset": true
+        },
+        {
+          "text": "from",
+          "start": 62.12,
+          "end": 62.7,
+          "confidence": 0.9079,
+          "asr_onset": true
+        },
+        {
+          "text": "Moonlight",
+          "start": 62.7,
+          "end": 63.04,
+          "confidence": 0.0
+        }
+      ],
+      "confidence": 0.588,
+      "ctc_confidence": 0.02,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 63.49,
+      "review_note": "Moonlight versus the night: supplied wording retained; recognition is ambiguous."
+    },
+    {
+      "id": 2,
+      "text": "Let\u2019s make this the final cry",
+      "start": 63.7,
+      "vocal_end": 69.16,
+      "words": [
+        {
+          "text": "Let's",
+          "start": 63.7,
+          "end": 65.38,
+          "confidence": 0.7012,
+          "asr_onset": true
+        },
+        {
+          "text": "make",
+          "start": 65.4,
+          "end": 65.82,
+          "confidence": 0.9643,
+          "asr_onset": true
+        },
+        {
+          "text": "this",
+          "start": 65.82,
+          "end": 66.6,
+          "confidence": 0.9842,
+          "asr_onset": true
+        },
+        {
+          "text": "the",
+          "start": 66.6,
+          "end": 67.22,
+          "confidence": 0.723,
+          "asr_onset": true
+        },
+        {
+          "text": "final",
+          "start": 67.26,
+          "end": 67.78,
+          "confidence": 0.9799,
+          "asr_onset": true
+        },
+        {
+          "text": "cry",
+          "start": 67.78,
+          "end": 69.16,
+          "confidence": 0.963
+        }
+      ],
+      "confidence": 0.886,
+      "ctc_confidence": 0.044,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 69.16
+    },
+    {
+      "id": 3,
+      "text": "Hold me in your arms tonight",
+      "start": 69.16,
+      "vocal_end": 73.54,
+      "words": [
+        {
+          "text": "Hold",
+          "start": 69.16,
+          "end": 69.94,
+          "confidence": 0.7064,
+          "asr_onset": true
+        },
+        {
+          "text": "me",
+          "start": 69.94,
+          "end": 70.48,
+          "confidence": 0.9984,
+          "asr_onset": true
+        },
+        {
+          "text": "in",
+          "start": 70.5,
+          "end": 71.16,
+          "confidence": 0.9953,
+          "asr_onset": true
+        },
+        {
+          "text": "your",
+          "start": 71.22,
+          "end": 71.8,
+          "confidence": 0.9845,
+          "asr_onset": true
+        },
+        {
+          "text": "arms",
+          "start": 71.8,
+          "end": 72.52,
+          "confidence": 0.9987,
+          "asr_onset": true
+        },
+        {
+          "text": "tonight",
+          "start": 72.58,
+          "end": 73.54,
+          "confidence": 0.9905,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.946,
+      "ctc_confidence": 0.11,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 73.615
+    },
+    {
+      "id": 4,
+      "text": "I know how to slay my Demons",
+      "start": 73.66,
+      "vocal_end": 78.82,
+      "words": [
+        {
+          "text": "I",
+          "start": 73.66,
+          "end": 75.0,
+          "confidence": 0.9335,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 75.02,
+          "end": 75.22,
+          "confidence": 0.9828,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 75.22,
+          "end": 75.58,
+          "confidence": 0.998,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 75.6,
+          "end": 76.58,
+          "confidence": 0.9944,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 76.62,
+          "end": 77.5,
+          "confidence": 0.6111,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 77.5,
+          "end": 78.18,
+          "confidence": 0.996,
+          "asr_onset": true
+        },
+        {
+          "text": "Demons",
+          "start": 78.24,
+          "end": 78.82,
+          "confidence": 0.0011,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.788,
+      "ctc_confidence": 0.035,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 79.255
+    },
+    {
+      "id": 5,
+      "text": "I know how to slay my Demons",
+      "start": 79.3,
+      "vocal_end": 82.86,
+      "words": [
+        {
+          "text": "I",
+          "start": 79.3,
+          "end": 81.38,
+          "confidence": 0.654
+        },
+        {
+          "text": "know",
+          "start": 81.38,
+          "end": 81.58,
+          "confidence": 0.9265,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 81.58,
+          "end": 81.76,
+          "confidence": 0.9614,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 81.76,
+          "end": 81.9,
+          "confidence": 0.9938,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 81.96,
+          "end": 82.12,
+          "confidence": 0.895,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 82.16,
+          "end": 82.44,
+          "confidence": 0.9688,
+          "asr_onset": true
+        },
+        {
+          "text": "Demons",
+          "start": 82.48,
+          "end": 82.86,
+          "confidence": 0.0003,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.771,
+      "ctc_confidence": 0.034,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 83.055
+    },
+    {
+      "id": 6,
+      "text": "The ones blackening my Heart",
+      "start": 83.1,
+      "vocal_end": 88.26,
+      "words": [
+        {
+          "text": "The",
+          "start": 83.1,
+          "end": 83.96,
+          "confidence": 0.5353
+        },
+        {
+          "text": "ones",
+          "start": 83.96,
+          "end": 84.6,
+          "confidence": 0.0005
+        },
+        {
+          "text": "blackening",
+          "start": 84.6,
+          "end": 86.2,
+          "confidence": 0.9336,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 86.2,
+          "end": 87.22,
+          "confidence": 0.9627,
+          "asr_onset": true
+        },
+        {
+          "text": "Heart",
+          "start": 87.22,
+          "end": 88.26,
+          "confidence": 0.0
+        }
+      ],
+      "confidence": 0.486,
+      "ctc_confidence": 0.066,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 88.26
+    },
+    {
+      "id": 7,
+      "text": "Eating away at our souls Growth",
+      "start": 88.26,
+      "vocal_end": 92.54,
+      "words": [
+        {
+          "text": "Eating",
+          "start": 88.26,
+          "end": 89.3,
+          "confidence": 0.0025
+        },
+        {
+          "text": "away",
+          "start": 89.3,
+          "end": 90.02,
+          "confidence": 0.2757
+        },
+        {
+          "text": "at",
+          "start": 90.02,
+          "end": 90.82,
+          "confidence": 0.3915
+        },
+        {
+          "text": "our",
+          "start": 90.82,
+          "end": 91.24,
+          "confidence": 0.0771
+        },
+        {
+          "text": "souls",
+          "start": 91.24,
+          "end": 91.68,
+          "confidence": 0.807
+        },
+        {
+          "text": "Growth",
+          "start": 91.68,
+          "end": 92.54,
+          "confidence": 0.0013
+        }
+      ],
+      "confidence": 0.259,
+      "ctc_confidence": 0.096,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 92.835,
+      "review_note": "Sung line is masked by backing music; source wording retained."
+    },
+    {
+      "id": 8,
+      "text": "Time to lock",
+      "start": 92.88,
+      "vocal_end": 94.42,
+      "words": [
+        {
+          "text": "Time",
+          "start": 92.88,
+          "end": 93.8,
+          "confidence": 0.0062,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 93.8,
+          "end": 94.1,
+          "confidence": 0.3888,
+          "asr_onset": true
+        },
+        {
+          "text": "lock",
+          "start": 94.12,
+          "end": 94.42,
+          "confidence": 0.8924,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.429,
+      "ctc_confidence": 0.098,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 94.635
+    },
+    {
+      "id": 9,
+      "text": "Time to lock",
+      "start": 94.68,
+      "vocal_end": 95.38,
+      "words": [
+        {
+          "text": "Time",
+          "start": 94.68,
+          "end": 94.78,
+          "confidence": 0.0018,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 94.78,
+          "end": 95.08,
+          "confidence": 0.9893,
+          "asr_onset": true
+        },
+        {
+          "text": "lock",
+          "start": 95.08,
+          "end": 95.38,
+          "confidence": 0.9758,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.656,
+      "ctc_confidence": 0.034,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 95.595
+    },
+    {
+      "id": 10,
+      "text": "Time to lock",
+      "start": 95.64,
+      "vocal_end": 96.34,
+      "words": [
+        {
+          "text": "Time",
+          "start": 95.64,
+          "end": 95.74,
+          "confidence": 0.8885,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 95.8,
+          "end": 96.06,
+          "confidence": 0.9925,
+          "asr_onset": true
+        },
+        {
+          "text": "lock",
+          "start": 96.06,
+          "end": 96.34,
+          "confidence": 0.9961,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.959,
+      "ctc_confidence": 0.041,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 96.34
+    },
+    {
+      "id": 11,
+      "text": "The cage of ghost's",
+      "start": 96.36,
+      "vocal_end": 97.8,
+      "words": [
+        {
+          "text": "The",
+          "start": 96.36,
+          "end": 96.58,
+          "confidence": 0.0815,
+          "asr_onset": true
+        },
+        {
+          "text": "cage",
+          "start": 96.7,
+          "end": 97.1,
+          "confidence": 0.9512,
+          "asr_onset": true
+        },
+        {
+          "text": "of",
+          "start": 97.1,
+          "end": 97.5,
+          "confidence": 0.8522
+        },
+        {
+          "text": "ghost's",
+          "start": 97.5,
+          "end": 97.8,
+          "confidence": 0.0011
+        }
+      ],
+      "confidence": 0.472,
+      "ctc_confidence": 0.026,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 98.155
+    },
+    {
+      "id": 12,
+      "text": "I know how to slay",
+      "start": 98.2,
+      "vocal_end": 101.94,
+      "words": [
+        {
+          "text": "I",
+          "start": 98.2,
+          "end": 98.88,
+          "confidence": 0.7324,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 98.88,
+          "end": 99.46,
+          "confidence": 0.9573,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 99.48,
+          "end": 100.06,
+          "confidence": 0.9081,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 100.1,
+          "end": 100.66,
+          "confidence": 0.4174,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 100.66,
+          "end": 101.94,
+          "confidence": 0.071
+        }
+      ],
+      "confidence": 0.617,
+      "ctc_confidence": 0.038,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 101.94
+    },
+    {
+      "id": 13,
+      "text": "My demons",
+      "start": 101.96,
+      "vocal_end": 103.26,
+      "words": [
+        {
+          "text": "My",
+          "start": 101.96,
+          "end": 102.68,
+          "confidence": 0.0185,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 102.68,
+          "end": 103.26,
+          "confidence": 0.9311,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.475,
+      "ctc_confidence": 0.274,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 103.71
+    },
+    {
+      "id": 14,
+      "text": "My demons",
+      "start": 104.2,
+      "vocal_end": 105.18,
+      "words": [
+        {
+          "text": "My",
+          "start": 104.2,
+          "end": 104.36,
+          "confidence": 0.3553,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 104.4,
+          "end": 105.18,
+          "confidence": 0.996,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.676,
+      "ctc_confidence": 0.021,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 105.515
+    },
+    {
+      "id": 15,
+      "text": "My demons",
+      "start": 105.56,
+      "vocal_end": 106.72,
+      "words": [
+        {
+          "text": "My",
+          "start": 105.56,
+          "end": 105.9,
+          "confidence": 0.49,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 105.92,
+          "end": 106.72,
+          "confidence": 0.9937,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.742,
+      "ctc_confidence": 0.017,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 107.17
+    },
+    {
+      "id": 16,
+      "text": "Old ancient stone script Rituals",
+      "start": 108.2,
+      "vocal_end": 111.4,
+      "words": [
+        {
+          "text": "Old",
+          "start": 108.2,
+          "end": 108.92,
+          "confidence": 0.5516,
+          "asr_onset": true
+        },
+        {
+          "text": "ancient",
+          "start": 108.92,
+          "end": 109.44,
+          "confidence": 0.6799,
+          "asr_onset": true
+        },
+        {
+          "text": "stone",
+          "start": 109.46,
+          "end": 109.84,
+          "confidence": 0.9461,
+          "asr_onset": true
+        },
+        {
+          "text": "script",
+          "start": 109.84,
+          "end": 110.28,
+          "confidence": 0.8611,
+          "asr_onset": true
+        },
+        {
+          "text": "Rituals",
+          "start": 110.28,
+          "end": 111.4,
+          "confidence": 0.4971,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.707,
+      "ctc_confidence": 0.253,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 111.4
+    },
+    {
+      "id": 17,
+      "text": "Stress closes all doors of Hope",
+      "start": 111.4,
+      "vocal_end": 114.02,
+      "words": [
+        {
+          "text": "Stress",
+          "start": 111.4,
+          "end": 111.94,
+          "confidence": 0.2575
+        },
+        {
+          "text": "closes",
+          "start": 111.94,
+          "end": 112.58,
+          "confidence": 0.9632,
+          "asr_onset": true
+        },
+        {
+          "text": "all",
+          "start": 112.58,
+          "end": 113.04,
+          "confidence": 0.6532,
+          "asr_onset": true
+        },
+        {
+          "text": "doors",
+          "start": 113.04,
+          "end": 113.38,
+          "confidence": 0.973,
+          "asr_onset": true
+        },
+        {
+          "text": "of",
+          "start": 113.4,
+          "end": 113.68,
+          "confidence": 0.9899,
+          "asr_onset": true
+        },
+        {
+          "text": "Hope",
+          "start": 113.68,
+          "end": 114.02,
+          "confidence": 0.0542,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.648,
+      "ctc_confidence": 0.285,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 114.47
+    },
+    {
+      "id": 18,
+      "text": "Redemption from a secret Code",
+      "start": 116.6,
+      "vocal_end": 121.88,
+      "words": [
+        {
+          "text": "Redemption",
+          "start": 116.6,
+          "end": 118.26,
+          "confidence": 0.6596
+        },
+        {
+          "text": "from",
+          "start": 118.26,
+          "end": 119.36,
+          "confidence": 0.269,
+          "asr_onset": true
+        },
+        {
+          "text": "a",
+          "start": 119.36,
+          "end": 119.86,
+          "confidence": 0.6702,
+          "asr_onset": true
+        },
+        {
+          "text": "secret",
+          "start": 119.88,
+          "end": 120.44,
+          "confidence": 0.979,
+          "asr_onset": true
+        },
+        {
+          "text": "Code",
+          "start": 120.44,
+          "end": 121.88,
+          "confidence": 0.0003
+        }
+      ],
+      "confidence": 0.516,
+      "ctc_confidence": 0.071,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 121.88
+    },
+    {
+      "id": 19,
+      "text": "Fixating where the wires get Crossed",
+      "start": 121.88,
+      "vocal_end": 126.76,
+      "words": [
+        {
+          "text": "Fixating",
+          "start": 121.88,
+          "end": 123.44,
+          "confidence": 0.4936
+        },
+        {
+          "text": "where",
+          "start": 123.44,
+          "end": 124.04,
+          "confidence": 0.5629
+        },
+        {
+          "text": "the",
+          "start": 124.06,
+          "end": 124.72,
+          "confidence": 0.9488,
+          "asr_onset": true
+        },
+        {
+          "text": "wires",
+          "start": 124.76,
+          "end": 125.34,
+          "confidence": 0.98,
+          "asr_onset": true
+        },
+        {
+          "text": "get",
+          "start": 125.34,
+          "end": 125.76,
+          "confidence": 0.9962,
+          "asr_onset": true
+        },
+        {
+          "text": "Crossed",
+          "start": 125.8,
+          "end": 126.76,
+          "confidence": 0.2257,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.701,
+      "ctc_confidence": 0.016,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 127.21,
+      "review_note": "Where versus when is ambiguous; source wording retained."
+    },
+    {
+      "id": 20,
+      "text": "I know how to slay my Demons",
+      "start": 128.28,
+      "vocal_end": 131.1,
+      "words": [
+        {
+          "text": "I",
+          "start": 128.28,
+          "end": 129.64,
+          "confidence": 0.9065,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 129.68,
+          "end": 129.84,
+          "confidence": 0.9724,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 129.86,
+          "end": 130.02,
+          "confidence": 0.9947,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 130.04,
+          "end": 130.22,
+          "confidence": 0.9968,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 130.24,
+          "end": 130.42,
+          "confidence": 0.9127,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 130.42,
+          "end": 130.7,
+          "confidence": 0.9909,
+          "asr_onset": true
+        },
+        {
+          "text": "Demons",
+          "start": 130.7,
+          "end": 131.1,
+          "confidence": 0.0042
+        }
+      ],
+      "confidence": 0.825,
+      "ctc_confidence": 0.096,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 131.55
+    },
+    {
+      "id": 21,
+      "text": "Freedom to roam",
+      "start": 136.11999999999998,
+      "vocal_end": 139.88,
+      "words": [
+        {
+          "text": "Freedom",
+          "start": 136.11999999999998,
+          "end": 137.32,
+          "confidence": 0.5573,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 137.51999999999998,
+          "end": 138.92,
+          "confidence": 0.9427,
+          "asr_onset": true
+        },
+        {
+          "text": "roam",
+          "start": 138.92,
+          "end": 139.88,
+          "confidence": 0.5742
+        }
+      ],
+      "confidence": 0.691,
+      "ctc_confidence": 0.119,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 139.88
+    },
+    {
+      "id": 22,
+      "text": "Past broken destiny",
+      "start": 139.88,
+      "vocal_end": 143.9,
+      "words": [
+        {
+          "text": "Past",
+          "start": 139.88,
+          "end": 141.36,
+          "confidence": 0.0108
+        },
+        {
+          "text": "broken",
+          "start": 141.36,
+          "end": 142.34,
+          "confidence": 0.9197,
+          "asr_onset": true
+        },
+        {
+          "text": "destiny",
+          "start": 142.34,
+          "end": 143.9,
+          "confidence": 0.9288,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.62,
+      "ctc_confidence": 0.11,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 144.35
+    },
+    {
+      "id": 23,
+      "text": "Freedom to roam",
+      "start": 145.7,
+      "vocal_end": 149.36,
+      "words": [
+        {
+          "text": "Freedom",
+          "start": 145.7,
+          "end": 146.92,
+          "confidence": 0.7842,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 147.1,
+          "end": 148.42,
+          "confidence": 0.9924,
+          "asr_onset": true
+        },
+        {
+          "text": "roam",
+          "start": 148.42,
+          "end": 149.36,
+          "confidence": 0.9982
+        }
+      ],
+      "confidence": 0.925,
+      "ctc_confidence": 0.048,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 149.36
+    },
+    {
+      "id": 24,
+      "text": "Past broken destiny",
+      "start": 149.36,
+      "vocal_end": 153.44,
+      "words": [
+        {
+          "text": "Past",
+          "start": 149.36,
+          "end": 150.96,
+          "confidence": 0.9901,
+          "asr_onset": true
+        },
+        {
+          "text": "broken",
+          "start": 150.98,
+          "end": 152.1,
+          "confidence": 0.9981,
+          "asr_onset": true
+        },
+        {
+          "text": "destiny",
+          "start": 152.12,
+          "end": 153.44,
+          "confidence": 0.9992,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.996,
+      "ctc_confidence": 0.06,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 153.89
+    },
+    {
+      "id": 25,
+      "text": "After all the screams",
+      "start": 155.22,
+      "vocal_end": 157.46,
+      "words": [
+        {
+          "text": "After",
+          "start": 155.22,
+          "end": 156.62,
+          "confidence": 0.5499,
+          "asr_onset": true
+        },
+        {
+          "text": "all",
+          "start": 156.62,
+          "end": 156.88,
+          "confidence": 0.9749,
+          "asr_onset": true
+        },
+        {
+          "text": "the",
+          "start": 156.92,
+          "end": 157.1,
+          "confidence": 0.9827,
+          "asr_onset": true
+        },
+        {
+          "text": "screams",
+          "start": 157.1,
+          "end": 157.46,
+          "confidence": 0.993,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.875,
+      "ctc_confidence": 0.755,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 157.46
+    },
+    {
+      "id": 26,
+      "text": "And bloody tears",
+      "start": 157.46,
+      "vocal_end": 158.42,
+      "words": [
+        {
+          "text": "And",
+          "start": 157.46,
+          "end": 157.74,
+          "confidence": 0.0034,
+          "asr_onset": true
+        },
+        {
+          "text": "bloody",
+          "start": 157.74,
+          "end": 158.0,
+          "confidence": 0.8834,
+          "asr_onset": true
+        },
+        {
+          "text": "tears",
+          "start": 158.0,
+          "end": 158.42,
+          "confidence": 0.9963,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.628,
+      "ctc_confidence": 0.291,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 158.91
+    },
+    {
+      "id": 27,
+      "text": "My demons still cry my Name",
+      "start": 162.4,
+      "vocal_end": 165.76,
+      "words": [
+        {
+          "text": "My",
+          "start": 162.4,
+          "end": 164.0,
+          "confidence": 0.6562
+        },
+        {
+          "text": "demons",
+          "start": 164.0,
+          "end": 164.3,
+          "confidence": 0.8781,
+          "asr_onset": true
+        },
+        {
+          "text": "still",
+          "start": 164.3,
+          "end": 164.76,
+          "confidence": 0.968,
+          "asr_onset": true
+        },
+        {
+          "text": "cry",
+          "start": 164.76,
+          "end": 165.08,
+          "confidence": 0.9845,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 165.1,
+          "end": 165.28,
+          "confidence": 0.9546,
+          "asr_onset": true
+        },
+        {
+          "text": "Name",
+          "start": 165.32,
+          "end": 165.76,
+          "confidence": 0.0003,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.74,
+      "ctc_confidence": 0.182,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 166.21
+    },
+    {
+      "id": 28,
+      "text": "Connection through my Failed life",
+      "start": 169.7,
+      "vocal_end": 172.76,
+      "words": [
+        {
+          "text": "Connection",
+          "start": 169.7,
+          "end": 171.44,
+          "confidence": 0.11
+        },
+        {
+          "text": "through",
+          "start": 171.6,
+          "end": 171.74,
+          "confidence": 0.8212,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 171.76,
+          "end": 171.98,
+          "confidence": 0.9725,
+          "asr_onset": true
+        },
+        {
+          "text": "Failed",
+          "start": 171.98,
+          "end": 172.32,
+          "confidence": 0.0
+        },
+        {
+          "text": "life",
+          "start": 172.32,
+          "end": 172.76,
+          "confidence": 0.018
+        }
+      ],
+      "confidence": 0.384,
+      "ctc_confidence": 0.006,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 173.21,
+      "review_note": "Connection / failed life is partly masked."
+    },
+    {
+      "id": 29,
+      "text": "I know how to slay my Demons",
+      "start": 176.9,
+      "vocal_end": 181.0,
+      "words": [
+        {
+          "text": "I",
+          "start": 176.9,
+          "end": 178.94,
+          "confidence": 0.2231
+        },
+        {
+          "text": "know",
+          "start": 178.94,
+          "end": 179.22,
+          "confidence": 0.0548
+        },
+        {
+          "text": "how",
+          "start": 179.22,
+          "end": 179.52,
+          "confidence": 0.0014
+        },
+        {
+          "text": "to",
+          "start": 179.52,
+          "end": 179.55,
+          "confidence": 0.188
+        },
+        {
+          "text": "slay",
+          "start": 179.52,
+          "end": 179.88,
+          "confidence": 0.0119
+        },
+        {
+          "text": "my",
+          "start": 180.34,
+          "end": 180.42,
+          "confidence": 0.0509,
+          "asr_onset": true
+        },
+        {
+          "text": "Demons",
+          "start": 180.56,
+          "end": 181.0,
+          "confidence": 0.0,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.076,
+      "ctc_confidence": 0.014,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 181.45,
+      "review_note": "Refrain wording partly masked."
+    },
+    {
+      "id": 30,
+      "text": "Why did you run",
+      "start": 213.88,
+      "vocal_end": 215.24,
+      "words": [
+        {
+          "text": "Why",
+          "start": 213.88,
+          "end": 214.48,
+          "confidence": 0.5869,
+          "asr_onset": true
+        },
+        {
+          "text": "did",
+          "start": 214.52,
+          "end": 214.74,
+          "confidence": 0.9883,
+          "asr_onset": true
+        },
+        {
+          "text": "you",
+          "start": 214.74,
+          "end": 214.94,
+          "confidence": 0.9978,
+          "asr_onset": true
+        },
+        {
+          "text": "run",
+          "start": 214.94,
+          "end": 215.24,
+          "confidence": 0.9923,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.891,
+      "ctc_confidence": 0.03,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 215.69
+    },
+    {
+      "id": 31,
+      "text": "Where did you hide",
+      "start": 216.08,
+      "vocal_end": 217.6,
+      "words": [
+        {
+          "text": "Where",
+          "start": 216.08,
+          "end": 216.34,
+          "confidence": 0.0233,
+          "asr_onset": true
+        },
+        {
+          "text": "did",
+          "start": 216.36,
+          "end": 216.54,
+          "confidence": 0.9737,
+          "asr_onset": true
+        },
+        {
+          "text": "you",
+          "start": 216.54,
+          "end": 216.76,
+          "confidence": 0.9977,
+          "asr_onset": true
+        },
+        {
+          "text": "hide",
+          "start": 216.8,
+          "end": 217.6,
+          "confidence": 0.9989,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.748,
+      "ctc_confidence": 0.039,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 217.6
+    },
+    {
+      "id": 32,
+      "text": "Mental health crippled",
+      "start": 217.6,
+      "vocal_end": 219.58,
+      "words": [
+        {
+          "text": "Mental",
+          "start": 217.6,
+          "end": 218.76,
+          "confidence": 0.0091
+        },
+        {
+          "text": "health",
+          "start": 218.76,
+          "end": 219.12,
+          "confidence": 0.0387
+        },
+        {
+          "text": "crippled",
+          "start": 219.16,
+          "end": 219.58,
+          "confidence": 0.9921,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.347,
+      "ctc_confidence": 0.028,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 220.03,
+      "review_note": "Mental health is partly masked."
+    },
+    {
+      "id": 33,
+      "text": "Advice heard",
+      "start": 220.24,
+      "vocal_end": 221.18,
+      "words": [
+        {
+          "text": "Advice",
+          "start": 220.24,
+          "end": 220.66,
+          "confidence": 0.8052,
+          "asr_onset": true
+        },
+        {
+          "text": "heard",
+          "start": 220.66,
+          "end": 221.18,
+          "confidence": 0.119
+        }
+      ],
+      "confidence": 0.462,
+      "ctc_confidence": 0.018,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 221.18
+    },
+    {
+      "id": 34,
+      "text": "With no room to fall",
+      "start": 221.18,
+      "vocal_end": 222.44,
+      "words": [
+        {
+          "text": "With",
+          "start": 221.18,
+          "end": 221.44,
+          "confidence": 0.1849,
+          "asr_onset": true
+        },
+        {
+          "text": "no",
+          "start": 221.44,
+          "end": 221.68,
+          "confidence": 0.0236
+        },
+        {
+          "text": "room",
+          "start": 221.7,
+          "end": 221.92,
+          "confidence": 0.9744,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 221.94,
+          "end": 222.12,
+          "confidence": 0.9803,
+          "asr_onset": true
+        },
+        {
+          "text": "fall",
+          "start": 222.14,
+          "end": 222.44,
+          "confidence": 0.9359,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.62,
+      "ctc_confidence": 0.029,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 222.555
+    },
+    {
+      "id": 35,
+      "text": "You had my heart",
+      "start": 222.6,
+      "vocal_end": 224.96,
+      "words": [
+        {
+          "text": "You",
+          "start": 222.6,
+          "end": 223.14,
+          "confidence": 0.538
+        },
+        {
+          "text": "had",
+          "start": 223.14,
+          "end": 223.66,
+          "confidence": 0.7301
+        },
+        {
+          "text": "my",
+          "start": 223.66,
+          "end": 224.28,
+          "confidence": 0.9948,
+          "asr_onset": true
+        },
+        {
+          "text": "heart",
+          "start": 224.28,
+          "end": 224.96,
+          "confidence": 0.9983,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.815,
+      "ctc_confidence": 0.081,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 225.235
+    },
+    {
+      "id": 36,
+      "text": "I had your soul",
+      "start": 225.28,
+      "vocal_end": 227.34,
+      "words": [
+        {
+          "text": "I",
+          "start": 225.28,
+          "end": 225.52,
+          "confidence": 0.2969,
+          "asr_onset": true
+        },
+        {
+          "text": "had",
+          "start": 225.52,
+          "end": 226.2,
+          "confidence": 0.2986
+        },
+        {
+          "text": "your",
+          "start": 226.2,
+          "end": 226.58,
+          "confidence": 0.9506,
+          "asr_onset": true
+        },
+        {
+          "text": "soul",
+          "start": 226.62,
+          "end": 227.34,
+          "confidence": 0.9989,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.636,
+      "ctc_confidence": 0.036,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 227.355
+    },
+    {
+      "id": 37,
+      "text": "On the day the blood Rains fell",
+      "start": 227.4,
+      "vocal_end": 232.02,
+      "words": [
+        {
+          "text": "On",
+          "start": 227.4,
+          "end": 228.4,
+          "confidence": 0.8708,
+          "asr_onset": true
+        },
+        {
+          "text": "the",
+          "start": 228.42,
+          "end": 228.84,
+          "confidence": 0.9915,
+          "asr_onset": true
+        },
+        {
+          "text": "day",
+          "start": 228.86,
+          "end": 229.52,
+          "confidence": 0.9964,
+          "asr_onset": true
+        },
+        {
+          "text": "the",
+          "start": 229.58,
+          "end": 230.28,
+          "confidence": 0.7493,
+          "asr_onset": true
+        },
+        {
+          "text": "blood",
+          "start": 230.28,
+          "end": 230.72,
+          "confidence": 0.7874
+        },
+        {
+          "text": "Rains",
+          "start": 230.72,
+          "end": 231.44,
+          "confidence": 0.2181
+        },
+        {
+          "text": "fell",
+          "start": 231.44,
+          "end": 232.02,
+          "confidence": 0.3207,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.705,
+      "ctc_confidence": 0.066,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 232.155,
+      "review_note": "Blood versus black, and rain/rains are ambiguous; source wording retained."
+    },
+    {
+      "id": 38,
+      "text": "I know how to slay",
+      "start": 232.2,
+      "vocal_end": 236.34,
+      "words": [
+        {
+          "text": "I",
+          "start": 232.2,
+          "end": 233.24,
+          "confidence": 0.6473,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 233.32,
+          "end": 233.9,
+          "confidence": 0.9586,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 233.92,
+          "end": 234.58,
+          "confidence": 0.957,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 234.58,
+          "end": 235.1,
+          "confidence": 0.9937,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 235.12,
+          "end": 236.34,
+          "confidence": 0.883,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.888,
+      "ctc_confidence": 0.081,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 236.34
+    },
+    {
+      "id": 39,
+      "text": "My demons",
+      "start": 236.34,
+      "vocal_end": 238.24,
+      "words": [
+        {
+          "text": "My",
+          "start": 236.34,
+          "end": 237.64,
+          "confidence": 0.2879,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 237.64,
+          "end": 238.24,
+          "confidence": 0.7983,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.543,
+      "ctc_confidence": 0.051,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 238.69
+    },
+    {
+      "id": 40,
+      "text": "My demons",
+      "start": 239.02,
+      "vocal_end": 240.02,
+      "words": [
+        {
+          "text": "My",
+          "start": 239.02,
+          "end": 239.22,
+          "confidence": 0.305,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 239.24,
+          "end": 240.02,
+          "confidence": 0.9914,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.648,
+      "ctc_confidence": 0.119,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 240.255
+    },
+    {
+      "id": 41,
+      "text": "My demons",
+      "start": 240.3,
+      "vocal_end": 241.3,
+      "words": [
+        {
+          "text": "My",
+          "start": 240.3,
+          "end": 240.66,
+          "confidence": 0.5759,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 240.82,
+          "end": 241.3,
+          "confidence": 0.9932,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.785,
+      "ctc_confidence": 0.062,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 241.75
+    },
+    {
+      "id": 42,
+      "text": "Social class determined",
+      "start": 241.8,
+      "vocal_end": 243.74,
+      "words": [
+        {
+          "text": "Social",
+          "start": 241.8,
+          "end": 242.7,
+          "confidence": 0.249,
+          "asr_onset": true
+        },
+        {
+          "text": "class",
+          "start": 242.7,
+          "end": 243.14,
+          "confidence": 0.9423,
+          "asr_onset": true
+        },
+        {
+          "text": "determined",
+          "start": 243.16,
+          "end": 243.74,
+          "confidence": 0.907,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.699,
+      "ctc_confidence": 0.088,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 243.74
+    },
+    {
+      "id": 43,
+      "text": "Before birth",
+      "start": 243.74,
+      "vocal_end": 244.74,
+      "words": [
+        {
+          "text": "Before",
+          "start": 243.74,
+          "end": 244.36,
+          "confidence": 0.0205,
+          "asr_onset": true
+        },
+        {
+          "text": "birth",
+          "start": 244.36,
+          "end": 244.74,
+          "confidence": 0.8221,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.421,
+      "ctc_confidence": 0.003,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 245.19
+    },
+    {
+      "id": 44,
+      "text": "We walk through",
+      "start": 246.5,
+      "vocal_end": 248.14,
+      "words": [
+        {
+          "text": "We",
+          "start": 246.5,
+          "end": 247.54,
+          "confidence": 0.6453
+        },
+        {
+          "text": "walk",
+          "start": 247.54,
+          "end": 247.72,
+          "confidence": 0.245,
+          "asr_onset": true
+        },
+        {
+          "text": "through",
+          "start": 247.74,
+          "end": 248.14,
+          "confidence": 0.6572,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.516,
+      "ctc_confidence": 0.029,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 248.335
+    },
+    {
+      "id": 45,
+      "text": "We walk through",
+      "start": 248.38,
+      "vocal_end": 249.46,
+      "words": [
+        {
+          "text": "We",
+          "start": 248.38,
+          "end": 248.62,
+          "confidence": 0.1015,
+          "asr_onset": true
+        },
+        {
+          "text": "walk",
+          "start": 248.66,
+          "end": 248.92,
+          "confidence": 0.995,
+          "asr_onset": true
+        },
+        {
+          "text": "through",
+          "start": 248.94,
+          "end": 249.46,
+          "confidence": 0.9908,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.696,
+      "ctc_confidence": 0.044,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 249.46
+    },
+    {
+      "id": 46,
+      "text": "We walk through",
+      "start": 249.46,
+      "vocal_end": 250.48,
+      "words": [
+        {
+          "text": "We",
+          "start": 249.46,
+          "end": 249.8,
+          "confidence": 0.9283,
+          "asr_onset": true
+        },
+        {
+          "text": "walk",
+          "start": 249.8,
+          "end": 250.16,
+          "confidence": 0.9749
+        },
+        {
+          "text": "through",
+          "start": 250.16,
+          "end": 250.48,
+          "confidence": 0.8808
+        }
+      ],
+      "confidence": 0.928,
+      "ctc_confidence": 0.085,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 250.48
+    },
+    {
+      "id": 47,
+      "text": "Closed doors",
+      "start": 250.48,
+      "vocal_end": 251.88,
+      "words": [
+        {
+          "text": "Closed",
+          "start": 250.48,
+          "end": 251.1,
+          "confidence": 0.0002
+        },
+        {
+          "text": "doors",
+          "start": 251.18,
+          "end": 251.88,
+          "confidence": 0.9578,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.479,
+      "ctc_confidence": 0.011,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 251.88
+    },
+    {
+      "id": 48,
+      "text": "We walk through",
+      "start": 251.88,
+      "vocal_end": 253.12,
+      "words": [
+        {
+          "text": "We",
+          "start": 251.88,
+          "end": 252.2,
+          "confidence": 0.8593,
+          "asr_onset": true
+        },
+        {
+          "text": "walk",
+          "start": 252.2,
+          "end": 252.5,
+          "confidence": 0.9956
+        },
+        {
+          "text": "through",
+          "start": 252.52,
+          "end": 253.12,
+          "confidence": 0.9908,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.949,
+      "ctc_confidence": 0.024,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 253.12
+    },
+    {
+      "id": 49,
+      "text": "We walk through",
+      "start": 253.14,
+      "vocal_end": 254.18,
+      "words": [
+        {
+          "text": "We",
+          "start": 253.14,
+          "end": 253.4,
+          "confidence": 0.9396,
+          "asr_onset": true
+        },
+        {
+          "text": "walk",
+          "start": 253.44,
+          "end": 253.74,
+          "confidence": 0.9983,
+          "asr_onset": true
+        },
+        {
+          "text": "through",
+          "start": 253.74,
+          "end": 254.18,
+          "confidence": 0.9985,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.979,
+      "ctc_confidence": 0.021,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 254.435
+    },
+    {
+      "id": 50,
+      "text": "We walk through",
+      "start": 254.48,
+      "vocal_end": 255.38,
+      "words": [
+        {
+          "text": "We",
+          "start": 254.48,
+          "end": 254.64,
+          "confidence": 0.9336,
+          "asr_onset": true
+        },
+        {
+          "text": "walk",
+          "start": 254.66,
+          "end": 255.0,
+          "confidence": 0.9944,
+          "asr_onset": true
+        },
+        {
+          "text": "through",
+          "start": 255.0,
+          "end": 255.38,
+          "confidence": 0.9966,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.975,
+      "ctc_confidence": 0.01,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 255.38
+    },
+    {
+      "id": 51,
+      "text": "Closed doors",
+      "start": 255.38,
+      "vocal_end": 256.74,
+      "words": [
+        {
+          "text": "Closed",
+          "start": 255.38,
+          "end": 256.26,
+          "confidence": 0.8474
+        },
+        {
+          "text": "doors",
+          "start": 256.26,
+          "end": 256.74,
+          "confidence": 0.9724,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.91,
+      "ctc_confidence": 0.007,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 256.955
+    },
+    {
+      "id": 52,
+      "text": "I know how",
+      "start": 257.0,
+      "vocal_end": 258.6,
+      "words": [
+        {
+          "text": "I",
+          "start": 257.0,
+          "end": 257.58,
+          "confidence": 0.6024,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 257.58,
+          "end": 257.78,
+          "confidence": 0.9286,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 257.78,
+          "end": 258.6,
+          "confidence": 0.9587,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.83,
+      "ctc_confidence": 0.018,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 259.05
+    },
+    {
+      "id": 53,
+      "text": "I know how",
+      "start": 259.1,
+      "vocal_end": 260.94,
+      "words": [
+        {
+          "text": "I",
+          "start": 259.1,
+          "end": 259.96,
+          "confidence": 0.426,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 259.96,
+          "end": 260.28,
+          "confidence": 0.9474,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 260.32,
+          "end": 260.94,
+          "confidence": 0.9005,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.758,
+      "ctc_confidence": 0.167,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 261.39
+    },
+    {
+      "id": 54,
+      "text": "I know how to slay my demons",
+      "start": 263.21,
+      "vocal_end": 265.54,
+      "words": [
+        {
+          "text": "I",
+          "start": 263.21,
+          "end": 263.64,
+          "confidence": 0.8443,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 263.64,
+          "end": 263.84,
+          "confidence": 0.9796,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 263.84,
+          "end": 264.02,
+          "confidence": 0.9919,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 264.04,
+          "end": 264.26,
+          "confidence": 0.9898,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 264.26,
+          "end": 264.62,
+          "confidence": 0.9105,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 264.62,
+          "end": 265.22,
+          "confidence": 0.9599,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 265.26,
+          "end": 265.54,
+          "confidence": 0.9517,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.947,
+      "ctc_confidence": 0.145,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 265.855
+    },
+    {
+      "id": 55,
+      "text": "My demons",
+      "start": 265.9,
+      "vocal_end": 267.22,
+      "words": [
+        {
+          "text": "My",
+          "start": 265.9,
+          "end": 266.5,
+          "confidence": 0.0223
+        },
+        {
+          "text": "demons",
+          "start": 266.5,
+          "end": 267.22,
+          "confidence": 0.1711,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.097,
+      "ctc_confidence": 0.044,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 267.67
+    },
+    {
+      "id": 56,
+      "text": "My demons",
+      "start": 268.28,
+      "vocal_end": 269.64,
+      "words": [
+        {
+          "text": "My",
+          "start": 268.28,
+          "end": 268.6,
+          "confidence": 0.0569,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 268.6,
+          "end": 269.64,
+          "confidence": 0.996,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.526,
+      "ctc_confidence": 0.026,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 269.995
+    },
+    {
+      "id": 57,
+      "text": "My demons",
+      "start": 270.04,
+      "vocal_end": 272.2,
+      "words": [
+        {
+          "text": "My",
+          "start": 270.04,
+          "end": 270.86,
+          "confidence": 0.8288,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 270.94,
+          "end": 272.2,
+          "confidence": 0.9986,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.914,
+      "ctc_confidence": 0.029,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 272.295
+    },
+    {
+      "id": 58,
+      "text": "My demons",
+      "start": 272.34,
+      "vocal_end": 274.14,
+      "words": [
+        {
+          "text": "My",
+          "start": 272.34,
+          "end": 273.12,
+          "confidence": 0.4133,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 273.38,
+          "end": 274.14,
+          "confidence": 0.9981,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.706,
+      "ctc_confidence": 0.028,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 274.59
+    },
+    {
+      "id": 59,
+      "text": "Tangled emotional",
+      "start": 278.08,
+      "vocal_end": 279.46,
+      "words": [
+        {
+          "text": "Tangled",
+          "start": 278.08,
+          "end": 278.92,
+          "confidence": 0.7413,
+          "asr_onset": true
+        },
+        {
+          "text": "emotional",
+          "start": 278.92,
+          "end": 279.46,
+          "confidence": 0.783,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.762,
+      "ctc_confidence": 0.012,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 279.46
+    },
+    {
+      "id": 60,
+      "text": "Brush strokes",
+      "start": 279.46,
+      "vocal_end": 280.22,
+      "words": [
+        {
+          "text": "Brush",
+          "start": 279.46,
+          "end": 279.84,
+          "confidence": 0.0001
+        },
+        {
+          "text": "strokes",
+          "start": 279.84,
+          "end": 280.22,
+          "confidence": 0.4997
+        }
+      ],
+      "confidence": 0.25,
+      "ctc_confidence": 0.028,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 280.255
+    },
+    {
+      "id": 61,
+      "text": "In my teary eyes",
+      "start": 280.3,
+      "vocal_end": 281.62,
+      "words": [
+        {
+          "text": "In",
+          "start": 280.3,
+          "end": 280.52,
+          "confidence": 0.0115,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 280.52,
+          "end": 280.78,
+          "confidence": 0.9344,
+          "asr_onset": true
+        },
+        {
+          "text": "teary",
+          "start": 280.78,
+          "end": 281.24,
+          "confidence": 0.9884,
+          "asr_onset": true
+        },
+        {
+          "text": "eyes",
+          "start": 281.24,
+          "end": 281.62,
+          "confidence": 0.8978,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.708,
+      "ctc_confidence": 0.07,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 282.035
+    },
+    {
+      "id": 62,
+      "text": "Wishing for sunshine",
+      "start": 282.08,
+      "vocal_end": 283.32,
+      "words": [
+        {
+          "text": "Wishing",
+          "start": 282.08,
+          "end": 282.5,
+          "confidence": 0.7917,
+          "asr_onset": true
+        },
+        {
+          "text": "for",
+          "start": 282.5,
+          "end": 282.86,
+          "confidence": 0.9424,
+          "asr_onset": true
+        },
+        {
+          "text": "sunshine",
+          "start": 282.86,
+          "end": 283.32,
+          "confidence": 0.9657,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.9,
+      "ctc_confidence": 0.027,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 283.77
+    },
+    {
+      "id": 63,
+      "text": "I know how to slay my demons",
+      "start": 287.96,
+      "vocal_end": 289.54,
+      "words": [
+        {
+          "text": "I",
+          "start": 287.96,
+          "end": 288.04,
+          "confidence": 0.0162,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 288.08,
+          "end": 288.26,
+          "confidence": 0.0919,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 288.26,
+          "end": 288.5,
+          "confidence": 0.0181,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 288.5,
+          "end": 288.66,
+          "confidence": 0.9381,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 288.66,
+          "end": 288.82,
+          "confidence": 0.1084,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 288.84,
+          "end": 289.1,
+          "confidence": 0.9819,
+          "asr_onset": true
+        },
+        {
+          "text": "demons",
+          "start": 289.16,
+          "end": 289.54,
+          "confidence": 0.9783,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.448,
+      "ctc_confidence": 0.089,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 289.99
+    },
+    {
+      "id": 64,
+      "text": "Freedom to roam",
+      "start": 294.9,
+      "vocal_end": 298.36,
+      "words": [
+        {
+          "text": "Freedom",
+          "start": 294.9,
+          "end": 295.88,
+          "confidence": 0.5683
+        },
+        {
+          "text": "to",
+          "start": 295.88,
+          "end": 297.3,
+          "confidence": 0.9353,
+          "asr_onset": true
+        },
+        {
+          "text": "roam",
+          "start": 297.3,
+          "end": 298.36,
+          "confidence": 0.4602,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.655,
+      "ctc_confidence": 0.156,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 298.36
+    },
+    {
+      "id": 65,
+      "text": "Past broken destiny",
+      "start": 298.36,
+      "vocal_end": 302.32,
+      "words": [
+        {
+          "text": "Past",
+          "start": 298.36,
+          "end": 299.74,
+          "confidence": 0.0017
+        },
+        {
+          "text": "broken",
+          "start": 299.76,
+          "end": 300.96,
+          "confidence": 0.9561,
+          "asr_onset": true
+        },
+        {
+          "text": "destiny",
+          "start": 300.96,
+          "end": 302.32,
+          "confidence": 0.9547,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.638,
+      "ctc_confidence": 0.029,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 302.77
+    },
+    {
+      "id": 66,
+      "text": "Freedom to roam",
+      "start": 304.04,
+      "vocal_end": 307.78,
+      "words": [
+        {
+          "text": "Freedom",
+          "start": 304.04,
+          "end": 305.36,
+          "confidence": 0.8351,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 305.44,
+          "end": 306.86,
+          "confidence": 0.9948,
+          "asr_onset": true
+        },
+        {
+          "text": "roam",
+          "start": 306.86,
+          "end": 307.78,
+          "confidence": 0.9991,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.943,
+      "ctc_confidence": 0.081,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 307.78
+    },
+    {
+      "id": 67,
+      "text": "Past broken destiny",
+      "start": 307.78,
+      "vocal_end": 311.86,
+      "words": [
+        {
+          "text": "Past",
+          "start": 307.78,
+          "end": 309.34,
+          "confidence": 0.975
+        },
+        {
+          "text": "broken",
+          "start": 309.42,
+          "end": 310.46,
+          "confidence": 0.9984,
+          "asr_onset": true
+        },
+        {
+          "text": "destiny",
+          "start": 310.46,
+          "end": 311.86,
+          "confidence": 0.9993
+        }
+      ],
+      "confidence": 0.991,
+      "ctc_confidence": 0.038,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 312.31
+    },
+    {
+      "id": 68,
+      "text": "After all the screams",
+      "start": 313.7,
+      "vocal_end": 315.9,
+      "words": [
+        {
+          "text": "After",
+          "start": 313.7,
+          "end": 315.08,
+          "confidence": 0.4775,
+          "asr_onset": true
+        },
+        {
+          "text": "all",
+          "start": 315.08,
+          "end": 315.34,
+          "confidence": 0.9737,
+          "asr_onset": true
+        },
+        {
+          "text": "the",
+          "start": 315.36,
+          "end": 315.52,
+          "confidence": 0.9682,
+          "asr_onset": true
+        },
+        {
+          "text": "screams",
+          "start": 315.52,
+          "end": 315.9,
+          "confidence": 0.6902,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.777,
+      "ctc_confidence": 0.263,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 315.9
+    },
+    {
+      "id": 69,
+      "text": "And bloody tears",
+      "start": 315.9,
+      "vocal_end": 316.86,
+      "words": [
+        {
+          "text": "And",
+          "start": 315.9,
+          "end": 316.18,
+          "confidence": 0.0084,
+          "asr_onset": true
+        },
+        {
+          "text": "bloody",
+          "start": 316.24,
+          "end": 316.46,
+          "confidence": 0.9302,
+          "asr_onset": true
+        },
+        {
+          "text": "tears",
+          "start": 316.46,
+          "end": 316.86,
+          "confidence": 0.9942,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.644,
+      "ctc_confidence": 0.029,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 317.35
+    },
+    {
+      "id": 70,
+      "text": "My demons still cry my Name",
+      "start": 321.0,
+      "vocal_end": 324.16,
+      "words": [
+        {
+          "text": "My",
+          "start": 321.0,
+          "end": 322.44,
+          "confidence": 0.6812
+        },
+        {
+          "text": "demons",
+          "start": 322.44,
+          "end": 322.74,
+          "confidence": 0.0959,
+          "asr_onset": true
+        },
+        {
+          "text": "still",
+          "start": 322.74,
+          "end": 323.24,
+          "confidence": 0.8264,
+          "asr_onset": true
+        },
+        {
+          "text": "cry",
+          "start": 323.24,
+          "end": 323.56,
+          "confidence": 0.3541,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 323.56,
+          "end": 323.8,
+          "confidence": 0.7294,
+          "asr_onset": true
+        },
+        {
+          "text": "Name",
+          "start": 323.86,
+          "end": 324.16,
+          "confidence": 0.0,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.448,
+      "ctc_confidence": 0.105,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 324.61
+    },
+    {
+      "id": 71,
+      "text": "Connection through my Failed life",
+      "start": 328.7,
+      "vocal_end": 331.24,
+      "words": [
+        {
+          "text": "Connection",
+          "start": 328.7,
+          "end": 329.86,
+          "confidence": 0.0001
+        },
+        {
+          "text": "through",
+          "start": 330.02,
+          "end": 330.24,
+          "confidence": 0.004,
+          "asr_onset": true
+        },
+        {
+          "text": "my",
+          "start": 330.26,
+          "end": 330.5,
+          "confidence": 0.6338,
+          "asr_onset": true
+        },
+        {
+          "text": "Failed",
+          "start": 330.5,
+          "end": 330.84,
+          "confidence": 0.0,
+          "asr_onset": true
+        },
+        {
+          "text": "life",
+          "start": 330.84,
+          "end": 331.24,
+          "confidence": 0.0023,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.128,
+      "ctc_confidence": 0.008,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 331.69,
+      "review_note": "Connection is partly masked."
+    },
+    {
+      "id": 72,
+      "text": "I know how to slay my Demons",
+      "start": 335.54,
+      "vocal_end": 337.72,
+      "words": [
+        {
+          "text": "I",
+          "start": 335.54,
+          "end": 336.24,
+          "confidence": 0.492,
+          "asr_onset": true
+        },
+        {
+          "text": "know",
+          "start": 336.24,
+          "end": 336.42,
+          "confidence": 0.6222,
+          "asr_onset": true
+        },
+        {
+          "text": "how",
+          "start": 336.42,
+          "end": 336.58,
+          "confidence": 0.4329,
+          "asr_onset": true
+        },
+        {
+          "text": "to",
+          "start": 336.58,
+          "end": 336.7,
+          "confidence": 0.5576,
+          "asr_onset": true
+        },
+        {
+          "text": "slay",
+          "start": 336.7,
+          "end": 336.94,
+          "confidence": 0.0018
+        },
+        {
+          "text": "my",
+          "start": 336.96,
+          "end": 337.24,
+          "confidence": 0.9154,
+          "asr_onset": true
+        },
+        {
+          "text": "Demons",
+          "start": 337.26,
+          "end": 337.72,
+          "confidence": 0.0,
+          "asr_onset": true
+        }
+      ],
+      "confidence": 0.432,
+      "ctc_confidence": 0.045,
+      "alignment": "Exact supplied text, Whisper medium.en cross-attention / DTW; independently recognized onsets where available",
+      "end": 338.17
+    }
+  ],
+  "notes": [
+    "Time zero is decoded audio start; source container starts at 0.047891 sec.",
+    "73 display cues / 285 supplied words; both SOLO markers excluded.",
+    "Exact supplied text aligned with Whisper medium.en attention/DTW, independent small.en and medium.en recognition plus CTC comparison.",
+    "Automatic alignment does not prove every sung boundary; review_note identifies particularly ambiguous text.",
+    "Screams, soul and for are supported by the recording recognition. Other ambiguous words retain supplied reference."
+  ]
+}

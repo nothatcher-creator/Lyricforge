@@ -1,0 +1,4 @@
+numpy>=2.0,<3
+scipy>=1.13,<2
+Pillow>=10,<13
+moderngl==5.13.0
